@@ -171,8 +171,8 @@ export const UI = {
   ),
   emReturn: t('Return to NyayaNow', 'न्यायनाउ पर वापस', 'న్యాయనౌకు తిరిగి'),
 
-  /* ——— Situation memory ——— */
-  memTitle: t('Situation memory', 'स्थिति मेमोरी', 'పరిస్థితి మెమరీ'),
+  /* ——— Situation memory / Incident record ——— */
+  memTitle: t('My Incident Record', 'मेरा घटना रिकॉर्ड', 'నా సంఘటన రికార్డు'),
   memIntro: t(
     'Privately record the details of what happened. This is stored only on this device — never sent anywhere.',
     'घटना का विवरण निजी रूप से दर्ज करें। यह केवल इसी डिवाइस पर रहता है — कहीं नहीं भेजा जाता।',
@@ -387,7 +387,178 @@ export const UI = {
     'तत्काल खतरे में 112 पर कॉल करें। न्यायनाउ आपातकालीन सेवा नहीं है।',
     'వెంటనే ప్రమాదంలో ఉంటే 112 కాల్ చేయండి. న్యాయనౌ అత్యవసర సేవ కాదు.'
   ),
-  proceedToGuide: t('Go to guide', 'गाइड पर जाएँ', 'గైడ్కు వెళ్లండి')
+  proceedToGuide: t('Go to guide', 'गाइड पर जाएँ', 'గైడ్కు వెళ్లండి'),
+
+  /* ——— Questioned vs arrested checker ——— */
+  sscTitle: t('What is happening right now?', 'अभी क्या हो रहा है?', 'ప్రస్తుతం ఏమి జరుగుతోంది?'),
+  sscIntro: t(
+    'Not sure if you are being questioned, asked to come to the station, or arrested? Two quick questions point you to the right guide.',
+    'समझ नहीं आ रहा कि आपसे पूछताछ हो रही है, थाने बुलाया गया है, या आप गिरफ़्तार हैं? दो छोटे सवाल आपको सही गाइड तक पहुँचाते हैं।',
+    'మిమ్మల్ని ప్రశ్నిస్తున్నారా, స్టేషన్ రమ్మన్నారా, లేదా అరెస్ట్ అయ్యారా అని తెలియదా? రెండు చిన్న ప్రశ్నలు సరైన గైడ్కు చేరుస్తాయి.'
+  ),
+  sscQ1: t(
+    'Have the police told you that you are under arrest?',
+    'क्या पुलिस ने आपको बताया है कि आप गिरफ़्तार हैं?',
+    'మీరు అరెస్ట్ అయ్యారని పోలీసులు మీకు చెప్పారా?'
+  ),
+  sscQ2: t(
+    'Are the police currently asking you questions or asking you to come to the police station?',
+    'क्या पुलिस अभी आपसे सवाल पूछ रही है या थाने आने को कह रही है?',
+    'పోలీసులు ప్రస్తుతం మిమ్మల్ని ప్రశ్నలు అడుగుతున్నారా లేదా పోలీస్ స్టేషన్ రమ్మంటున్నారా?'
+  ),
+  sscRecQuestioning: t('Police questioning', 'पुलिस पूछताछ', 'పోలీసు ప్రశ్నలు'),
+  sscRecArrest: t('Arrest', 'गिरफ़्तारी', 'అరెస్ట్'),
+  sscUncertain: t("You're not sure — that's okay.", 'आप सुनिश्चित नहीं हैं — कोई बात नहीं।', 'మీకు ఖచ్చితంగా తెలియదా — పర్వాలేదు.'),
+  sscCautious: t(
+    'The legal rules that apply can depend on the circumstances. Here is the guide that most closely matches what you have described.',
+    'लागू होने वाले कानूनी नियम परिस्थितियों पर निर्भर करते हैं। यहाँ वह गाइड है जो आपके बताए अनुसार सबसे निकट है।',
+    'వర్తించే చట్టపరమైన నియమాలు పరిస్థితులపై ఆధారపడతాయి. మీరు వివరించిన దానికి దగ్గరగా ఉన్న గైడ్ ఇదే.'
+  ),
+  sscDifference: t(
+    'Being asked questions or to come to the station is not the same as being formally told you are under arrest. If you are arrested, specific rights apply — you must be told the grounds, a relative or friend can be informed, and you can meet a lawyer. If you are unsure, ask whether you are under arrest and consider seeking legal advice.',
+    'सवाल पूछे जाना या थाने बुलाया जाना, यह बताए जाने से अलग है कि आप गिरफ़्तार हैं। गिरफ़्तारी पर विशेष अधिकार लागू होते हैं — कारण बताए जाने चाहिए, परिवार/मित्र को सूचित किया जा सकता है, और आप वकील से मिल सकते हैं। संदेह हो तो पूछें कि क्या आप गिरफ़्तार हैं और कानूनी सलाह लेने पर विचार करें।',
+    'ప్రశ్నలు అడగడం లేదా స్టేషన్ రమ్మనడం — మీరు అరెస్ట్ అయ్యారని అధికారికంగా చెప్పడం కాదు. అరెస్ట్ అయితే ప్రత్యేక హక్కులు వర్తిస్తాయి — కారణాలు చెప్పాలి, బంధువు/స్నేహితుడికి తెలియజేయవచ్చు, న్యాయవాదిని కలవవచ్చు. సందేహమైతే అరెస్ట్ అవుతున్నారా అని అడగండి, న్యాయ సలహా తీసుకోవడం పరిగణించండి.'
+  ),
+
+  /* ——— Safety check ——— */
+  scTitle: t('Are you safe right now?', 'क्या आप अभी सुरक्षित हैं?', 'మీరు ప్రస్తుతం సురక్షితంగా ఉన్నారా?'),
+  scDanger: t('I am in immediate danger', 'मैं तत्काल खतरे में हूँ', 'నేను వెంటనే ప్రమాదంలో ఉన్నాను'),
+  scSafe: t('I am safe right now', 'मैं अभी सुरक्षित हूँ', 'నేను ప్రస్తుతం సురక్షితంగా ఉన్నాను'),
+  scUnsafeNote: t(
+    'If you believe you are in immediate danger, consider using the emergency/help options below.',
+    'यदि आप तत्काल खतरे में हैं, तो नीचे दिए गए आपातकालीन/सहायता विकल्पों का उपयोग करने पर विचार करें।',
+    'మీరు వెంటనే ప్రమాదంలో ఉన్నారని భావిస్తే క్రింది అత్యవసర/సహాయ ఎంపికలను పరిగణించండి.'
+  ),
+  scViewHelp: t('View help options', 'सहायता विकल्प देखें', 'సహాయ ఎంపికలు చూడండి'),
+  scOpenEmergency: t('Open emergency help', 'आपातकालीन सहायता खोलें', 'అత్యవసర సహాయం తెరవండి'),
+  scContinue: t('Continue to the guide', 'गाइड पर आगे बढ़ें', 'గైడ్కు కొనసాగండి'),
+
+  /* ——— Incident record timeline + export ——— */
+  irTimeline: t('Incident timeline', 'घटना समयरेखा', 'సంఘటన కాలక్రమం'),
+  irTimelineHint: t(
+    'Add the events of one incident in order — for example, when you were stopped, when you were asked to come to the station, and when property was taken.',
+    'एक घटना के क्रम में घटनाक्रम जोड़ें — जैसे कब रोका गया, कब थाने बुलाया गया, कब संपत्ति ली गई।',
+    'ఒక సంఘటనలోని ఈవెంట్లను క్రమంలో జోడించండి — ఉదా. ఎప్పుడు ఆపారు, ఎప్పుడు స్టేషన్ రమ్మన్నారు, ఎప్పుడు ఆస్తి తీసుకున్నారు.'
+  ),
+  irAddEvent: t('Add event', 'घटना जोड़ें', 'ఈవెంట్ జోడించండి'),
+  irEventTitle: t('Event title', 'घटना का शीर्षक', 'ఈవెంట్ శీర్షిక'),
+  irEventDesc: t('Description', 'विवरण', 'వివరణ'),
+  irSaveEvent: t('Save event', 'घटना सहेजें', 'ఈవెంట్ సేవ్ చేయండి'),
+  irExport: t('Export my incident record', 'मेरा घटना रिकॉर्ड निर्यात करें', 'నా సంఘటన రికార్డును ఎగుమతి చేయండి'),
+  irExportWarning: t(
+    'This creates a file containing the information you entered. Keep the exported file somewhere secure.',
+    'यह आपके द्वारा दर्ज जानकारी वाली फ़ाइल बनाता है। निर्यात की गई फ़ाइल को किसी सुरक्षित स्थान पर रखें।',
+    'ఇది మీరు నమోదు చేసిన సమాచారంతో కూడిన ఫైల్ను సృష్టిస్తుంది. ఎగుమతి చేసిన ఫైల్ను సురక్షిత ప్రదేశంలో ఉంచండి.'
+  ),
+  irCancel: t('Cancel', 'रद्द करें', 'రద్దు చేయండి'),
+  irExportConfirm: t('Export', 'निर्यात करें', 'ఎగుమతి చేయండి'),
+  irExported: t('File downloaded. Keep it somewhere secure.', 'फ़ाइल डाउनलोड हुई। इसे सुरक्षित रखें।', 'ఫైల్ డౌన్లోడ్ అయింది. దాన్ని సురక్షితంగా ఉంచండి.'),
+  irEventCount: t('events', 'घटनाएँ', 'ఈవెంట్లు'),
+
+  /* ——— Emergency Rights Pack ——— */
+  epTitle: t('Emergency Rights Pack', 'आपातकालीन अधिकार पैक', 'అత్యవసర హక్కుల ప్యాక్'),
+  epIntro: t(
+    'The most important information, available even when you are offline.',
+    'सबसे महत्वपूर्ण जानकारी, ऑफ़लाइन होने पर भी उपलब्ध।',
+    'అత్యంత ముఖ్యమైన సమాచారం, ఆఫ్లైన్లో కూడా అందుబాటులో ఉంటుంది.'
+  ),
+  epOfflineNote: t(
+    'Cached information — verify against official sources when you are back online.',
+    'कैश की गई जानकारी — ऑनलाइन लौटने पर आधिकारिक स्रोतों से सत्यापित करें।',
+    'క్యాష్ చేసిన సమాచారం — ఆన్లైన్కు వచ్చాక అధికారిక మూలాలతో ధృవీకరించండి.'
+  ),
+  epEmergency: t('Emergency numbers', 'आपातकालीन नंबर', 'అత్యవసర నంబర్లు'),
+  epArrest: t('Arrest — the essentials', 'गिरफ़्तारी — आवश्यक बातें', 'అరెస్ట్ — తప్పనిసరి విషయాలు'),
+  epQuestioning: t('Police questioning — the essentials', 'पुलिस पूछताछ — आवश्यक बातें', 'పోలీసు ప్రశ్నలు — తప్పనిసరి విషయాలు'),
+  epFirRefused: t('FIR refused — your next step', 'FIR दर्ज नहीं — आपका अगला कदम', 'FIR నమోదు కాలేదు — మీ తదుపరి అడుగు'),
+  epAbuse: t('Police abuse — safety first', 'पुलिस दुर्व्यवहार — सुरक्षा पहले', 'పోలీసు దుర్వినియోగం — భద్రత ముందుగా'),
+  epEssentialRights: t('Essential rights', 'आवश्यक अधिकार', 'తప్పనిసరి హక్కులు'),
+
+  /* ——— eCourts bridge ——— */
+  ecTitle: t('Already have a case?', 'क्या आपका कोई मामला है?', 'మీకు ఇప్పటికే కేసు ఉందా?'),
+  ecSub: t('Check official court information through eCourts.', 'eCourts के माध्यम से आधिकारिक अदालती जानकारी देखें।', 'eCourts ద్వారా అధికారిక కోర్టు సమాచారం చూడండి.'),
+  ecCnr: t('I have a CNR number', 'मेरे पास CNR नंबर है', 'నా దగ్గర CNR నంబర్ ఉంది'),
+  ecCnrBtn: t('Check case status', 'केस स्थिति देखें', 'కేసు స్థితి తనిఖీ చేయండి'),
+  ecFir: t('I have an FIR number', 'मेरे पास FIR नंबर है', 'నా దగ్గర FIR నంబర్ ఉంది'),
+  ecFirBtn: t('Learn how to search', 'खोजने का तरीका जानें', 'శోధించే విధానం తెలుసుకోండి'),
+  ecParty: t('I know a party name', 'मुझे पक्षकार का नाम पता है', 'పార్టీ పేరు తెలుసు'),
+  ecPartyBtn: t('Search official court records', 'आधिकारिक अदालती रिकॉर्ड खोजें', 'అధికారిక కోర్టు రికార్డులు శోధించండి'),
+  ecDisclaimer: t(
+    'NyayaNow does not provide court records. This link takes you to the official eCourts service.',
+    'न्यायनाउ अदालती रिकॉर्ड उपलब्ध नहीं कराता। यह लिंक आपको आधिकारिक eCourts सेवा पर ले जाता है।',
+    'న్యాయనౌ కోర్టు రికార్డులను అందించదు. ఈ లింక్ మిమ్మల్ని అధికారిక eCourts సేవకు తీసుకెళ్తుంది.'
+  ),
+
+  /* ——— Legal jargon ——— */
+  ltTitle: t('Legal jargon explained', 'कानूनी शब्द सरल भाषा में', 'చట్టపరమైన పదాలు సరళంగా'),
+  ltIntro: t(
+    'Plain-language explanations of common legal terms, each linked to its official source.',
+    'सामान्य कानूनी शब्दों की सरल व्याख्या, हर एक आधिकारिक स्रोत से जुड़ा।',
+    'సాధారణ చట్టపరమైన పదాల సరళ వివరణ, ప్రతి ఒక్కటి అధికారిక మూలానికి అనుసంధానించబడి ఉంటుంది.'
+  ),
+  ltSimpleWords: t('In simple words', 'सरल शब्दों में', 'సరళమైన మాటల్లో'),
+  ltLegalSource: t('Legal source', 'कानूनी स्रोत', 'చట్టపరమైన మూలం'),
+  ltInGuide: t('Legal terms in this guide', 'इस गाइड के कानूनी शब्द', 'ఈ గైడ్లోని చట్టపరమైన పదాలు'),
+  ltTapTerm: t('Tap a term to see it in simple words.', 'किसी शब्द पर टैप करें — सरल शब्दों में देखें।', 'సరళమైన మాటల్లో చూడటానికి పదాన్ని నొక్కండి.'),
+
+  /* ——— What happens next (interactive) ——— */
+  whnPossible: t('Possible next step', 'संभावित अगला कदम', 'సాధ్యమయ్యే తదుపరి అడుగు'),
+  whnDepending: t(
+    'Depending on the circumstances — see the relevant guide.',
+    'परिस्थितियों पर निर्भर करता है — प्रासंगिक गाइड देखें।',
+    'పరిస్థితులపై ఆధారపడి ఉంటుంది — సంబంధిత గైడ్ చూడండి.'
+  ),
+
+  /* ——— Classifier UX ——— */
+  clClosestMatch: t('We think this is the closest match', 'हमें लगता है यह सबसे निकटतम मिलान है', 'ఇది దగ్గరి మ్యాచ్ అని మేము భావిస్తున్నాము'),
+  clBasedOn: t('Based on what you described.', 'आपने जो बताया उसके आधार पर।', 'మీరు వివరించిన దాని ఆధారంగా.'),
+  clOpenGuide: t('Open guide', 'गाइड खोलें', 'గైడ్ తెరవండి'),
+  clChooseDifferent: t('Choose a different situation', 'कोई अन्य परिस्थिति चुनें', 'వేరే పరిస్థితిని ఎంచుకోండి'),
+
+  /* ——— Voice input ——— */
+  spMic: t('Speak instead of typing', 'टाइप करने की जगह बोलें', 'టైప్ చేయకుండా మాట్లాడండి'),
+  spListening: t('Listening…', 'सुन रहे हैं…', 'వింటున్నాం…'),
+  spPrivacy: t(
+    'Voice input may use your browser’s or its provider’s speech-recognition service. Nothing is sent to NyayaNow. You can type instead.',
+    'वॉइस इनपुट आपके ब्राउज़र या उसके प्रदाता की स्पीच-पहचान सेवा का उपयोग कर सकता है। कुछ भी न्यायनाउ को नहीं भेजा जाता। आप टाइप भी कर सकते हैं।',
+    'వాయిస్ ఇన్పుట్ మీ బ్రౌజర్ లేదా దాని ప్రొవైడర్ స్పీచ్-గుర్తింపు సేవను ఉపయోగించవచ్చు. ఏదీ న్యాయనౌకు పంపబడదు. మీరు టైప్ చేయవచ్చు.'
+  ),
+
+  /* ——— Quick exit ——— */
+  qeQuickExit: t('Quick exit', 'त्वरित निकास', 'త్వరిత నిష్క్రమణ'),
+  qeTooltip: t('Quickly leave this page.', 'इस पृष्ठ से जल्दी बाहर निकलें।', 'ఈ పేజీ నుండి త్వరగా బయటకు వెళ్లండి.'),
+
+  /* ——— Source trust ——— */
+  srcOfficialBadge: t('✓ Official source', '✓ आधिकारिक स्रोत', '✓ అధికారిక మూలం'),
+  srcSourceLabel: t('Source', 'स्रोत', 'మూలం'),
+  srcWhyThisSource: t('Why this source?', 'यह स्रोत क्यों?', 'ఈ మూలం ఎందుకు?'),
+  srcWhyLegislation: t(
+    'Official legislation — the law itself, published by the Government of India.',
+    'आधिकारिक विधान — कानून स्वयं, भारत सरकार द्वारा प्रकाशित।',
+    'అధికారిక చట్టం — భారత ప్రభుత్వం ప్రచురించిన చట్టమే.'
+  ),
+  srcWhyAuthority: t(
+    'Official government authority — a ministry, commission or official portal of the Government of India.',
+    'आधिकारिक सरकारी प्राधिकरण — भारत सरकार का मंत्रालय, आयोग या आधिकारिक पोर्टल।',
+    'అధికారిక ప్రభుత్వ అథారిటీ — భారత ప్రభుత్వ మంత్రిత్వ శాఖ, కమిషన్ లేదా అధికారిక పోర్టల్.'
+  ),
+  srcWhyCourt: t(
+    'Official court source — judgments or services of the judiciary of India.',
+    'आधिकारिक न्यायालय स्रोत — भारतीय न्यायपालिका के निर्णय या सेवाएँ।',
+    'అధికారిక కోర్టు మూలం — భారత న్యాయవ్యవస్థ తీర్పులు లేదా సేవలు.'
+  ),
+  srcWhyLegalAid: t(
+    'Official legal-aid authority — established under the Legal Services Authorities Act.',
+    'आधिकारिक कानूनी-सहायता प्राधिकरण — विधिक सेवा प्राधिकरण अधिनियम के तहत स्थापित।',
+    'అధికారిక న్యాయ-సహాయ అథారిటీ — న్యాయ సేవా అథారిటీల చట్టం కింద స్థాపించబడింది.'
+  ),
+
+  /* ——— Footer ——— */
+  footerHelp: t('Help', 'सहायता', 'సహాయం'),
+  footerEmergencyHelp: t('Emergency help', 'आपातकालीन सहायता', 'అత్యవసర సహాయం'),
+  footerLegalAid: t('Legal aid', 'कानूनी सहायता', 'న్యాయ సహాయం'),
+  footerOfficialResources: t('Official resources', 'आधिकारिक संसाधन', 'అధికారిక వనరులు'),
+  footerGetHelp: t('Get legal help', 'कानूनी सहायता लें', 'న్యాయ సహాయం పొందండి')
 } as const
 
 export type UIKey = keyof typeof UI

@@ -10,6 +10,7 @@ const en = (s: string): L10n => ({ en: s, hi: '', te: '' })
 export const SOURCES: Record<string, Source> = {
   bnss: {
     id: 'bnss',
+    kind: 'legislation',
     institution: en('India Code — Ministry of Law and Justice'),
     legalInstrument: 'Bharatiya Nagarik Suraksha Sanhita, 2023 (Act 46 of 2023)',
     officialUrl: 'https://www.indiacode.nic.in/handle/123456789/20099',
@@ -20,6 +21,7 @@ export const SOURCES: Record<string, Source> = {
   },
   constitution: {
     id: 'constitution',
+    kind: 'legislation',
     institution: en('Constitution of India — India Code'),
     legalInstrument: 'Constitution of India, 1950',
     sectionOrArticle: 'Articles 20(3), 21, 22',
@@ -31,6 +33,7 @@ export const SOURCES: Record<string, Source> = {
   },
   pca: {
     id: 'pca',
+    kind: 'legislation',
     institution: en('India Code — Ministry of Law and Justice'),
     legalInstrument: 'Prevention of Corruption Act, 1988 (Act 49 of 1988)',
     officialUrl: 'https://www.indiacode.nic.in/handle/123456789/15302',
@@ -41,6 +44,7 @@ export const SOURCES: Record<string, Source> = {
   },
   lsaa: {
     id: 'lsaa',
+    kind: 'legislation',
     institution: en('India Code — Ministry of Law and Justice'),
     legalInstrument: 'Legal Services Authorities Act, 1987',
     officialUrl: 'https://www.indiacode.nic.in/bitstream/123456789/19023/1/legal_service_authorities_act%2C_1987.pdf',
@@ -51,6 +55,7 @@ export const SOURCES: Record<string, Source> = {
   },
   nalsa: {
     id: 'nalsa',
+    kind: 'legalaid',
     institution: en('National Legal Services Authority (NALSA)'),
     legalInstrument: 'NALSA — Legal Services Authorities Act, 1987',
     officialUrl: 'https://nalsa.gov.in/',
@@ -61,6 +66,7 @@ export const SOURCES: Record<string, Source> = {
   },
   nhrc: {
     id: 'nhrc',
+    kind: 'authority',
     institution: en('National Human Rights Commission (NHRC)'),
     legalInstrument: 'Protection of Human Rights Act, 1993',
     officialUrl: 'https://nhrc.nic.in/',
@@ -71,6 +77,7 @@ export const SOURCES: Record<string, Source> = {
   },
   cpgrams: {
     id: 'cpgrams',
+    kind: 'authority',
     institution: en('CPGRAMS — Department of Administrative Reforms & Public Grievances'),
     legalInstrument: 'Centralised Public Grievance Redress and Monitoring System',
     officialUrl: 'https://pgportal.gov.in/',
@@ -81,6 +88,7 @@ export const SOURCES: Record<string, Source> = {
   },
   cyber: {
     id: 'cyber',
+    kind: 'authority',
     institution: en('National Cyber Crime Reporting Portal — Ministry of Home Affairs'),
     legalInstrument: 'National Cyber Crime Reporting Portal',
     officialUrl: 'https://cybercrime.gov.in/',
@@ -91,6 +99,7 @@ export const SOURCES: Record<string, Source> = {
   },
   mha: {
     id: 'mha',
+    kind: 'authority',
     institution: en('Ministry of Home Affairs, Government of India'),
     legalInstrument: 'Ministry of Home Affairs',
     officialUrl: 'https://www.mha.gov.in/',
@@ -99,6 +108,7 @@ export const SOURCES: Record<string, Source> = {
   },
   sci: {
     id: 'sci',
+    kind: 'court',
     institution: en('Supreme Court of India'),
     legalInstrument: 'Judgments of the Supreme Court of India',
     officialUrl: 'https://www.sci.gov.in/',
@@ -109,6 +119,7 @@ export const SOURCES: Record<string, Source> = {
   },
   apslsa: {
     id: 'apslsa',
+    kind: 'legalaid',
     institution: en('Andhra Pradesh State Legal Services Authority'),
     legalInstrument: 'APSLSA — Legal Services Authorities Act, 1987',
     officialUrl: 'https://andhrapradesh.nalsa.gov.in/',
@@ -117,6 +128,7 @@ export const SOURCES: Record<string, Source> = {
   },
   indiacode: {
     id: 'indiacode',
+    kind: 'authority',
     institution: en('India Code — Government of India'),
     legalInstrument: 'India Code (Digital Repository of Acts)',
     officialUrl: 'https://www.indiacode.nic.in/',

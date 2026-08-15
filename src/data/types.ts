@@ -5,6 +5,9 @@ export type L10n = { en: string; hi: string; te: string }
 
 export type Urgency = 'high' | 'medium' | 'low' | 'info'
 
+/** What kind of official source backs a claim — used by the "Why this source?" explainer. */
+export type SourceKind = 'legislation' | 'authority' | 'court' | 'legalaid'
+
 /** Verified official source. */
 export interface Source {
   id: string
@@ -16,6 +19,7 @@ export interface Source {
   officialUrl: string
   purpose: L10n
   lastVerified: string
+  kind: SourceKind
 }
 
 /** A citizen-facing legal right with a plain-language explanation + verified basis. */
@@ -81,8 +85,8 @@ export interface Situation {
   avoid: ActionItem[]
   /** Interactive stage timeline (flagship for arrest). */
   timeline?: TimelineStage[]
-  /** "WHAT HAPPENS NEXT?" — visual action path. */
-  whatHappensNext: { label: L10n; note?: L10n }[]
+  /** "WHAT HAPPENS NEXT?" — visual action path. `linkTo` turns a possible next step into a link to another verified guide. */
+  whatHappensNext: { label: L10n; note?: L10n; linkTo?: string }[]
   helpRouteIds: string[]
   complaintRoutes: ComplaintRoute[]
   sourceIds: string[]

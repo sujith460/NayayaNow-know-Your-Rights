@@ -21,6 +21,37 @@ export interface SituationMemory {
   updatedAt: string
 }
 
+/** One event on an incident timeline. */
+export interface IncidentEvent {
+  id: string
+  date: string
+  time: string
+  title: string
+  description: string
+  location: string
+  notes: string
+}
+
+/**
+ * "My Incident Record" — incident-level details plus a timeline of events.
+ * Everything stays on this device under the nyayanow: namespace.
+ */
+export interface IncidentRecord {
+  id: string
+  /** Incident date. */
+  date: string
+  /** Incident time. */
+  time: string
+  /** Incident location. */
+  location: string
+  station: string
+  officer: string
+  what: string
+  notes: string
+  events: IncidentEvent[]
+  updatedAt: string
+}
+
 export interface ChecklistState {
   items: boolean[]
   updatedAt: string
@@ -56,7 +87,52 @@ function makeId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`
 }
 
+/** Convert a legacy situation-memory entry into an incident record (no events). */
+function toIncidentRecord(m: SituationMemory): IncidentRecord {
+  return {
+    ...m,
+    id: m.id || makeId(),
+    events: [],
+    updatedAt: m.updatedAt || new Date().toISOString()
+  }
+}
+
 export const storage = {
+  /**
+   * Incident records ("My Incident Record"). Migrates the legacy single-entry
+   * memory storage into the timeline format so nothing already saved is lost.
+   */
+  getIncidents(): IncidentRecord[] {
+    const list = read<IncidentRecord[]>('incidents', [])
+    if (list.length > 0) return list
+
+    // Migrate legacy entries (if any) exactly once.
+    const legacy = read<SituationMemory | null>('memory', null)
+    const legacyList = read<SituationMemory[]>('memories', [])
+    const migrated: IncidentRecord[] = []
+    if (legacy) migrated.push(toIncidentRecord(legacy))
+    for (const m of legacyList) migrated.push(toIncidentRecord(m))
+    if (migrated.length > 0) {
+      write('incidents', migrated)
+      remove('memory')
+      remove('memories')
+      return migrated
+    }
+    return []
+  },
+  saveIncident(r: IncidentRecord): void {
+    write('incidents', [
+      { ...r, id: r.id || makeId(), updatedAt: new Date().toISOString() },
+      ...this.getIncidents()
+    ])
+  },
+  deleteIncident(id: string): void {
+    write('incidents', this.getIncidents().filter((r) => r.id !== id))
+  },
+  clearIncidents(): void {
+    remove('incidents')
+  },
+
   getMemories(): SituationMemory[] {
     // Migrate the legacy single-memory entry (if any) into the list.
     const legacy = read<SituationMemory | null>('memory', null)
@@ -121,6 +197,7 @@ export const storage = {
   clearAll(): void {
     remove('memory')
     remove('memories')
+    remove('incidents')
     remove('checklist')
     remove('privacy')
     remove('lang')

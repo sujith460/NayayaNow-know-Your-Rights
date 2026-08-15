@@ -69,12 +69,12 @@ export function Navigator() {
               <Sparkles className="h-4 w-4" aria-hidden="true" />
               {t('clFound')}
             </p>
-            <p className="mt-2 text-sm text-mist">{t('clMatched')}</p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
+              {t('clClosestMatch')}
+            </h2>
+            <p className="mt-1 text-sm text-mist">{t('clBasedOn')}</p>
 
-            <Link
-              to={`/situation/${matched.slug}`}
-              className="card card-hover mt-5 flex flex-col gap-4 p-6 sm:flex-row sm:items-center"
-            >
+            <div className="card mt-5 flex flex-col gap-4 p-6 sm:flex-row sm:items-center">
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-saffron">
                 <SituationIcon name={matched.icon} className="h-6 w-6" />
               </span>
@@ -92,10 +92,20 @@ export function Navigator() {
                   {tr(matched.summary)}
                 </span>
               </span>
-              <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-saffron-deep">
-                {t('proceedToGuide')} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </span>
-            </Link>
+            </div>
+
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <Link to={`/situation/${matched.slug}`} className="flex-1 sm:flex-none">
+                <Button variant="primary" className="w-full sm:w-auto">
+                  {t('clOpenGuide')} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Button>
+              </Link>
+              <a href="#all-situations" className="flex-1 sm:flex-none">
+                <Button variant="ghost" className="w-full sm:w-auto">
+                  {t('clChooseDifferent')}
+                </Button>
+              </a>
+            </div>
 
             <p className="mt-6 rounded-2xl bg-paper-2 p-4 text-xs leading-relaxed text-mist">
               {t('clAIBoundary')}

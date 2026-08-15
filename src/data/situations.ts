@@ -132,7 +132,7 @@ export const SITUATIONS: Situation[] = [
     whatHappensNext: [
       { label: t('You are here — stopped or questioned', 'आप यहाँ हैं — रोका/पूछताछ', 'మీరు ఇక్కడ ఉన్నారు — ఆపారు/ప్రశ్నించారు') },
       { label: t('Police may ask you to come to the station', 'पुलिस थाने आने को कह सकती है', 'పోలీసులు స్టేషన్ రమ్మనవచ్చు'), note: t('Ask whether you are under arrest.', 'पूछें कि क्या आप गिरफ़्तार हैं।', 'మీరు అరెస్ట్ అవుతున్నారా అని అడగండి.') },
-      { label: t('If arrested — grounds told, relative informed', 'गिरफ़्तारी पर — कारण बताए जाएँगे, परिवार को सूचना', 'అరెస్ట్ అయితే — కారణాలు చెప్పబడతాయి, బంధువుకు తెలియజేయబడుతుంది'), note: t('Art. 22(1) · BNSS §47, §48', 'अनु. 22(1) · बीएनएसएस §47, §48', 'ఆర్టి. 22(1) · BNSS §47, §48') },
+      { label: t('If arrested — grounds told, relative informed', 'गिरफ़्तारी पर — कारण बताए जाएँगे, परिवार को सूचना', 'అరెస్ట్ అయితే — కారణాలు చెప్పబడతాయి, బంధువుకు తెలియజేయబడుతుంది'), note: t('Art. 22(1) · BNSS §47, §48', 'अनु. 22(1) · बीएनएसएस §47, §48', 'ఆర్టి. 22(1) · BNSS §47, §48'), linkTo: 'arrested' },
       { label: t('Produced before a Magistrate within 24 hours', '24 घंटे के भीतर मजिस्ट्रेट के सामने पेशी', '24 గంటల్లో మేజిస్ట్రేట్ ముందు హాజరు'), note: t('Art. 22(2) · BNSS §57, §58', 'अनु. 22(2) · बीएनएसएस §57, §58', 'ఆర్టి. 22(2) · BNSS §57, §58') },
       { label: t('Free legal aid available if needed', 'ज़रूरत पड़ने पर निःशुल्क कानूनी सहायता उपलब्ध', 'అవసరమైతే ఉచిత న్యాయ సహాయం అందుబాటులో ఉంది'), note: t('NALSA / Legal Services Authorities', 'नालसा / कानूनी सेवा प्राधिकरण', 'NALSA / న్యాయ సేవా అథారిటీలు') }
     ],
@@ -545,7 +545,7 @@ export const SITUATIONS: Situation[] = [
     whatHappensNext: [
       { label: t('You are here — information refused', 'आप यहाँ हैं — सूचना दर्ज नहीं', 'మీరు ఇక్కడ ఉన్నారు — సమాచారం నమోదు కాలేదు') },
       { label: t('Superintendent of Police / higher authority', 'पुलिस अधीक्षक / वरिष्ठ अधिकारी', 'సూపరింటెండెంట్ / ఉన్నత అధికారి') },
-      { label: t('Complaint to Magistrate (BNSS §175(3))', 'मजिस्ट्रेट से शिकायत (बीएनएसएस §175(3))', 'మేజిస్ట్రేట్కు ఫిర్యాదు (BNSS §175(3))'), note: t('Magistrate may order investigation', 'मजिस्ट्रेट जाँच का आदेश दे सकते हैं', 'మేజిస్ట్రేట్ దర్యాప్తు ఆదేశించవచ్చు') },
+      { label: t('Complaint to Magistrate (BNSS §175(3))', 'मजिस्ट्रेट से शिकायत (बीएनएसएस §175(3))', 'మేజిస్ట్రేట్కు ఫిర్యాదు (BNSS §175(3))'), note: t('Magistrate may order investigation', 'मजिस्ट्रेट जाँच का आदेश दे सकते हैं', 'మేజిస్ట్రేట్ దర్యాప్తు ఆదేశించవచ్చు'), linkTo: 'i-want-to-complain' },
       { label: t('Investigation proceeds (BNSS §176)', 'जाँच आगे बढ़ती है (बीएनएसएस §176)', 'దర్యాప్తు కొనసాగుతుంది (BNSS §176)') },
       { label: t('Legal aid while you pursue this', 'इस दौरान कानूनी सहायता', 'ఈ ప్రక్రియలో న్యాయ సహాయం'), note: t('NALSA / Legal Services Authorities', 'नालसा / कानूनी सेवा प्राधिकरण', 'NALSA / న్యాయ సేవా అథారిటీలు') }
     ],
@@ -687,7 +687,7 @@ export const SITUATIONS: Situation[] = [
       { label: t('You are here — search', 'आप यहाँ हैं — तलाशी', 'మీరు ఇక్కడ ఉన్నారు — సోదా') },
       { label: t('Search conducted (warrant or legal power)', 'तलाशी (वारंट या कानूनी शक्ति से)', 'సోదా (వారెంట్ లేదా చట్టపరమైన అధికారంతో)'), note: t('BNSS §96, §185', 'बीएनएसएस §96, §185', 'BNSS §96, §185') },
       { label: t('List of seized items prepared', 'ज़ब्त वस्तुओं की सूची', 'జప్తు వస్తువుల జాబితా'), note: t('BNSS §103 · recording §105', 'बीएनएसएस §103 · रिकॉर्डिंग §105', 'BNSS §103 · రికార్డింగ్ §105') },
-      { label: t('If property taken — see the seized-property guide', 'संपत्ति ली गई — ज़ब्त संपत्ति गाइड देखें', 'ఆస్తి తీసుకుంటే — జప్తు ఆస్తి గైడ్ చూడండి'), note: t('BNSS §106, §503', 'बीएनएसएस §106, §503', 'BNSS §106, §503') },
+      { label: t('If property taken — see the seized-property guide', 'संपत्ति ली गई — ज़ब्त संपत्ति गाइड देखें', 'ఆస్తి తీసుకుంటే — జప్తు ఆస్తి గైడ్ చూడండి'), note: t('BNSS §106, §503', 'बीएनएसएस §106, §503', 'BNSS §106, §503'), linkTo: 'property-seized' },
       { label: t('Legal remedy if the search was unlawful', 'अवैध तलाशी पर कानूनी उपाय', 'చట్టవిరుద్ధ సోదాకు చట్టపరమైన పరిహారం'), note: t('Consult a lawyer or Legal Services Authority', 'वकील या कानूनी सेवा प्राधिकरण से परामर्श', 'న్యాయవాది లేదా న్యాయ సేవా అథారిటీని సంప్రదించండి') }
     ],
     helpRouteIds: ['nalsa', 'helpline-15100', 'dlsa-directory'],
@@ -934,7 +934,7 @@ export const SITUATIONS: Situation[] = [
       { label: t('Safety → medical care if injured', 'सुरक्षा → चोट लगने पर चिकित्सा', 'భద్రత → గాయమైతే వైద్యం'), note: t('Call 112 in immediate danger', 'तत्काल खतरे में 112 पर कॉल करें', 'వెంటనే ప్రమాదం ఉంటే 112 కాల్ చేయండి') },
       { label: t('Document what happened', 'घटना दर्ज करें', 'సంఘటనను నమోదు చేయండి'), note: t('Date, time, place, officers, witnesses', 'तारीख़, समय, स्थान, अधिकारी, गवाह', 'తేదీ, సమయం, ప్రదేశం, అధికారులు, సాక్షులు') },
       { label: t('Legal advice on complaint route', 'शिकायत मार्ग पर कानूनी सलाह', 'ఫిర్యాదు మార్గంపై న్యాయ సలహా'), note: t('NALSA / lawyer', 'नालसा / वकील', 'NALSA / న్యాయవాది') },
-      { label: t('Complaint: senior police → NHRC / State HRC as appropriate', 'शिकायत: वरिष्ठ पुलिस → एनएचआरसी/राज्य आयोग', 'ఫిర్యాదు: సీనియర్ పోలీస్ → NHRC / రాష్ట్ర కమిషన్') }
+      { label: t('Complaint: senior police → NHRC / State HRC as appropriate', 'शिकायत: वरिष्ठ पुलिस → एनएचआरसी/राज्य आयोग', 'ఫిర్యాదు: సీనియర్ పోలీస్ → NHRC / రాష్ట్ర కమిషన్'), linkTo: 'i-want-to-complain' }
     ],
     helpRouteIds: ['nalsa', 'helpline-15100', 'nhrc-route', 'dlsa-directory'],
     complaintRoutes: [

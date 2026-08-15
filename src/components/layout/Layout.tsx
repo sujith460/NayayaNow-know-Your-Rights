@@ -7,7 +7,7 @@ import { useApp } from '../../context/AppContext'
 import { SourceDialog } from '../dialogs/SourceDialog'
 import { DisclaimerDialog } from '../dialogs/DisclaimerDialog'
 import { PrivacyDialog } from '../dialogs/PrivacyDialog'
-import { SituationMemoryDialog } from '../features/SituationMemoryDialog'
+import { IncidentRecordDialog } from '../features/IncidentRecordDialog'
 import { ComplaintChecklistDialog } from '../features/ComplaintChecklistDialog'
 import { EmergencyOverlay } from '../features/EmergencyOverlay'
 import { OfflineIndicator } from '../features/OfflineIndicator'
@@ -31,7 +31,7 @@ export function Layout() {
       {dialog === 'sources' && <SourceDialog onClose={closeDialog} />}
       {dialog === 'disclaimer' && <DisclaimerDialog onClose={closeDialog} />}
       {dialog === 'privacy' && <PrivacyDialog onClose={closeDialog} />}
-      {dialog === 'memory' && <SituationMemoryDialog onClose={closeDialog} />}
+      {dialog === 'memory' && <IncidentRecordDialog onClose={closeDialog} />}
       {dialog === 'checklist' && <ComplaintChecklistDialog onClose={closeDialog} />}
       {emergencyOpen && <EmergencyOverlay />}
 

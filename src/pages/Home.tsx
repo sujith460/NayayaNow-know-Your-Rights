@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Zap, NotebookPen, ClipboardCheck, ShieldCheck, HelpCircle } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Zap, NotebookPen, ClipboardCheck, ShieldCheck, HelpCircle, WifiOff } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import { Button } from '../components/ui/Button'
 import { SituationCard } from '../components/situation/SituationCard'
 import { UrgencyBadge } from '../components/ui/UrgencyBadge'
 import { SearchInput } from '../components/features/SearchInput'
+import { SituationStatusChecker } from '../components/features/SituationStatusChecker'
+import { ECourtsBridge } from '../components/features/ECourtsBridge'
 import { ALL_ENTRIES, NOT_SURE_ENTRY } from '../data/situations'
 
 export function Home() {
@@ -61,6 +63,11 @@ export function Home() {
         </div>
       </section>
 
+      {/* ——— Questioned vs arrested decision tool ——— */}
+      <section className="mx-auto max-w-3xl px-4 pt-12 sm:px-6 sm:pt-14">
+        <SituationStatusChecker />
+      </section>
+
       {/* ——— Situation grid ——— */}
       <section id="situations" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
@@ -106,9 +113,14 @@ export function Home() {
         </div>
       </section>
 
+      {/* ——— eCourts trusted bridge ——— */}
+      <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 sm:pb-20">
+        <ECourtsBridge />
+      </section>
+
       {/* ——— Feature strip ——— */}
       <section className="border-y border-line bg-paper-2/60">
-        <div className="mx-auto grid max-w-6xl gap-4 px-4 py-12 sm:grid-cols-3 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-4 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
           <button
             onClick={() => openDialog('memory')}
             className="card card-hover flex items-start gap-4 p-5 text-left"
@@ -140,6 +152,15 @@ export function Home() {
             <span>
               <span className="font-display text-base font-semibold text-ink">{t('cnTitle')}</span>
               <span className="mt-1 block text-sm leading-relaxed text-mist">{t('cnIntro')}</span>
+            </span>
+          </Link>
+          <Link to="/emergency" className="card card-hover flex items-start gap-4 p-5">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-danger-soft text-danger">
+              <WifiOff className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <span>
+              <span className="font-display text-base font-semibold text-ink">{t('epTitle')}</span>
+              <span className="mt-1 block text-sm leading-relaxed text-mist">{t('epIntro')}</span>
             </span>
           </Link>
         </div>

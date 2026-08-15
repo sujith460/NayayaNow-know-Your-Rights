@@ -1,8 +1,22 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
-import { ArrowLeft, ShieldCheck, NotebookPen, ClipboardCheck, Scale, ExternalLink, AlertTriangle, CheckCircle2 } from 'lucide-react'
+import { useState } from 'react'
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
+import {
+  ArrowLeft,
+  ShieldCheck,
+  NotebookPen,
+  ClipboardCheck,
+  Scale,
+  ExternalLink,
+  AlertTriangle,
+  CheckCircle2,
+  ChevronDown,
+  LogOut
+} from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import { getSituationBySlug } from '../data/situations'
 import { getSources } from '../data/sources'
+import type { Source } from '../data/types'
+import { SITUATION_TERMS } from '../data/legalTerms'
 import { UrgencyBadge } from '../components/ui/UrgencyBadge'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Stepper } from '../components/situation/Stepper'
@@ -14,26 +28,120 @@ import { WhatHappensNext } from '../components/situation/WhatHappensNext'
 import { HelpRouteCard } from '../components/situation/HelpRouteCard'
 import { ComplaintRouteCard } from '../components/situation/ComplaintRouteCard'
 import { SituationIcon } from '../components/ui/icons'
+import { SafetyCheck } from '../components/features/SafetyCheck'
+import { LegalTermTooltip } from '../components/ui/LegalTermTooltip'
+
+function SourceCard({ source }: { source: Source }) {
+  const { t, tr } = useApp()
+  const [open, setOpen] = useState(false)
+
+  const whyKey =
+    source.kind === 'legislation'
+      ? 'srcWhyLegislation'
+      : source.kind === 'authority'
+        ? 'srcWhyAuthority'
+        : source.kind === 'court'
+          ? 'srcWhyCourt'
+          : 'srcWhyLegalAid'
+
+  return (
+    <article className="card flex flex-col p-5">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <span className="inline-flex items-center gap-1 rounded-full bg-leaf-soft px-2.5 py-1 text-[11px] font-semibold text-leaf">
+            <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
+            {t('srcOfficialBadge')}
+          </span>
+          <h3 className="mt-2 font-display text-base font-semibold text-ink">
+            {tr(source.institution)}
+          </h3>
+        </div>
+      </div>
+      <p className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-saffron-deep">
+        {source.legalInstrument}
+        {source.sectionOrArticle ? ` · ${source.sectionOrArticle}` : ''}
+      </p>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-mist">{tr(source.purpose)}</p>
+
+      <dl className="mt-4 space-y-1 text-xs text-mist">
+        {source.sectionOrArticle && (
+          <div className="flex gap-1.5">
+            <dt className="shrink-0 font-semibold text-ink">{t('legalBasis')}:</dt>
+            <dd>{source.sectionOrArticle}</dd>
+          </div>
+        )}
+        <div className="flex gap-1.5">
+          <dt className="shrink-0 font-semibold text-ink">{t('srcSourceLabel')}:</dt>
+          <dd>{tr(source.institution)}</dd>
+        </div>
+        <div className="flex gap-1.5">
+          <dt className="shrink-0 font-semibold text-ink">{t('lastVerified')}:</dt>
+          <dd>{source.lastVerified}</dd>
+        </div>
+      </dl>
+
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <a
+          href={source.officialUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-saffron-deep hover:underline"
+        >
+          {t('viewOfficialSource')} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+        </a>
+      </div>
+
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-mist transition-colors hover:text-ink"
+      >
+        {t('srcWhyThisSource')}
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+      </button>
+      {open && (
+        <p className="mt-2 rounded-xl bg-paper p-3 text-xs leading-relaxed text-mist animate-fade">
+          {t(whyKey)}
+        </p>
+      )}
+    </article>
+  )
+}
 
 export function SituationPage() {
   const { slug } = useParams<{ slug: string }>()
   const { t, tr, openDialog } = useApp()
+  const navigate = useNavigate()
   const situation = slug ? getSituationBySlug(slug) : undefined
 
   if (!situation) return <Navigate to="/" replace />
 
   const sources = getSources(situation.sourceIds)
   const isAbuse = situation.id === 'POLICE_ABUSE'
+  const termIds = SITUATION_TERMS[situation.id] ?? []
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 animate-rise">
-      <Link
-        to="/"
-        className="inline-flex items-center gap-2 text-sm font-semibold text-mist hover:text-ink"
-      >
-        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-        {t('backToHome')}
-      </Link>
+      <div className="flex items-center justify-between gap-3">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-mist hover:text-ink"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          {t('backToHome')}
+        </Link>
+
+        {/* Subtle, accessible quick exit — replaces the current page without adding history */}
+        <button
+          onClick={() => navigate('/', { replace: true })}
+          title={t('qeTooltip')}
+          aria-label={t('qeQuickExit')}
+          className="inline-flex items-center gap-1.5 rounded-full border border-line bg-cream px-3 py-1.5 text-xs font-semibold text-mist transition-colors hover:border-danger/40 hover:text-danger"
+        >
+          <LogOut className="h-3.5 w-3.5" aria-hidden="true" />
+          × {t('qeQuickExit')}
+        </button>
+      </div>
 
       {/* Situation header */}
       <header className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-start">
@@ -56,6 +164,9 @@ export function SituationPage() {
           </p>
         </div>
       </header>
+
+      {/* Safety check for high-risk guides */}
+      <SafetyCheck situation={situation} />
 
       {isAbuse && (
         <div className="mt-6 flex items-start gap-3 rounded-2xl border border-danger/30 bg-danger-soft p-4" role="note">
@@ -113,9 +224,25 @@ export function SituationPage() {
         <WhatHappensNext situation={situation} />
       </section>
 
+      {/* Legal terms in this guide */}
+      {termIds.length > 0 && (
+        <section className="mt-16" aria-label={t('ltInGuide')}>
+          <SectionHeading index="07" title={t('ltInGuide')} subtitle={t('ltTapTerm')}>
+            <Link to="/legal-terms" className="text-sm font-semibold text-saffron-deep hover:underline">
+              {t('ltTitle')} →
+            </Link>
+          </SectionHeading>
+          <div className="grid gap-3">
+            {termIds.map((id) => (
+              <LegalTermTooltip key={id} termId={id} />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Get legal help */}
       <section className="mt-16" aria-labelledby="help-heading">
-        <SectionHeading index="07" title={t('secHelp')} />
+        <SectionHeading index={termIds.length > 0 ? '08' : '07'} title={t('secHelp')} />
         <div className="grid gap-4 sm:grid-cols-2">
           {situation.helpRouteIds.map((id) => (
             <HelpRouteCard key={id} routeId={id} />
@@ -126,7 +253,7 @@ export function SituationPage() {
       {/* Where to complain */}
       {situation.complaintRoutes.length > 0 && (
         <section className="mt-16" aria-labelledby="complain-heading">
-          <SectionHeading index="08" title={t('secComplain')} />
+          <SectionHeading index={termIds.length > 0 ? '09' : '08'} title={t('secComplain')} />
           <div className="grid gap-4">
             {situation.complaintRoutes.map((r) => (
               <ComplaintRouteCard key={r.id} route={r} />
@@ -138,36 +265,13 @@ export function SituationPage() {
       {/* Official sources */}
       <section className="mt-16" aria-labelledby="sources-heading">
         <SectionHeading
-          index="09"
+          index={termIds.length > 0 ? '10' : situation.complaintRoutes.length > 0 ? '09' : '08'}
           title={t('secSources')}
           subtitle={t('srcIntro')}
         />
         <div className="grid gap-4 sm:grid-cols-2">
           {sources.map((s) => (
-            <article key={s.id} className="card flex flex-col p-5">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="font-display text-base font-semibold text-ink">{tr(s.institution)}</h3>
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-leaf" aria-hidden="true" />
-              </div>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-saffron-deep">
-                {s.legalInstrument}
-                {s.sectionOrArticle ? ` · ${s.sectionOrArticle}` : ''}
-              </p>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-mist">{tr(s.purpose)}</p>
-              <div className="mt-4 flex items-center justify-between gap-3">
-                <span className="text-xs text-mist">
-                  {t('lastVerified')}: {s.lastVerified}
-                </span>
-                <a
-                  href={s.officialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-saffron-deep hover:underline"
-                >
-                  {t('trustViewProvision')} <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
-              </div>
-            </article>
+            <SourceCard key={s.id} source={s} />
           ))}
         </div>
       </section>
