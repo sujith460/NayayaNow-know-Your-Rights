@@ -17,7 +17,7 @@ compatibility_date = "2025-06-01"
 # Public configuration — visible to the Worker runtime, never to the client.
 [vars]
 # Comma-separated frontend origins allowed to call this worker.
-ALLOWED_ORIGINS =  "http://localhost:5173,http://127.0.0.1:5173,https://nyayanow.vercel.app/"
+ALLOWED_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173,https://nyayanow.vercel.app"
 
 # Google Gemini (Generative Language API). LLM_ENDPOINT is the API base;
 # the worker appends /models/{LLM_MODEL}:generateContent.
