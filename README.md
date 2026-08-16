@@ -58,11 +58,7 @@ src/
   pages/       # Home, Situation, Navigator, NotSure, Complaints, Help, Sources, About
 ```
 
-## Notes for the hackathon
 
-- The GitHub footer link points to the repository root placeholder — update `src/components/layout/Footer.tsx` once the repo URL exists.
-- The classifier is intentionally rule-based (offline, private, zero hallucination risk). Swapping in an LLM later only requires implementing the `classify()` interface in `src/lib/classifier.ts` — the legal content layer stays untouched.
-- All official URLs are verified real government links. The `STATES` catalogue in `src/data/registry.ts` was checked live (HTTP 200) against NALSA’s official `{state}.nalsa.gov.in` portals; Bihar (Patna High Court) and Jharkhand (jhalsa.org) use their own official sites; Odisha and four UTs fall back to the official NALSA directory. Add or change entries only with verified official URLs.
 
 ## Disclaimer
 
