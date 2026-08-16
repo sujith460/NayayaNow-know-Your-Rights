@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HelpCircle, RotateCcw, ArrowRight } from 'lucide-react'
 import { useApp } from '../../context/AppContext'
-import { getSituationById } from '../../data/situations'
+import { getSituationById, SITUATIONS } from '../../data/situations'
 import { SituationIcon } from '../ui/icons'
 import { UrgencyBadge } from '../ui/UrgencyBadge'
 
@@ -24,9 +24,6 @@ export function SituationStatusChecker() {
     setQ1(null)
     setQ2(null)
   }
-
-  const arrest = getSituationById('ARREST')
-  const questioning = getSituationById('POLICE_QUESTIONING')
 
   const renderGuide = (id: 'ARREST' | 'POLICE_QUESTIONING') => {
     const s = getSituationById(id)
@@ -73,24 +70,21 @@ export function SituationStatusChecker() {
       <p className="mt-3 rounded-xl bg-saffron-soft p-3 text-sm leading-relaxed text-saffron-deep">
         {t('sscDifference')}
       </p>
-      {arrest && questioning && (
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <Link
-            to={`/situation/${arrest.slug}`}
-            className="card card-hover flex items-center gap-3 p-4"
-          >
-            <SituationIcon name={arrest.icon} className="h-5 w-5 shrink-0 text-saffron-deep" />
-            <span className="text-sm font-semibold text-ink">{t('sscRecArrest')}</span>
-          </Link>
-          <Link
-            to={`/situation/${questioning.slug}`}
-            className="card card-hover flex items-center gap-3 p-4"
-          >
-            <SituationIcon name={questioning.icon} className="h-5 w-5 shrink-0 text-saffron-deep" />
-            <span className="text-sm font-semibold text-ink">{t('sscRecQuestioning')}</span>
-          </Link>
+      <div className="mt-4">
+        <p className="text-xs font-semibold uppercase tracking-wide text-mist">{t('clBrowseAll')}</p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {SITUATIONS.map((s) => (
+            <Link
+              key={s.id}
+              to={`/situation/${s.slug}`}
+              className="card card-hover flex items-center gap-3 p-4"
+            >
+              <SituationIcon name={s.icon} className="h-5 w-5 shrink-0 text-saffron-deep" />
+              <span className="text-sm font-semibold text-ink">{tr(s.shortTitle)}</span>
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
       <button
         onClick={restart}
         className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-mist hover:text-ink"

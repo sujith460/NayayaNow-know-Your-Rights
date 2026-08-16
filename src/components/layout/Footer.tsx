@@ -10,6 +10,7 @@ export function Footer() {
     { to: '/', label: t('footerSituations') },
     { to: '/navigator', label: t('footerRightsNavigator') },
     { to: '/complaints', label: t('footerComplaintNavigator') },
+    { to: '/faq', label: t('navFaq') },
     { to: '/help', label: t('footerLegalHelp') }
   ]
 

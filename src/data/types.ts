@@ -68,6 +68,8 @@ export interface ComplaintRoute {
   officialUrl?: string
   legalBasis?: string
   sourceIds?: string[]
+  /** Official helpline number (verified). Rendered as a tap-to-call link. */
+  phone?: string
 }
 
 export interface Situation {
@@ -83,6 +85,8 @@ export interface Situation {
   rights: Right[]
   do: ActionItem[]
   avoid: ActionItem[]
+  /** "What evidence & documents to keep" — records that protect the person at later steps. */
+  evidence: ActionItem[]
   /** Interactive stage timeline (flagship for arrest). */
   timeline?: TimelineStage[]
   /** "WHAT HAPPENS NEXT?" — visual action path. `linkTo` turns a possible next step into a link to another verified guide. */
@@ -102,6 +106,11 @@ export type SituationId =
   | 'POLICE_ABUSE'
   | 'BRIBE'
   | 'COMPLAINT'
+  | 'WOMEN_AND_POLICE'
+  | 'PROLONGED_DETENTION'
+  | 'POLICE_REFUSED_HELP'
+  | 'POLICE_NOTICE'
+  | 'POLICE_AT_HOME'
   | 'NOT_SURE'
   | 'UNKNOWN'
 

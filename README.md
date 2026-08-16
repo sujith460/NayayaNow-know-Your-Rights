@@ -12,7 +12,9 @@ Built for an Independence Day civic-tech hackathon. No login. No tracking. Works
 
 ## What it does
 
-- **8 verified situation guides** — questioning, arrest, FIR refusal, search, property seizure, abuse/threat, bribe, complaint — plus an "I'm not sure" guided flow.
+- **13 verified situation guides** — questioning, arrest, FIR refusal, search, property seizure, abuse/threat, bribe, complaint, woman & the police, prolonged detention, police refusing to help, police notice to appear, police at home — plus an "I'm not sure" guided flow.
+- **What evidence & documents to keep** — every guide has a dedicated section (right after "Where to complain") listing what to note down and preserve, derived from verified content — so users know what to record while it is fresh.
+- **FAQ page** — plain-language answers to common questions (rights when stopped, arrest, FIR refusal, search, seizure, bribe, women's protections, 24-hour rule, notices, home visits, unhelpful police), each with a citation and a link to the full guide.
 - **30-second mode** — every guide leads with "What matters right now": 3–5 actionable points, with a **Listen button** that reads the summary out loud in the selected language (English / हिन्दी / తెలుగు) using the browser's built-in speech synthesis — no audio leaves the device.
 - **Natural-language navigator** — describe what happened in your own words; an on-device matcher (never an LLM) maps your words to a verified situation ID. Low confidence → asks you instead of guessing.
 - **Arrest flagship** — interactive stage timeline (arrest → interrogation → custody → Magistrate) with BNSS/Constitution sources at each stage.
@@ -46,7 +48,7 @@ npm run preview    # serve the production build
 
 ```
 src/
-  data/        # verified knowledge base: sources, situations (8), ui strings, help registry
+  data/        # verified knowledge base: sources, situations (13), faq, ui strings, help registry
   lib/         # on-device classifier, local-only storage
   context/     # language, privacy mode, dialog/emergency state
   components/
@@ -54,8 +56,8 @@ src/
     ui/        # Modal, Button, badges, icons
     dialogs/   # Source / Disclaimer / Privacy dialogs
     situation/ # RightCard, Timeline, 30-second summary, route cards…
-    features/  # EmergencyOverlay, SituationMemory, Checklist, LanguageSwitcher
-  pages/       # Home, Situation, Navigator, NotSure, Complaints, Help, Sources, About
+    features/  # EmergencyOverlay, SituationMemory, Checklist, LanguageSwitcher, HelpDialog
+  pages/       # Home, Situation, Navigator, NotSure, Complaints, Help, Sources, About, FAQ
 ```
 
 

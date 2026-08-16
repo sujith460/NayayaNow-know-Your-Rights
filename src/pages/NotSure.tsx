@@ -2,10 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HelpCircle, ArrowRight, RotateCcw } from 'lucide-react'
 import { useApp } from '../context/AppContext'
-import { getSituationById } from '../data/situations'
+import { getSituationById, SITUATIONS } from '../data/situations'
 import { SituationIcon } from '../components/ui/icons'
 import { UrgencyBadge } from '../components/ui/UrgencyBadge'
-import { Button } from '../components/ui/Button'
 
 type Answer = 'yes' | 'no' | 'notsure' | null
 
@@ -114,12 +113,26 @@ export function NotSure() {
                 </Link>
               </div>
             ) : (
-              <div className="rounded-3xl border border-dashed border-line bg-paper p-8 text-center">
-                <h2 className="font-display text-2xl font-semibold text-ink">{t('clUnknown')}</h2>
-                <p className="mt-2 text-sm text-mist">{t('clUnknownHint')}</p>
-                <Link to="/" className="mt-6 inline-block">
-                  <Button variant="secondary">{t('clBrowseAll')}</Button>
-                </Link>
+              <div>
+                <div className="rounded-3xl border border-dashed border-line bg-paper p-8 text-center">
+                  <h2 className="font-display text-2xl font-semibold text-ink">{t('clUnknown')}</h2>
+                  <p className="mt-2 text-sm text-mist">{t('clUnknownHint')}</p>
+                </div>
+                <div className="mt-8">
+                  <h3 className="font-display text-lg font-semibold text-ink">{t('clBrowseAll')}</h3>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {SITUATIONS.map((s) => (
+                      <Link
+                        key={s.id}
+                        to={`/situation/${s.slug}`}
+                        className="card card-hover flex items-center gap-3 p-4"
+                      >
+                        <SituationIcon name={s.icon} className="h-5 w-5 shrink-0 text-saffron-deep" />
+                        <span className="text-sm font-semibold text-ink">{tr(s.shortTitle)}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 

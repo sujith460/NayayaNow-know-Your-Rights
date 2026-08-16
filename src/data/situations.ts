@@ -129,6 +129,23 @@ export const SITUATIONS: Situation[] = [
         text: t('Do not hand over your phone or documents without understanding why.', 'बिना कारण जाने अपना फोन या दस्तावेज़ न दें।', 'కారణం తెలియకుండా మీ ఫోన్ లేదా పత్రాలు ఇవ్వకండి.')
       }
     ],
+    evidence: [
+      {
+        id: 'q-ev-1',
+        text: t('Note the officer’s name, badge number, place and time.', 'अधिकारी का नाम, बैज नंबर, स्थान और समय नोट करें।', 'అధికారి పేరు, బ్యాడ్జ్ నంబర్, ప్రదేశం మరియు సమయం గమనించండి.'),
+        why: t('It helps later if you need to complain or give an account.', 'बाद में शिकायत या विवरण देने में मदद करता है।', 'తర్వాత ఫిర్యాదు చేయాల్సి వస్తే ఉపయోగపడుతుంది.')
+      },
+      {
+        id: 'q-ev-2',
+        text: t('Note the reason you were stopped or questioned, as told to you.', 'आपको रोके/पूछताछ करने का बताया गया कारण नोट करें।', 'మిమ్మల్ని ఆపడానికి/ప్రశ్నించడానికి చెప్పిన కారణం గమనించండి.'),
+        why: t('Your record of what was said matters if the interaction is later disputed.', 'बाद में विवाद होने पर आपका दर्ज विवरण महत्वपूर्ण है।', 'తర్వాత వివాదం వస్తే మీ నమోదు వివరణ ముఖ్యం.')
+      },
+      {
+        id: 'q-ev-3',
+        text: t('If you sign anything, keep a copy and note what it was.', 'यदि कुछ साइन करें तो उसकी प्रति रखें और नोट करें कि वह क्या था।', 'ఏదైనా సంతకం చేస్తే కాపీ ఉంచుకోండి, అది ఏమిటో గమనించండి.'),
+        why: t('A signed statement may be used later; a lawyer can review it first.', 'हस्ताक्षरित बयान बाद में इस्तेमाल हो सकता है; पहले वकील से दिखाएँ।', 'సంతకం చేసిన ప్రకటన తర్వాత ఉపయోగించవచ్చు; ముందుగా న్యాయవాదితో చూపించండి.')
+      }
+    ],
     whatHappensNext: [
       { label: t('You are here — stopped or questioned', 'आप यहाँ हैं — रोका/पूछताछ', 'మీరు ఇక్కడ ఉన్నారు — ఆపారు/ప్రశ్నించారు') },
       { label: t('Police may ask you to come to the station', 'पुलिस थाने आने को कह सकती है', 'పోలీసులు స్టేషన్ రమ్మనవచ్చు'), note: t('Ask whether you are under arrest.', 'पूछें कि क्या आप गिरफ़्तार हैं।', 'మీరు అరెస్ట్ అవుతున్నారా అని అడగండి.') },
@@ -300,6 +317,28 @@ export const SITUATIONS: Situation[] = [
         why: t('What you reveal can be used in the case; get advice first.', 'आप जो बताते हैं वह मामले में इस्तेमाल हो सकता है; पहले सलाह लें।', 'మీరు చెప్పింది కేసులో ఉపయోగించవచ్చు; ముందుగా సలహా తీసుకోండి.')
       }
     ],
+    evidence: [
+      {
+        id: 'a-ev-1',
+        text: t('Note the grounds of arrest as told to you, and whether it is bailable.', 'बताए गए गिरफ़्तारी के कारण और ज़मानती/गैर-ज़मानती स्थिति नोट करें।', 'మీకు చెప్పిన అరెస్ట్ కారణాలు, బెయిల్ పరిస్థితి గమనించండి.'),
+        why: t('You are entitled to this information (Art. 22(1); BNSS §47).', 'आप इस जानकारी के हकदार हैं (अनु. 22(1); बीएनएसएस §47)।', 'ఈ సమాచారానికి మీరు అర్హులు (ఆర్టి. 22(1); BNSS §47).')
+      },
+      {
+        id: 'a-ev-2',
+        text: t('Note the time and place of arrest, and the officers involved.', 'गिरफ़्तारी का समय, स्थान और शामिल अधिकारियों को नोट करें।', 'అరెస్ట్ సమయం, ప్రదేశం, ప్రమేయం ఉన్న అధికారులు గమనించండి.'),
+        why: t('These details matter for the 24-hour rule and any complaint.', '24 घंटे के नियम और शिकायत के लिए ये विवरण महत्वपूर्ण हैं।', '24 గంటల నియమం, ఫిర్యాదుకు ఈ వివరాలు ముఖ్యం.')
+      },
+      {
+        id: 'a-ev-3',
+        text: t('Keep any medical record if you were injured.', 'चोट लगने पर चिकित्सा रिकॉर्ड रखें।', 'గాయమైతే వైద్య రికార్డు ఉంచుకోండి.'),
+        why: t('Medical records matter for your safety and any later complaint (BNSS §51, §53).', 'चिकित्सा रिकॉर्ड आपकी सुरक्षा और बाद की शिकायत के लिए महत्वपूर्ण हैं (बीएनएसएस §51, §53)।', 'వైద్య రికార్డులు మీ భద్రతకు, తర్వాతి ఫిర్యాదుకు ముఖ్యం (BNSS §51, §53).')
+      },
+      {
+        id: 'a-ev-4',
+        text: t('Keep copies of anything you are asked to sign.', 'जो भी हस्ताक्षर करने को कहा जाए उसकी प्रति रखें।', 'సంతకం చేయమన్న దాని కాపీలు ఉంచుకోండి.'),
+        why: t('A signed statement may be used later; have your lawyer review it first.', 'हस्ताक्षरित बयान बाद में इस्तेमाल हो सकता है; पहले वकील से दिखाएँ।', 'సంతకం చేసిన ప్రకటన తర్వాత ఉపయోగించవచ్చు; ముందు న్యాయవాదితో చూపించండి.')
+      }
+    ],
     timeline: [
       {
         id: 'arrest',
@@ -425,6 +464,7 @@ export const SITUATIONS: Situation[] = [
       },
       {
         id: 'a-cr-2',
+        phone: '14433',
         route: t('NHRC / State Human Rights Commission', 'एनएचआरसी / राज्य मानवाधिकार आयोग', 'NHRC / రాష్ట్ర మానవ హక్కుల కమిషన్'),
         whyItMayApply: t('For serious human-rights violations connected with arrest or custody.', 'गिरफ़्तारी या हिरासत से जुड़े गंभीर मानवाधिकार उल्लंघन के लिए।', 'అరెస్ట్ లేదా నిర్బంధానికి సంబంధించిన తీవ్రమైన మానవ హక్కుల ఉల్లంఘనలకు.'),
         whatToPrepare: t('Details of the incident, witnesses and any evidence — after getting legal advice.', 'घटना का विवरण, गवाह और साक्ष्य — कानूनी सलाह के बाद।', 'సంఘటన వివరాలు, సాక్షులు, ఆధారాలు — న్యాయ సలహా తర్వాత.'),
@@ -540,6 +580,23 @@ export const SITUATIONS: Situation[] = [
         id: 'fir-avoid-3',
         text: t('Do not confront or argue aggressively at the station.', 'थाने में आक्रामक बहस न करें।', 'స్టేషన్లో దూకుడుగా వాదించకండి.'),
         why: t('A calm written record protects you better than a confrontation.', 'शांत लिखित रिकॉर्ड टकराव से बेहतर सुरक्षा देता है।', 'ప్రశాంతమైన వ్రాతపూర్వక రికార్డు ఘర్షణ కంటే మిమ్మల్ని బాగా కాపాడుతుంది.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'fir-ev-1',
+        text: t('Keep a dated copy of your written complaint.', 'अपनी शिकायत की तारीख़युक्त प्रति रखें।', 'మీ ఫిర్యాదు తేదీతో కూడిన కాపీ ఉంచుకోండి.'),
+        why: t('A written record with date/time helps at every later step.', 'तारीख़-समय सहित लिखित रिकॉर्ड हर अगले चरण में मदद करता है।', 'తేదీ/సమయంతో వ్రాతపూర్వక రికార్డు ప్రతి తదుపరి దశలో ఉపయోగపడుతుంది.')
+      },
+      {
+        id: 'fir-ev-2',
+        text: t('Note the name and rank of the officer who refused, and the date and time.', 'इनकार करने वाले अधिकारी का नाम, पद और तारीख़-समय नोट करें।', 'నిరాకరించిన అధికారి పేరు, హోదా, తేదీ-సమయం గమనించండి.'),
+        why: t('It identifies the refusal clearly for the Superintendent of Police and the Magistrate.', 'यह पुलिस अधीक्षक और मजिस्ट्रेट के लिए इनकार स्पष्ट करता है।', 'సూపరింటెండెంట్, మేజిస్ట్రేట్కు నిరాకరణను స్పష్టం చేస్తుంది.')
+      },
+      {
+        id: 'fir-ev-3',
+        text: t('Keep copies of everything you submit to higher authorities and the Magistrate.', 'वरिष्ठ अधिकारियों और मजिस्ट्रेट को दी गई हर चीज़ की प्रति रखें।', 'పై అధికారులకు, మేజిస్ట్రేట్కు సమర్పించిన ప్రతిదాని కాపీలు ఉంచుకోండి.'),
+        why: t('Your trail of attempts shows the matter was pursued in order.', 'आपके प्रयासों का क्रम दिखाता है कि मामला क्रमबद्ध रूप से उठाया गया।', 'మీ ప్రయత్నాల క్రమం విషయాన్ని క్రమబద్ధంగా వెంబడించారని చూపుతుంది.')
       }
     ],
     whatHappensNext: [
@@ -683,6 +740,23 @@ export const SITUATIONS: Situation[] = [
         why: t('Record the facts calmly; legal challenges are handled through proper channels.', 'तथ्य शांति से दर्ज करें; कानूनी चुनौती सही माध्यम से होती है।', 'వాస్తవాలను ప్రశాంతంగా నమోదు చేయండి; చట్టపరమైన సవాల్ సరైన మార్గాల ద్వారా జరుగుతుంది.')
       }
     ],
+    evidence: [
+      {
+        id: 's-ev-1',
+        text: t('Note the warrant details if one is shown — who issued it, date and scope.', 'वारंट दिखाया जाए तो उसका विवरण नोट करें — किसने जारी किया, तारीख़ और दायरा।', 'వారెంట్ చూపిస్తే వివరాలు గమనించండి — ఎవరు జారీ చేశారు, తేదీ, పరిధి.'),
+        why: t('The warrant shows the authority and scope of the search.', 'वारंट तलाशी का अधिकार और दायरा दिखाता है।', 'వారెంట్ సోదా అధికారం, పరిధిని చూపుతుంది.')
+      },
+      {
+        id: 's-ev-2',
+        text: t('Ask for the list of things seized and a copy of the search record.', 'ज़ब्त वस्तुओं की सूची और तलाशी रिकॉर्ड की प्रति माँगें।', 'జప్తు వస్తువుల జాబితా, సోదా రికార్డు కాపీ అడగండి.'),
+        why: t('This list is essential if you later need to reclaim property.', 'बाद में संपत्ति वापस लेने के लिए यह सूची आवश्यक है।', 'తర్వాత ఆస్తి తిరిగి పొందాలంటే ఈ జాబితా అవసరం.')
+      },
+      {
+        id: 's-ev-3',
+        text: t('Note the date, time, place and officers involved.', 'तारीख़, समय, स्थान और शामिल अधिकारियों को नोट करें।', 'తేదీ, సమయం, ప్రదేశం, ప్రమేయం ఉన్న అధికారులు గమనించండి.'),
+        why: t('The basic facts you need if you later complain about the search.', 'बाद में तलाशी की शिकायत के लिए ये मूल तथ्य चाहिए।', 'తర్వాత సోదాపై ఫిర్యాదుకు ఈ ప్రాథమిక వాస్తవాలు అవసరం.')
+      }
+    ],
     whatHappensNext: [
       { label: t('You are here — search', 'आप यहाँ हैं — तलाशी', 'మీరు ఇక్కడ ఉన్నారు — సోదా') },
       { label: t('Search conducted (warrant or legal power)', 'तलाशी (वारंट या कानूनी शक्ति से)', 'సోదా (వారెంట్ లేదా చట్టపరమైన అధికారంతో)'), note: t('BNSS §96, §185', 'बीएनएसएस §96, §185', 'BNSS §96, §185') },
@@ -797,6 +871,23 @@ export const SITUATIONS: Situation[] = [
         id: 'p-avoid-2',
         text: t('Do not assume the seizure was unlawful without legal advice.', 'बिना कानूनी सलाह के ज़ब्ती अवैध मानने की जल्दबाज़ी न करें।', 'న్యాయ సలహా లేకుండా జప్తు చట్టవిరుద్ధమని భావించకండి.'),
         why: t('Whether a seizure was lawful depends on the facts and the law; a lawyer can assess it.', 'ज़ब्ती की वैधता तथ्यों और कानून पर निर्भर करती है; वकील आकलन कर सकते हैं।', 'జప్తు చట్టబద్ధత వాస్తవాలు, చట్టంపై ఆధారపడుతుంది; న్యాయవాది అంచనా వేయగలరు.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'p-ev-1',
+        text: t('Write down everything taken, with details, while it is fresh.', 'सब कुछ विस्तार से लिख लें, जबकि याद ताज़ा है।', 'గుర్తుండగానే తీసుకున్న ప్రతిదీ వివరంగా రాయండి.'),
+        why: t('Your own record protects you if the official list is later incomplete.', 'आधिकारिक सूची अधूरी हो तो आपका रिकॉर्ड सुरक्षा देता है।', 'అధికారిక జాబితా తర్వాత అసంపూర్ణంగా ఉంటే మీ రికార్డు కాపాడుతుంది.')
+      },
+      {
+        id: 'p-ev-2',
+        text: t('Keep the seizure memo and copies of your documents.', 'ज़ब्ती मेमो और अपने दस्तावेज़ों की प्रतियाँ रखें।', 'జప్తు మెమో, మీ పత్రాల కాపీలు ఉంచుకోండి.'),
+        why: t('Documentation is what you will need to claim the property later.', 'संपत्ति वापस लेने के लिए दस्तावेज़ ही काम आएँगे।', 'ఆస్తి తిరిగి పొందడానికి పత్రాలే అవసరం.')
+      },
+      {
+        id: 'p-ev-3',
+        text: t('Preserve receipts, bills and proof of ownership.', 'रसीदें, बिल और स्वामित्व के प्रमाण सुरक्षित रखें।', 'రసీదులు, బిల్లులు, యాజమాన్య ఆధారాలు భద్రపరచండి.'),
+        why: t('They establish that the property is yours.', 'वे सिद्ध करते हैं कि संपत्ति आपकी है।', 'ఆస్తి మీదే అని ఇవి రుజువు చేస్తాయి.')
       }
     ],
     whatHappensNext: [
@@ -929,6 +1020,23 @@ export const SITUATIONS: Situation[] = [
         why: t('A written record with dates gives you a trail to follow up.', 'तारीख़ों सहित लिखित रिकॉर्ड अनुवर्तन के लिए राह बनाता है।', 'తేదీలతో వ్రాతపూర్వక రికార్డు కొనసాగింపుకు ఆధారం.')
       }
     ],
+    evidence: [
+      {
+        id: 'ab-ev-1',
+        text: t('Get medical care if injured and keep the record.', 'चोट लगने पर चिकित्सा लें और रिकॉर्ड रखें।', 'గాయమైతే వైద్యం తీసుకుని రికార్డు ఉంచుకోండి.'),
+        why: t('Medical records are important if you later complain or file a case.', 'बाद में शिकायत या मामला दर्ज करने पर चिकित्सा रिकॉर्ड महत्वपूर्ण हैं।', 'తర్వాత ఫిర్యాదు లేదా కేసు కోసం వైద్య రికార్డులు ముఖ్యం.')
+      },
+      {
+        id: 'ab-ev-2',
+        text: t('Note details while fresh: who, what, when, where, witnesses.', 'याद ताज़ा होने पर विवरण नोट करें: कौन, क्या, कब, कहाँ, गवाह।', 'గుర్తుండగా వివరాలు రాయండి: ఎవరు, ఏమి, ఎప్పుడు, ఎక్కడ, సాక్షులు.'),
+        why: t('A written account with names is the backbone of any complaint.', 'नामों सहित लिखित विवरण किसी भी शिकायत की रीढ़ है।', 'పేర్లతో వ్రాతపూర్వక వివరణ ఏ ఫిర్యాదుకైనా వెన్నెముక.')
+      },
+      {
+        id: 'ab-ev-3',
+        text: t('Preserve evidence only if it is safe — photos of injuries, torn clothes, messages.', 'साक्ष्य केवल सुरक्षित होने पर ही सुरक्षित करें — चोटों की तस्वीरें, फटे कपड़े, संदेश।', 'సురక్షితంగా ఉంటేనే ఆధారాలు భద్రపరచండి — గాయాల ఫోటోలు, చిరిగిన బట్టలు, సందేశాలు.'),
+        why: t('Genuine, preserved evidence is what counts in any proceeding.', 'किसी भी कार्यवाही में वास्तविक सुरक्षित साक्ष्य ही मायने रखते हैं।', 'ఏ ప్రక్రియలోనైనా నిజమైన, భద్రపరిచిన ఆధారాలే లెక్క.')
+      }
+    ],
     whatHappensNext: [
       { label: t('You are here — safe (or in danger)', 'आप यहाँ हैं — सुरक्षित (या खतरे में)', 'మీరు ఇక్కడ ఉన్నారు — సురక్షితం (లేదా ప్రమాదం)') },
       { label: t('Safety → medical care if injured', 'सुरक्षा → चोट लगने पर चिकित्सा', 'భద్రత → గాయమైతే వైద్యం'), note: t('Call 112 in immediate danger', 'तत्काल खतरे में 112 पर कॉल करें', 'వెంటనే ప్రమాదం ఉంటే 112 కాల్ చేయండి') },
@@ -946,6 +1054,7 @@ export const SITUATIONS: Situation[] = [
       },
       {
         id: 'ab-cr-2',
+        phone: '14433',
         route: t('NHRC (National Human Rights Commission)', 'एनएचआरसी (राष्ट्रीय मानवाधिकार आयोग)', 'NHRC (జాతీయ మానవ హక్కుల కమిషన్)'),
         whyItMayApply: t('For human-rights violations — especially serious abuse or assault by police.', 'मानवाधिकार उल्लंघन — विशेषकर पुलिस द्वारा गंभीर दुर्व्यवहार या हमले के लिए।', 'మానవ హక్కుల ఉల్లంఘనలకు — ముఖ్యంగా పోలీసుల తీవ్ర దుర్వినియోగం లేదా దాడికి.'),
         whatToPrepare: t('Details of the incident, evidence and witnesses — take legal advice first.', 'घटना का विवरण, साक्ष्य और गवाह — पहले कानूनी सलाह लें।', 'సంఘటన వివరాలు, ఆధారాలు, సాక్షులు — ముందుగా న్యాయ సలహా తీసుకోండి.'),
@@ -1053,6 +1162,23 @@ export const SITUATIONS: Situation[] = [
         why: t('Paying under compulsion is a personal safety decision; if it happens, tell your lawyer.', 'दबाव में पैसा देना व्यक्तिगत सुरक्षा निर्णय है; ऐसा हुआ तो वकील को बताएँ।', 'బలవంతంగా చెల్లించడం వ్యక్తిగత భద్రత నిర్ణయం; జరిగితే మీ న్యాయవాదికి చెప్పండి.')
       }
     ],
+    evidence: [
+      {
+        id: 'b-ev-1',
+        text: t('Note everything: date, time, place, what was demanded, officer details, witnesses.', 'सब नोट करें: तारीख़, समय, स्थान, माँग, अधिकारी का विवरण, गवाह।', 'అన్నీ గమనించండి: తేదీ, సమయం, ప్రదేశం, డిమాండ్, అధికారి వివరాలు, సాక్షులు.'),
+        why: t('A clear written record is the backbone of any complaint.', 'स्पष्ट लिखित रिकॉर्ड किसी भी शिकायत की रीढ़ है।', 'స్పష్టమైన వ్రాతపూర్వక రికార్డు ఏ ఫిర్యాదుకైనా వెన్నెముక.')
+      },
+      {
+        id: 'b-ev-2',
+        text: t('If safe, note whether the demand was put in writing or repeated before a witness.', 'सुरक्षित हो तो नोट करें कि माँग लिखित में की गई या गवाह के सामने दोहराई गई।', 'సురక్షితంగా ఉంటే డిమాండ్ రాతపూర్వకమా లేదా సాక్షి ముందు పునరావృతమా అని గమనించండి.'),
+        why: t('Witnesses and writing make a complaint credible.', 'गवाह और लिखित रिकॉर्ड शिकायत को विश्वसनीय बनाते हैं।', 'సాక్షులు, వ్రాతపూర్వకం ఫిర్యాదును నమ్మదగినవిగా చేస్తాయి.')
+      },
+      {
+        id: 'b-ev-3',
+        text: t('Keep only safe, lawful evidence — never attempt risky recording.', 'केवल सुरक्षित, कानूनी साक्ष्य रखें — जोखिम भरी रिकॉर्डिंग कभी न करें।', 'సురక్షితమైన, చట్టబద్ధమైన ఆధారాలు మాత్రమే — ప్రమాదకర రికార్డింగ్ ఎప్పుడూ వద్దు.'),
+        why: t('Your safety never takes a back seat; a lawyer can guide the lawful route.', 'आपकी सुरक्षा कभी पीछे नहीं होनी चाहिए; वकील कानूनी मार्ग बता सकते हैं।', 'మీ భద్రత ఎప్పుడూ వెనుక ఉండకూడదు; న్యాయవాది చట్టబద్ధ మార్గం చూపగలరు.')
+      }
+    ],
     whatHappensNext: [
       { label: t('You are here — demand made', 'आप यहाँ हैं — पैसे की माँग', 'మీరు ఇక్కడ ఉన్నారు — డిమాండ్') },
       { label: t('Stay safe · note details', 'सुरक्षित रहें · विवरण नोट करें', 'సురక్షితంగా ఉండండి · వివరాలు గమనించండి'), note: t('Date, time, place, officer, witnesses', 'तारीख़, समय, स्थान, अधिकारी, गवाह', 'తేదీ, సమయం, ప్రదేశం, అధికారి, సాక్షులు') },
@@ -1063,6 +1189,7 @@ export const SITUATIONS: Situation[] = [
     complaintRoutes: [
       {
         id: 'b-cr-1',
+        phone: '1064',
         route: t('State Anti-Corruption Bureau / vigilance body', 'राज्य भ्रष्टाचार-विरोधी ब्यूरो / सतर्कता निकाय', 'రాష్ట్ర యాంటీ కరప్షన్ బ్యూరో / విజిలెన్స్ సంస్థ'),
         whyItMayApply: t('Police bribery is handled by anti-corruption bodies; the right one depends on your state.', 'पुलिस रिश्वतखोरी भ्रष्टाचार-विरोधी निकाय देखते हैं; सही निकाय राज्य पर निर्भर करता है।', 'పోలీసు లంచం అవినీతి నిరోధక సంస్థలు నిర్వహిస్తాయి; సరైనది మీ రాష్ట్రంపై ఆధారపడి ఉంటుంది.'),
         whatToPrepare: t('A written, dated account of the demand with officer details and witnesses — after legal advice.', 'माँग का लिखित, तारीख़युक्त विवरण, अधिकारी का विवरण और गवाह — कानूनी सलाह के बाद।', 'డిమాండ్ యొక్క వ్రాతపూర్వక, తేదీతో కూడిన వివరణ, అధికారి వివరాలు, సాక్షులు — న్యాయ సలహా తర్వాత.'),
@@ -1156,6 +1283,23 @@ export const SITUATIONS: Situation[] = [
         why: t('Accuracy protects you and keeps the complaint credible.', 'सटीकता आपकी रक्षा करती है और शिकायत विश्वसनीय रहती है।', 'ఖచ్చితత్వం మిమ్మల్ని కాపాడుతుంది, ఫిర్యాదు నమ్మదగినదిగా ఉంటుంది.')
       }
     ],
+    evidence: [
+      {
+        id: 'c-ev-1',
+        text: t('Write down what happened: date, time, place, people, and what you want done.', 'घटना लिखें: तारीख़, समय, स्थान, लोग, और आप क्या चाहते हैं।', 'సంఘటన రాయండి: తేదీ, సమయం, ప్రదేశం, వ్యక్తులు, మీరు కోరుకునేది.'),
+        why: t('Specific, dated facts make a complaint actionable.', 'विशिष्ट, तारीख़युक्त तथ्य शिकायत को कार्रवाई योग्य बनाते हैं।', 'నిర్దిష్ట, తేదీతో కూడిన వాస్తవాలు ఫిర్యాదును చర్య యోగ్యం చేస్తాయి.')
+      },
+      {
+        id: 'c-ev-2',
+        text: t('Collect supporting documents and records.', 'सहायक दस्तावेज़ और रिकॉर्ड इकट्ठा करें।', 'సహాయక పత్రాలు, రికార్డులు సేకరించండి.'),
+        why: t('They back up your account at every stage.', 'वे हर चरण में आपके विवरण का समर्थन करते हैं।', 'ప్రతి దశలో మీ వివరణకు అవి మద్దతిస్తాయి.')
+      },
+      {
+        id: 'c-ev-3',
+        text: t('Keep copies of everything you submit, and any reference number.', 'जो भी जमा करें उसकी प्रति और संदर्भ संख्या रखें।', 'సమర్పించిన ప్రతిదాని కాపీ, రిఫరెన్స్ నంబర్ ఉంచుకోండి.'),
+        why: t('Copies and references let you follow up on the complaint.', 'प्रतियाँ और संदर्भ शिकायत पर अनुवर्तन करने देते हैं।', 'కాపీలు, రిఫరెన్స్ ఫిర్యాదును ఫాలో అప్ చేయడానికి వీలిస్తాయి.')
+      }
+    ],
     whatHappensNext: [
       { label: t('You are here — choose a route', 'आप यहाँ हैं — मार्ग चुनें', 'మీరు ఇక్కడ ఉన్నారు — మార్గం ఎంచుకోండి') },
       { label: t('Prepare: dates, documents, records', 'तैयारी: तारीख़ें, दस्तावेज़, रिकॉर्ड', 'తయారీ: తేదీలు, పత్రాలు, రికార్డులు'), note: t('Use the Complaint Checklist', 'शिकायत चेकलिस्ट का उपयोग करें', 'ఫిర్యాదు చెక్లిస్ట్ ఉపయోగించండి') },
@@ -1174,6 +1318,7 @@ export const SITUATIONS: Situation[] = [
       },
       {
         id: 'c-cr-abuse',
+        phone: '14433',
         route: t('Police threatened / abused / assaulted me', 'पुलिस ने धमकाया/दुर्व्यवहार/मारपीट की', 'పోలీసులు బెదిరించారు/దుర్వినియోగం/కొట్టారు'),
         whyItMayApply: t('Serious misconduct or human-rights violation by police officers.', 'पुलिस अधिकारियों द्वारा गंभीर दुर्व्यवहार या मानवाधिकार उल्लंघन।', 'పోలీసు అధికారుల తీవ్ర దుర్వినియోగం లేదా మానవ హక్కుల ఉల్లంఘన.'),
         whatToPrepare: t('Written account, medical records if injured, witnesses — with legal advice.', 'लिखित विवरण, चोट के रिकॉर्ड, गवाह — कानूनी सलाह से।', 'వ్రాతపూర్వక వివరణ, గాయాల రికార్డులు, సాక్షులు — న్యాయ సలహాతో.'),
@@ -1182,6 +1327,7 @@ export const SITUATIONS: Situation[] = [
       },
       {
         id: 'c-cr-bribe',
+        phone: '1064',
         route: t('Police asked for money', 'पुलिस ने पैसे माँगे', 'పోలీసులు డబ్బు అడిగారు'),
         whyItMayApply: t('A police officer demanded money or an undue advantage for official work.', 'आधिकारिक काम के लिए पुलिस अधिकारी ने पैसे या अनुचित लाभ माँगा।', 'అధికారిక పనికి పోలీసు అధికారి డబ్బు లేదా అన్యాయ ప్రయోజనం డిమాండ్ చేశారు.'),
         whatToPrepare: t('Dated record of the demand, officer details, witnesses — after legal advice.', 'माँग का तारीख़युक्त रिकॉर्ड, अधिकारी का विवरण, गवाह — कानूनी सलाह के बाद।', 'డిమాండ్ తేదీతో కూడిన రికార్డు, అధికారి వివరాలు, సాక్షులు — న్యాయ సలహా తర్వాత.'),
@@ -1190,6 +1336,7 @@ export const SITUATIONS: Situation[] = [
       },
       {
         id: 'c-cr-hr',
+        phone: '14433',
         route: t('Human-rights issue', 'मानवाधिकार मुद्दा', 'మానవ హక్కుల సమస్య'),
         whyItMayApply: t('The conduct involves a violation of human rights, such as custodial violence.', 'आचरण मानवाधिकार उल्लंघन है, जैसे हिरासत में हिंसा।', 'ప్రవర్తన మానవ హక్కుల ఉల్లంఘన అయితే — ఉదా. కస్టడీ హింస.'),
         whatToPrepare: t('Full incident details, evidence, witnesses; take legal advice first.', 'पूरा घटना विवरण, साक्ष्य, गवाह; पहले कानूनी सलाह लें।', 'పూర్తి సంఘటన వివరాలు, ఆధారాలు, సాక్షులు; ముందుగా న్యాయ సలహా తీసుకోండి.'),
@@ -1199,6 +1346,7 @@ export const SITUATIONS: Situation[] = [
       },
       {
         id: 'c-cr-cyber',
+        phone: '1930',
         route: t('Cybercrime', 'साइबर अपराध', 'సైబర్ నేరం'),
         whyItMayApply: t('Online fraud, cyber harassment, or other offences committed through digital means.', 'ऑनलाइन धोखाधड़ी, साइबर उत्पीड़न या डिजिटल माध्यम से अपराध।', 'ఆన్లైన్ మోసం, సైబర్ వేధింపు లేదా డిజిటల్ మార్గాల నేరాలు.'),
         whatToPrepare: t('Screenshots, transaction records, and a written account of what happened.', 'स्क्रीनशॉट, लेन-देन रिकॉर्ड और घटना का लिखित विवरण।', 'స్క్రీన్షాట్లు, లావాదేవీ రికార్డులు, సంఘటన వ్రాతపూర్వక వివరణ.'),
@@ -1217,6 +1365,829 @@ export const SITUATIONS: Situation[] = [
       }
     ],
     sourceIds: ['cpgrams', 'nhrc', 'cyber', 'bnss', 'pca'],
+    lastVerified: '2026-08-15'
+  },
+
+  /* ────────────────────────────────────────────────────────────────
+     9. WOMAN DEALING WITH THE POLICE
+  ──────────────────────────────────────────────────────────────── */
+  {
+    id: 'WOMEN_AND_POLICE',
+    slug: 'woman-dealing-with-police',
+    icon: 'users',
+    title: t('I am a woman dealing with the police', 'मैं एक महिला हूँ और पुलिस से बात कर रही हूँ', 'నేను స్త్రీని, పోలీసులతో వ్యవహరిస్తున్నాను'),
+    shortTitle: t('Woman dealing with police', 'पुलिस से बात करती महिला', 'పోలీసులతో వ్యవహరించే స్త్రీ'),
+    description: t(
+      'You are a woman being stopped, questioned, searched, asked to come to the police station, or arrested. The law gives women specific protections during police interactions.',
+      'आप एक महिला हैं जिसे रोका, पूछताछ, तलाशी, थाने बुलाया या गिरफ़्तार किया गया है। कानून पुलिस व्यवहार के दौरान महिलाओं को विशेष सुरक्षा देता है।',
+      'మీరు స్త్రీ; మిమ్మల్ని ఆపారు, ప్రశ్నించారు, సోదా చేశారు, స్టేషన్ రమ్మన్నారు లేదా అరెస్ట్ చేశారు. పోలీసులతో వ్యవహారాల్లో చట్టం స్త్రీలకు ప్రత్యేక రక్షణలు ఇస్తుంది.'
+    ),
+    urgency: 'medium',
+    summary: t(
+      'Women have specific legal protections in police interactions: a woman is searched only by a female officer, a woman is not ordinarily arrested after sunset, and women cannot be required to attend the police station for questioning — the police must record statements at your residence. Knowing these protections helps you assert them calmly and safely.',
+      'पुलिस व्यवहार में महिलाओं को विशेष कानूनी सुरक्षा मिलती है: महिला की तलाशी केवल महिला अधिकारी करती है, सूर्यास्त के बाद सामान्यतः महिला की गिरफ़्तारी नहीं होती, और पूछताछ के लिए महिला को थाने बुलाना अनिवार्य नहीं — पुलिस आपके निवास पर ही बयान दर्ज करती है। इन सुरक्षाओं को जानकर आप शांति और सुरक्षा से उनका उपयोग कर सकती हैं।',
+      'పోలీసులతో వ్యవహారాల్లో స్త్రీలకు ప్రత్యేక చట్టపరమైన రక్షణలు ఉన్నాయి: స్త్రీని మహిళా అధికారి మాత్రమే సోదా చేయాలి, సూర్యాస్తమయం తర్వాత సాధారణంగా స్త్రీని అరెస్ట్ చేయకూడదు, ప్రశ్నలకు స్టేషన్ రమ్మని స్త్రీని నిర్బంధించలేరు — పోలీసులు మీ నివాసంలోనే వాంగ్మూలం నమోదు చేయాలి. ఈ రక్షణలు తెలుసుకుంటే ప్రశాంతంగా, సురక్షితంగా వినియోగించుకోవచ్చు.'
+    ),
+    immediateActions: [
+      t('Stay calm. Ask why you are being stopped, questioned, or asked to come to the station.', 'शांत रहें। पूछें कि आपको क्यों रोका, पूछताछ या थाने बुलाया जा रहा है।', 'ప్రశాంతంగా ఉండండి. ఎందుకు ఆపుతున్నారో, ప్రశ్నిస్తున్నారో, స్టేషన్ రమ్మంటున్నారో అడగండి.'),
+      t('If a search of your person is required, ask for a woman officer — the law requires it.', 'यदि आपकी तलाशी आवश्यक हो, तो महिला अधिकारी माँगें — कानून यही कहता है।', 'మిమ్మల్ని సోదా చేయాల్సి వస్తే మహిళా అధికారి కోసం అడగండి — చట్టం అదే చెబుతుంది.'),
+      t('If asked to attend the police station for questioning, you may ask that it happen at your residence.', 'पूछताछ के लिए थाने बुलाया जाए तो आप अपने निवास पर ही बयान देने का अनुरोध कर सकती हैं।', 'ప్రశ్నలకు స్టేషన్ రమ్మంటే మీ నివాసంలోనే జరగాలని అడగవచ్చు.'),
+      t('Call 181 (women helpline) or a trusted person if you feel unsafe.', 'असुरक्षित महसूस होने पर 181 (महिला हेल्पलाइन) या किसी भरोसेमंद व्यक्ति को कॉल करें।', 'భద్రతగా అనిపించకపోతే 181 (మహిళా హెల్ప్లైన్) లేదా నమ్మకమైన వ్యక్తికి కాల్ చేయండి.'),
+      t('Note the officer’s name, badge number, place and time.', 'अधिकारी का नाम, बैज नंबर, स्थान और समय नोट करें।', 'అధికారి పేరు, బ్యాడ్జ్ నంబర్, ప్రదేశం, సమయం గమనించండి.')
+    ],
+    rights: [
+      {
+        id: 'w-right-search',
+        title: t('To be searched only by a female officer', 'केवल महिला अधिकारी द्वारा तलाशी का अधिकार', 'మహిళా అధికారి ద్వారా మాత్రమే సోదా హక్కు'),
+        whatThisMeans: t(
+          'Whenever a woman has to be searched, the search must be made by another female with strict regard to decency.',
+          'जब भी किसी महिला की तलाशी आवश्यक हो, वह किसी अन्य महिला द्वारा, पूर्ण शालीनता के साथ की जाएगी।',
+          'స్త్రీని సోదా చేయాల్సి వస్తే ఆ సోదా మరో స్త్రీ ద్వారా, పూర్తి మర్యాదతో చేయాలి.'
+        ),
+        legalBasis: 'BNSS §49(2)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'w-right-night',
+        title: t('Not to be arrested after sunset, except with a Magistrate’s permission', 'सूर्यास्त के बाद गिरफ़्तारी से सुरक्षा (मजिस्ट्रेट की अनुमति के बिना)', 'సూర్యాస్తమయం తర్వాత అరెస్ట్ నుండి రక్షణ (మేజిస్ట్రేట్ అనుమతి లేకుండా)'),
+        whatThisMeans: t(
+          'Save in exceptional circumstances, no woman shall be arrested after sunset and before sunrise. Where exceptional circumstances exist, a woman police officer must first obtain the prior written permission of a Magistrate of the first class. In addition, when a woman is arrested, her submission to custody on oral intimation is presumed, and a male officer shall not touch her person unless circumstances require.',
+          'विशेष परिस्थितियों को छोड़कर, सूर्यास्त के बाद और सूर्योदय से पहले किसी महिला की गिरफ़्तारी नहीं होगी। विशेष परिस्थिति में महिला अधिकारी को पहले प्रथम श्रेणी मजिस्ट्रेट की लिखित अनुमति लेनी होगी। साथ ही, महिला की गिरफ़्तारी पर मौखिक सूचना से उसका समर्पण माना जाता है, और परिस्थिति की आवश्यकता को छोड़कर पुरुष अधिकारी उसके शरीर को नहीं छूएगा।',
+          'ప్రత్యేక పరిస్థితులు తప్ప సూర్యాస్తమయం తర్వాత, సూర్యోదయానికి ముందు స్త్రీని అరెస్ట్ చేయకూడదు. ప్రత్యేక పరిస్థితుల్లో మహిళా పోలీసు అధికారి ముందుగా ఫస్ట్ క్లాస్ మేజిస్ట్రేట్ వ్రాతపూర్వక అనుమతి పొందాలి. అంతేకాక, స్త్రీ అరెస్ట్ అయినప్పుడు మౌఖిక సమాచారంతోనే ఆమె అప్పగించుకున్నట్లు భావిస్తారు; పరిస్థితులు అవసరమైతే తప్ప పురుష అధికారి ఆమె శరీరాన్ని తాకకూడదు.'
+        ),
+        legalBasis: 'BNSS §43(1) proviso, §43(5)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'w-right-attendance',
+        title: t('Not to be required to attend the police station for questioning', 'पूछताछ के लिए थाने बुलाए जाने से सुरक्षा', 'ప్రశ్నలకు స్టేషన్ రమ్మని నిర్బంధించకూడదనే హక్కు'),
+        whatThisMeans: t(
+          'No woman can be required to attend at any place other than her residence for an investigation-related appearance. The police may record her statement at her residence instead.',
+          'जाँच से जुड़ी उपस्थिति के लिए किसी महिला को उसके निवास के अलावा किसी अन्य स्थान पर बुलाना अनिवार्य नहीं है। पुलिस उसका बयान उसके निवास पर ही दर्ज कर सकती है।',
+          'దర్యాప్తుకు సంబంధించిన హాజరు కోసం స్త్రీని ఆమె నివాసం కాకుండా మరే చోటికీ రమ్మని నిర్బంధించలేరు. పోలీసులు ఆమె నివాసంలోనే వాంగ్మూలం నమోదు చేయవచ్చు.'
+        ),
+        legalBasis: 'BNSS §179 (proviso)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'w-right-lawyer',
+        title: t('To know the grounds and to meet a lawyer during interrogation', 'कारण जानने और पूछताछ में वकील से मिलने का अधिकार', 'కారణాలు తెలుసుకునే, విచారణలో న్యాయవాదిని కలిసే హక్కు'),
+        whatThisMeans: t(
+          'If you are arrested, you must be told the grounds, and you are entitled to meet an advocate of your choice during interrogation.',
+          'गिरफ़्तारी पर आपको कारण बताए जाने चाहिए, और पूछताछ के दौरान आप अपनी पसंद के अधिवक्ता से मिल सकती हैं।',
+          'అరెస్ట్ అయితే కారణాలు చెప్పాలి; విచారణ సమయంలో మీ ఇష్టానుసారం న్యాయవాదిని కలవవచ్చు.'
+        ),
+        legalBasis: 'Constitution of India, Article 22(1) · BNSS §38, §47',
+        sourceIds: ['constitution', 'bnss']
+      },
+      {
+        id: 'w-right-helpdesk',
+        title: t('To use the women help desk at a police station', 'थाने में महिला हेल्प डेस्क का उपयोग करने का अधिकार', 'పోలీస్ స్టేషన్లో మహిళా హెల్ప్ డెస్క్ ఉపయోగించే హక్కు'),
+        whatThisMeans: t(
+          'Under a Ministry of Home Affairs scheme funded by the Nirbhaya Fund, police stations across India have women help desks staffed to receive women and assist them. You can ask to be assisted by a woman officer or at the women help desk.',
+          'निर्भया फंड से वित्तपोषित गृह मंत्रालय योजना के तहत भारत भर के थानों में महिला हेल्प डेस्क हैं। आप महिला अधिकारी या महिला हेल्प डेस्क से सहायता माँग सकती हैं।',
+          'నిర్భయ ఫండ్ ద్వారా నిధులిచ్చిన హోం మంత్రిత్వ శాఖ పథకం కింద దేశవ్యాప్తంగా పోలీస్ స్టేషన్లలో మహిళా హెల్ప్ డెస్క్లు ఉన్నాయి. మీరు మహిళా అధికారి లేదా హెల్ప్ డెస్క్ సహాయం అడగవచ్చు.'
+        ),
+        legalBasis: 'MHA — Women Help Desks scheme (Nirbhaya Fund)',
+        sourceIds: ['mha']
+      }
+    ],
+    do: [
+      {
+        id: 'w-do-1',
+        text: t('State your request calmly: a woman officer for any search, and questioning at your residence.', 'शांति से अनुरोध करें: किसी भी तलाशी के लिए महिला अधिकारी, और पूछताछ आपके निवास पर।', 'ప్రశాంతంగా అడగండి: ఏ సోదాకైనా మహిళా అధికారి, ప్రశ్నలు మీ నివాసంలోనే.'),
+        why: t('These are legal entitlements (BNSS §49(2), §179), not favours.', 'ये कानूनी अधिकार हैं (बीएनएसएस §49(2), §179), एहसान नहीं।', 'ఇవి చట్టపరమైన హక్కులు (BNSS §49(2), §179), దయ కాదు.')
+      },
+      {
+        id: 'w-do-2',
+        text: t('If arrested at night, note the time and whether a Magistrate’s permission was obtained.', 'रात में गिरफ़्तारी हो तो समय नोट करें और देखें कि मजिस्ट्रेट की अनुमति ली गई थी या नहीं।', 'రాత్రి అరెస్ట్ అయితే సమయం గమనించండి; మేజిస్ట్రేట్ అనుమతి పొందారా లేదా చూడండి.'),
+        why: t('Night arrest of a woman without prior Magistrate permission is a violation of BNSS §43(5).', 'बिना मजिस्ट्रेट की अनुमति महिला की रात्रि गिरफ़्तारी बीएनएसएस §43(5) का उल्लंघन है।', 'మేజిస్ట్రేట్ అనుమతి లేకుండా స్త్రీని రాత్రి అరెస్ట్ చేయడం BNSS §43(5) ఉల్లంఘన.')
+      },
+      {
+        id: 'w-do-3',
+        text: t('Call 181 (women helpline) or a family member if you are being taken to the station.', 'थाने ले जाए जाने पर 181 (महिला हेल्पलाइन) या परिवार को कॉल करें।', 'స్టేషన్కు తీసుకెళ్తుంటే 181 (మహిళా హెల్ప్లైన్) లేదా కుటుంబ సభ్యుడికి కాల్ చేయండి.'),
+        why: t('Tell someone where you are — it protects you and creates a record.', 'किसी को बताएँ कि आप कहाँ हैं — यह आपकी सुरक्षा और रिकॉर्ड दोनों है।', 'మీరు ఎక్కడ ఉన్నారో ఎవరికైనా చెప్పండి — ఇది రక్షణ, రికార్డు కూడా.')
+      },
+      {
+        id: 'w-do-4',
+        text: t('Ask for a lawyer or free legal aid if you need support.', 'सहायता चाहिए तो वकील या निःशुल्क कानूनी सहायता माँगें।', 'సహాయం అవసరమైతే న్యాయవాది లేదా ఉచిత న్యాయ సహాయం అడగండి.')
+      }
+    ],
+    avoid: [
+      {
+        id: 'w-avoid-1',
+        text: t('Do not agree to a search by a male officer.', 'पुरुष अधिकारी द्वारा तलाशी के लिए सहमत न हों।', 'పురుష అధికారి సోదాకు అంగీకరించకండి.'),
+        why: t('A woman may only be searched by another female (BNSS §49(2)).', 'महिला की तलाशी केवल दूसरी महिला कर सकती है (बीएनएसएस §49(2))।', 'స్త్రీని మరో స్త్రీ మాత్రమే సోదా చేయాలి (BNSS §49(2)).')
+      },
+      {
+        id: 'w-avoid-2',
+        text: t('Do not stay silent if you feel unsafe — seek help.', 'असुरक्षित महसूस होने पर चुप न रहें — मदद माँगें।', 'భద్రతగా అనిపించకపోతే మౌనంగా ఉండకండి — సహాయం అడగండి.'),
+        why: t('The 181 helpline and women help desks exist to assist you.', '181 हेल्पलाइन और महिला हेल्प डेस्क आपकी सहायता के लिए हैं।', '181 హెల్ప్లైన్, మహిళా హెల్ప్ డెస్క్లు మీ కోసం ఉన్నాయి.')
+      },
+      {
+        id: 'w-avoid-3',
+        text: t('Do not sign a statement you have not read and understood.', 'बिना पढ़े-समझे बयान पर हस्ताक्षर न करें।', 'చదవకుండా, అర్థం చేసుకోకుండా వాంగ్మూలంపై సంతకం చేయకండి.'),
+        why: t('A lawyer can review it first; a signed statement may be used later.', 'पहले वकील से दिखाएँ; हस्ताक्षरित बयान बाद में इस्तेमाल हो सकता है।', 'ముందుగా న్యాయవాదితో చూపించండి; సంతకం చేసిన ప్రకటన తర్వాత ఉపయోగించవచ్చు.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'w-ev-1',
+        text: t('Note the officer’s name, badge number, place and time.', 'अधिकारी का नाम, बैज नंबर, स्थान और समय नोट करें।', 'అధికారి పేరు, బ్యాడ్జ్ నంబర్, ప్రదేశం, సమయం గమనించండి.'),
+        why: t('It helps later if you need to complain or give an account.', 'बाद में शिकायत या विवरण देने में मदद करता है।', 'తర్వాత ఫిర్యాదు చేయాల్సి వస్తే ఉపయోగపడుతుంది.')
+      },
+      {
+        id: 'w-ev-2',
+        text: t('If searched, note whether a woman officer performed the search.', 'तलाशी हो तो नोट करें कि क्या महिला अधिकारी ने तलाशी ली।', 'సోదా జరిగితే మహిళా అధికారి చేశారా లేదా గమనించండి.'),
+        why: t('A woman may only be searched by another female (BNSS §49(2)).', 'महिला की तलाशी केवल दूसरी महिला कर सकती है (बीएनएसएस §49(2))।', 'స్త్రీని మరో స్త్రీ మాత్రమే సోదా చేయాలి (BNSS §49(2)).')
+      },
+      {
+        id: 'w-ev-3',
+        text: t('If arrested at night, note the time and whether a Magistrate’s permission was obtained.', 'रात में गिरफ़्तारी हो तो समय नोट करें और देखें कि मजिस्ट्रेट की अनुमति ली गई थी या नहीं।', 'రాత్రి అరెస్ట్ అయితే సమయం, మేజిస్ట్రేట్ అనుమతి పొందారా గమనించండి.'),
+        why: t('Night arrest of a woman without prior permission is a violation of BNSS §43(5).', 'बिना मजिस्ट्रेट की अनुमति महिला की रात्रि गिरफ़्तारी बीएनएसएस §43(5) का उल्लंघन है।', 'ముందస్తు అనుమతి లేకుండా స్త్రీని రాత్రి అరెస్ట్ చేయడం BNSS §43(5) ఉల్లంఘన.')
+      }
+    ],
+    whatHappensNext: [
+      { label: t('You are here — interacting with police as a woman', 'आप यहाँ हैं — महिला के रूप में पुलिस से बातचीत', 'మీరు ఇక్కడ ఉన్నారు — స్త్రీగా పోలీసులతో వ్యవహారం') },
+      { label: t('Search, if any, by a woman officer', 'तलाशी, यदि हो, महिला अधिकारी द्वारा', 'సోదా, ఉంటే, మహిళా అధికారి ద్వారా'), note: t('BNSS §49(2)', 'बीएनएसएस §49(2)', 'BNSS §49(2)') },
+      { label: t('Questioning, if any, at your residence', 'पूछताछ, यदि हो, आपके निवास पर', 'ప్రశ్నలు, ఉంటే, మీ నివాసంలో'), note: t('BNSS §179', 'बीएनएसएस §179', 'BNSS §179') },
+      { label: t('If arrested — grounds told, relative informed, produced within 24 hours', 'गिरफ़्तारी पर — कारण, परिवार को सूचना, 24 घंटे में पेशी', 'అరెస్ట్ అయితే — కారణాలు, బంధువుకు సమాచారం, 24 గంటల్లో హాజరు'), note: t('Art. 22 · BNSS §47, §48, §57', 'अनु. 22 · बीएनएसएस §47, §48, §57', 'ఆర్టి. 22 · BNSS §47, §48, §57'), linkTo: 'arrested' },
+      { label: t('Free legal aid if needed', 'ज़रूरत पर निःशुल्क कानूनी सहायता', 'అవసరమైతే ఉచిత న్యాయ సహాయం'), note: t('NALSA / Legal Services Authorities', 'नालसा / कानूनी सेवा प्राधिकरण', 'NALSA / న్యాయ సేవా అథారిటీలు') }
+    ],
+    helpRouteIds: ['nalsa', 'helpline-15100', 'dlsa-directory'],
+    complaintRoutes: [
+      {
+        id: 'w-cr-1',
+        phone: '181',
+        route: t('Senior police officer / women help desk escalation', 'वरिष्ठ पुलिस अधिकारी / महिला हेल्प डेस्क शिकायत', 'సీనియర్ పోలీసు అధికారి / మహిళా హెల్ప్ డెస్క్ ఫిర్యాదు'),
+        whyItMayApply: t('If your protections were ignored — e.g., a male officer searched you or you were arrested at night without permission.', 'यदि आपकी सुरक्षा अनदेखी हुई — जैसे पुरुष अधिकारी ने तलाशी ली या बिना अनुमति रात में गिरफ़्तारी।', 'మీ రక్షణలను పట్టించుకోకపోతే — ఉదా. పురుష అధికారి సోదా లేదా అనుమతి లేకుండా రాత్రి అరెస్ట్.'),
+        whatToPrepare: t('Date, time, place, officer details, and a written account of what happened.', 'तारीख़, समय, स्थान, अधिकारी का विवरण और घटना का लिखित विवरण।', 'తేదీ, సమయం, ప్రదేశం, అధికారి వివరాలు, జరిగిన దాని వ్రాతపూర్వక వివరణ.'),
+        legalBasis: 'BNSS §43, §49(2), §179',
+        sourceIds: ['bnss']
+      }
+    ],
+    sourceIds: ['bnss', 'constitution', 'mha'],
+    lastVerified: '2026-08-15'
+  },
+
+  /* ────────────────────────────────────────────────────────────────
+     10. PROLONGED DETENTION
+  ──────────────────────────────────────────────────────────────── */
+  {
+    id: 'PROLONGED_DETENTION',
+    slug: 'detained-longer-than-24-hours',
+    icon: 'clock',
+    title: t('I have been detained for a long time', 'मुझे लंबे समय से हिरासत में रखा गया है', 'నన్ను ఎక్కువ కాలం నిర్బంధంలో ఉంచారు'),
+    shortTitle: t('Detained for a long time', 'लंबी हिरासत', 'దీర్ఘ నిర్బంధం'),
+    description: t(
+      'You have been held by the police for more than 24 hours, or your detention has continued for days without you being produced before a Magistrate.',
+      'आपको 24 घंटे से अधिक समय से पुलिस हिरासत में रखा गया है, या बिना मजिस्ट्रेट के सामने पेश किए कई दिनों से हिरासत जारी है।',
+      'మిమ్మల్ని 24 గంటల కంటే ఎక్కువ పోలీసులు నిర్బంధించారు, లేదా మేజిస్ట్రేట్ ముందు హాజరుపరచకుండా రోజుల తరబడి నిర్బంధం కొనసాగుతోంది.'
+    ),
+    urgency: 'high',
+    summary: t(
+      'No one can be held in police custody beyond 24 hours without a Magistrate’s order. Continued detention is only lawful through remand ordered by a Magistrate. If you were not produced within 24 hours, were not told the grounds, or your family was not informed, these are serious violations with legal remedies — including habeas corpus for unlawful detention.',
+      'मजिस्ट्रेट के आदेश के बिना 24 घंटे से अधिक पुलिस हिरासत में कोई नहीं रखा जा सकता। लंबी हिरासत केवल मजिस्ट्रेट द्वारा आदेशित रिमांड से ही कानूनी है। यदि आपको 24 घंटे में पेश नहीं किया गया, कारण नहीं बताए गए, या परिवार को सूचना नहीं दी गई — ये गंभीर उल्लंघन हैं और इनके कानूनी उपाय हैं, जिनमें अवैध हिरासत के लिए बंदी प्रत्यक्षीकरण शामिल है।',
+      'మేజిస్ట్రేట్ ఆదేశం లేకుండా 24 గంటలకు మించి ఎవరినీ పోలీసు నిర్బంధంలో ఉంచలేరు. మేజిస్ట్రేట్ ఆదేశించిన రిమాండ్ ద్వారా మాత్రమే కొనసాగింపు నిర్బంధం చట్టబద్ధం. 24 గంటల్లో హాజరుపరచకపోతే, కారణాలు చెప్పకపోతే, కుటుంబానికి తెలియజేయకపోతే — ఇవి తీవ్రమైన ఉల్లంఘనలు; చట్టపరమైన పరిహారాలు ఉన్నాయి — చట్టవిరుద్ధ నిర్బంధానికి హేబియస్ కార్పస్ సహా.'
+    ),
+    immediateActions: [
+      t('Ask to be produced before a Magistrate if you have been held beyond 24 hours.', '24 घंटे से अधिक हिरासत में रखे जाने पर मजिस्ट्रेट के सामने पेशी की माँग करें।', '24 గంటలు దాటితే మేజిస్ట్రేట్ ముందు హాజరుపరచమని అడగండి.'),
+      t('Ask again for the grounds of detention and to inform a relative or friend.', 'हिरासत के कारण और परिवार/मित्र को सूचित करने के लिए फिर अनुरोध करें।', 'నిర్బంధ కారణాలు మరియు బంధువు/స్నేహితుడికి తెలియజేయమని మళ్లీ అడగండి.'),
+      t('Insist on meeting a lawyer — free legal aid is available for eligible persons.', 'वकील से मिलने पर ज़ोर दें — पात्र व्यक्तियों के लिए निःशुल्क कानूनी सहायता उपलब्ध है।', 'న్యాయవాదిని కలవాలని పట్టుబట్టండి — అర్హులకు ఉచిత న్యాయ సహాయం అందుబాటులో ఉంది.'),
+      t('Ask for medical help if you have been injured, and get it recorded.', 'चोट लगने पर चिकित्सा सहायता माँगें और उसे दर्ज कराएँ।', 'గాయమైతే వైద్య సహాయం అడిగి నమోదు చేయించుకోండి.'),
+      t('Ask a relative to note the time of arrest and your location.', 'परिवार से गिरफ़्तारी का समय और आपका स्थान नोट करने को कहें।', 'బంధువును అరెస్ట్ సమయం, మీ స్థానం గమనించమని అడగండి.')
+    ],
+    rights: [
+      {
+        id: 'pd-right-24h',
+        title: t('To be produced before a Magistrate within 24 hours', '24 घंटे के भीतर मजिस्ट्रेट के सामने पेश होने का अधिकार', '24 గంటల్లో మేజిస్ట్రేట్ ముందు హాజరయ్యే హక్కు'),
+        whatThisMeans: t(
+          'A person arrested must be brought before the nearest Magistrate or the officer in charge of a police station without unnecessary delay, and cannot be detained beyond 24 hours (excluding travel time) without a Magistrate’s order.',
+          'गिरफ़्तार व्यक्ति को बिना अनुचित देरी निकटतम मजिस्ट्रेट या थाना प्रभारी के सामने लाया जाना चाहिए, और मजिस्ट्रेट के आदेश के बिना 24 घंटे (यात्रा समय छोड़कर) से अधिक हिरासत नहीं हो सकती।',
+          'అరెస్ట్ అయిన వ్యక్తిని ఆలస్యం లేకుండా దగ్గరి మేజిస్ట్రేట్ లేదా స్టేషన్ ఇన్ఛార్జ్ ముందు తీసుకురావాలి; మేజిస్ట్రేట్ ఆదేశం లేకుండా 24 గంటలు (ప్రయాణ సమయం మినహా) మించి నిర్బంధించలేరు.'
+        ),
+        legalBasis: 'Constitution of India, Article 22(2) · BNSS §57, §58',
+        sourceIds: ['constitution', 'bnss']
+      },
+      {
+        id: 'pd-right-remand',
+        title: t('Continued detention only by a Magistrate’s order (remand)', 'मजिस्ट्रेट के आदेश (रिमांड) से ही लंबी हिरासत', 'మేజిస్ట్రేట్ ఆదేశం (రిమాండ్)తోనే కొనసాగింపు నిర్బంధం'),
+        whatThisMeans: t(
+          'When an investigation cannot be completed in 24 hours, the accused must be produced before a Magistrate, who may authorise further detention. Detention without such an order is unlawful.',
+          'जब जाँच 24 घंटे में पूरी न हो, तो आरोपी को मजिस्ट्रेट के सामने पेश करना होता है, जो आगे की हिरासत की अनुमति दे सकते हैं। ऐसे आदेश के बिना हिरासत अवैध है।',
+          'దర్యాప్తు 24 గంటల్లో పూర్తి కాకపోతే నిందితుడిని మేజిస్ట్రేట్ ముందు హాజరుపరచాలి; వారు మరింత నిర్బంధానికి అనుమతించవచ్చు. అటువంటి ఆదేశం లేకుండా నిర్బంధం చట్టవిరుద్ధం.'
+        ),
+        legalBasis: 'BNSS §187',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'pd-right-defaultbail',
+        title: t('To default bail if investigation is not completed in 60/90 days', '60/90 दिनों में जाँच पूरी न होने पर डिफ़ॉल्ट ज़मानत का अधिकार', '60/90 రోజుల్లో దర్యాప్తు పూర్తి కాకపోతే డిఫాల్ట్ బెయిల్ హక్కు'),
+        whatThisMeans: t(
+          'If the investigation is not completed and no police report is filed within the prescribed period (60 days for lesser offences, 90 days for serious ones), the accused is entitled to be released on bail.',
+          'यदि निर्धारित अवधि (कम अपराधों के लिए 60 दिन, गंभीर अपराधों के लिए 90 दिन) में जाँच पूरी नहीं होती और पुलिस रिपोर्ट दर्ज नहीं होती, तो आरोपी ज़मानत पर छोड़े जाने का हकदार है।',
+          'నిర్దేశిత కాలం (తక్కువ నేరాలకు 60 రోజులు, తీవ్రమైన వాటికి 90 రోజులు)లో దర్యాప్తు పూర్తి కాక, పోలీసు నివేదిక దాఖలు కాకపోతే నిందితుడు బెయిల్పై విడుదలకు అర్హుడు.'
+        ),
+        legalBasis: 'BNSS §187(3)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'pd-right-grounds',
+        title: t('To know the grounds and to have a relative informed', 'कारण जानने और परिवार को सूचित कराने का अधिकार', 'కారణాలు తెలుసుకునే, బంధువుకు సమాచారం ఇప్పించే హక్కు'),
+        whatThisMeans: t(
+          'You must be told why you are detained, the police must inform a relative or friend of your whereabouts, and you may meet a lawyer during interrogation.',
+          'आपको बताना होगा कि आपको क्यों रखा गया है, पुलिस को आपके परिवार/मित्र को आपका स्थान बताना होगा, और पूछताछ के दौरान आप वकील से मिल सकते हैं।',
+          'ఎందుకు నిర్బంధించారో చెప్పాలి; పోలీసులు మీ బంధువు/స్నేహితుడికి మీ స్థానం తెలియజేయాలి; విచారణలో న్యాయవాదిని కలవవచ్చు.'
+        ),
+        legalBasis: 'Constitution of India, Article 22(1) · BNSS §47, §48, §38',
+        sourceIds: ['constitution', 'bnss']
+      },
+      {
+        id: 'pd-right-habeas',
+        title: t('To seek habeas corpus for unlawful detention', 'अवैध हिरासत के लिए बंदी प्रत्यक्षीकरण का अधिकार', 'చట్టవిరుద్ధ నిర్బంధానికి హేబియస్ కార్పస్ హక్కు'),
+        whatThisMeans: t(
+          'If you believe the detention is unlawful, you or your family can approach the High Court or the Supreme Court for a writ of habeas corpus, which requires the detaining authority to justify the detention in court.',
+          'यदि हिरासत अवैध लगती है, तो आप या आपका परिवार उच्च न्यायालय या सर्वोच्च न्यायालय में बंदी प्रत्यक्षीकरण याचिका दायर कर सकते हैं, जिसमें हिरासत का औचित्य न्यायालय में सिद्ध करना होता है।',
+          'నిర్బంధం చట్టవిరుద్ధమని భావిస్తే మీరు లేదా కుటుంబం హైకోర్టు లేదా సుప్రీంకోర్టులో హేబియస్ కార్పస్ పిటిషన్ దాఖలు చేయవచ్చు; దానిలో నిర్బంధాన్ని కోర్టులో సమర్థించాలి.'
+        ),
+        legalBasis: 'Constitution of India, Articles 32, 226',
+        sourceIds: ['constitution']
+      },
+      {
+        id: 'pd-right-medical',
+        title: t('To medical examination', 'चिकित्सा परीक्षण का अधिकार', 'వైద్య పరీక్ష హక్కు'),
+        whatThisMeans: t(
+          'An arrested person may be examined by a medical officer on request, and police may have an accused examined by a medical practitioner. Ask for medical help if you have been injured.',
+          'गिरफ़्तार व्यक्ति की अनुरोध पर चिकित्सा अधिकारी द्वारा जाँच हो सकती है, और पुलिस चिकित्सक से जाँच करा सकती है। चोट लगने पर चिकित्सा सहायता माँगें।',
+          'అరెస్ట్ అయిన వ్యక్తిని అభ్యర్థన మేరకు వైద్య అధికారి పరీక్షించవచ్చు; పోలీసులు వైద్యుని ద్వారా పరీక్ష చేయించవచ్చు. గాయమైతే వైద్య సహాయం అడగండి.'
+        ),
+        legalBasis: 'BNSS §51, §53',
+        sourceIds: ['bnss']
+      }
+    ],
+    do: [
+      {
+        id: 'pd-do-1',
+        text: t('Keep asking for the grounds of detention and for a lawyer — repeat it clearly.', 'हिरासत के कारण और वकील की माँग दोहराते रहें — स्पष्ट रूप से।', 'నిర్బంధ కారణాలు, న్యాయవాది కోసం స్పష్టంగా పదే పదే అడుగుతూ ఉండండి.'),
+        why: t('It creates a record and triggers the police’s legal duties.', 'इससे रिकॉर्ड बनता है और पुलिस के कानूनी कर्तव्य सक्रिय होते हैं।', 'ఇది రికార్డు సృష్టిస్తుంది, పోలీసుల చట్టపరమైన విధులు ప్రేరేపిస్తుంది.')
+      },
+      {
+        id: 'pd-do-2',
+        text: t('Ask a family member to contact a lawyer or the Legal Services Authority.', 'परिवार से वकील या कानूनी सेवा प्राधिकरण से संपर्क करने को कहें।', 'కుటుంబ సభ్యుడిని న్యాయవాది లేదా న్యాయ సేవా అథారిటీని సంప్రదించమని అడగండి.'),
+        why: t('Legal aid is free for eligible persons and can move the court quickly.', 'पात्र व्यक्तियों के लिए कानूनी सहायता निःशुल्क है और तुरंत न्यायालय जा सकती है।', 'అర్హులకు న్యాయ సహాయం ఉచితం; కోర్టును త్వరగా ఆశ్రయించవచ్చు.')
+      },
+      {
+        id: 'pd-do-3',
+        text: t('If injured, ask for medical examination and that it be recorded.', 'चोट हो तो चिकित्सा परीक्षण और उसके रिकॉर्ड की माँग करें।', 'గాయమైతే వైద్య పరీక్ష మరియు నమోదు కోసం అడగండి.'),
+        why: t('Medical records matter for your safety and for any later complaint.', 'चिकित्सा रिकॉर्ड आपकी सुरक्षा और बाद की शिकायत के लिए महत्वपूर्ण हैं।', 'వైద్య రికార్డులు మీ భద్రతకు, తర్వాతి ఫిర్యాదుకు ముఖ్యం.')
+      },
+      {
+        id: 'pd-do-4',
+        text: t('Note the dates: when you were arrested and when you were produced.', 'तारीख़ें नोट करें: कब गिरफ़्तार हुए और कब पेश हुए।', 'తేదీలు గమనించండి: ఎప్పుడు అరెస్ట్, ఎప్పుడు హాజరు.'),
+        why: t('These dates determine whether the 24-hour rule and default-bail periods were respected.', 'ये तारीख़ें तय करती हैं कि 24 घंटे का नियम और डिफ़ॉल्ट ज़मानत अवधि पूरी हुई या नहीं।', 'ఈ తేదీలే 24 గంటల నియమం, డిఫాల్ట్ బెయిల్ కాలాలు పాటించబడ్డాయో లేదో నిర్ణయిస్తాయి.')
+      }
+    ],
+    avoid: [
+      {
+        id: 'pd-avoid-1',
+        text: t('Do not lose hope after the first 24 hours — the law gives continuing remedies.', 'पहले 24 घंटे के बाद हार न मानें — कानून निरंतर उपाय देता है।', 'మొదటి 24 గంటల తర్వాత ఆశ వదులుకోకండి — చట్టం నిరంతర పరిహారాలు ఇస్తుంది.'),
+        why: t('Remand, default bail and habeas corpus remain available.', 'रिमांड, डिफ़ॉल्ट ज़मानत और बंदी प्रत्यक्षीकरण उपलब्ध रहते हैं।', 'రిమాండ్, డిఫాల్ట్ బెయిల్, హేబియస్ కార్పస్ అందుబాటులో ఉంటాయి.')
+      },
+      {
+        id: 'pd-avoid-2',
+        text: t('Do not sign statements under pressure without your lawyer’s review.', 'दबाव में बिना वकील की सलाह बयान पर हस्ताक्षर न करें।', 'ఒత్తిడిలో న్యాయవాది సలహా లేకుండా ప్రకటనలపై సంతకం చేయకండి.'),
+        why: t('What you sign can be used later; a lawyer should see it first.', 'हस्ताक्षरित बात बाद में इस्तेमाल हो सकती है; पहले वकील को दिखाएँ।', 'మీరు సంతకం చేసినది తర్వాత ఉపయోగించవచ్చు; ముందు న్యాయవాదికి చూపించాలి.')
+      },
+      {
+        id: 'pd-avoid-3',
+        text: t('Do not reveal phone passwords under pressure without legal advice.', 'दबाव में बिना कानूनी सलाह फोन का पासवर्ड न बताएँ।', 'ఒత్తిడిలో న్యాయ సలహా లేకుండా ఫోన్ పాస్వర్డ్ చెప్పకండి.'),
+        why: t('What you reveal can be used in the case; get advice first.', 'आप जो बताते हैं वह मामले में इस्तेमाल हो सकता है; पहले सलाह लें।', 'మీరు చెప్పినది కేసులో ఉపయోగించవచ్చు; ముందు సలహా తీసుకోండి.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'pd-ev-1',
+        text: t('Note the dates: when you were arrested and when you were produced.', 'तारीख़ें नोट करें: कब गिरफ़्तार हुए और कब पेश हुए।', 'తేదీలు గమనించండి: ఎప్పుడు అరెస్ట్, ఎప్పుడు హాజరు.'),
+        why: t('These dates determine whether the 24-hour rule and default-bail periods were respected.', 'ये तारीख़ें तय करती हैं कि 24 घंटे का नियम और डिफ़ॉल्ट ज़मानत अवधि पूरी हुई या नहीं।', 'ఈ తేదీలే 24 గంటల నియమం, డిఫాల్ట్ బెయిల్ కాలాలు పాటించబడ్డాయో లేదో నిర్ణయిస్తాయి.')
+      },
+      {
+        id: 'pd-ev-2',
+        text: t('Ask a relative to note the time of arrest and your location.', 'परिवार से गिरफ़्तारी का समय और आपका स्थान नोट करने को कहें।', 'బంధువును అరెస్ట్ సమయం, మీ స్థానం గమనించమని అడగండి.'),
+        why: t('A family record helps the lawyer and any petition.', 'परिवार का रिकॉर्ड वकील और किसी याचिका में मदद करता है।', 'కుటుంబ రికార్డు న్యాయవాదికి, ఏ పిటిషన్కైనా ఉపయోగపడుతుంది.')
+      },
+      {
+        id: 'pd-ev-3',
+        text: t('Keep any medical record if you were injured.', 'चोट लगने पर चिकित्सा रिकॉर्ड रखें।', 'గాయమైతే వైద్య రికార్డు ఉంచుకోండి.'),
+        why: t('Medical records matter for your safety and any later complaint.', 'चिकित्सा रिकॉर्ड आपकी सुरक्षा और बाद की शिकायत के लिए महत्वपूर्ण हैं।', 'వైద్య రికార్డులు మీ భద్రతకు, తర్వాతి ఫిర్యాదుకు ముఖ్యం.')
+      }
+    ],
+    whatHappensNext: [
+      { label: t('You are here — held beyond 24 hours', 'आप यहाँ हैं — 24 घंटे से अधिक हिरासत', 'మీరు ఇక్కడ ఉన్నారు — 24 గంటలకు మించి నిర్బంధం') },
+      { label: t('Produced before a Magistrate (mandatory)', 'मजिस्ट्रेट के सामने पेशी (अनिवार्य)', 'మేజిస్ట్రేట్ ముందు హాజరు (తప్పనిసరి)'), note: t('Art. 22(2) · BNSS §57, §58', 'अनु. 22(2) · बीएनएसएस §57, §58', 'ఆర్టి. 22(2) · BNSS §57, §58') },
+      { label: t('Remand by Magistrate, or release', 'मजिस्ट्रेट द्वारा रिमांड या रिहाई', 'మేజిస్ట్రేట్ రిమాండ్ లేదా విడుదల'), note: t('BNSS §187', 'बीएनएसएस §187', 'BNSS §187') },
+      { label: t('Default bail if no police report in 60/90 days', '60/90 दिनों में रिपोर्ट न होने पर डिफ़ॉल्ट ज़मानत', '60/90 రోజుల్లో నివేదిక లేకపోతే డిఫాల్ట్ బెయిల్'), note: t('BNSS §187(3)', 'बीएनएसएस §187(3)', 'BNSS §187(3)') },
+      { label: t('Habeas corpus for unlawful detention', 'अवैध हिरासत पर बंदी प्रत्यक्षीकरण', 'చట్టవిరుద్ధ నిర్బంధానికి హేబియస్ కార్పస్'), note: t('Art. 32, 226', 'अनु. 32, 226', 'ఆర్టి. 32, 226') }
+    ],
+    helpRouteIds: ['nalsa', 'helpline-15100', 'dlsa-directory'],
+    complaintRoutes: [
+      {
+        id: 'pd-cr-1',
+        phone: '15100',
+        route: t('Lawyer / Legal Services Authority → court (bail, habeas corpus)', 'वकील / कानूनी सेवा प्राधिकरण → न्यायालय (ज़मानत, बंदी प्रत्यक्षीकरण)', 'న్యాయవాది / న్యాయ సేవా అథారిటీ → కోర్టు (బెయిల్, హేబియస్ కార్పస్)'),
+        whyItMayApply: t('If the 24-hour rule was violated or the detention is unlawful.', 'यदि 24 घंटे का नियम टूटा या हिरासत अवैध है।', '24 గంటల నియమం ఉల్లంఘించబడితే లేదా నిర్బంధం చట్టవిరుద్ధమైతే.'),
+        whatToPrepare: t('Dates and times of arrest and production, and any record of requests made.', 'गिरफ़्तारी और पेशी की तारीख़ें-समय, और किए गए अनुरोधों का रिकॉर्ड।', 'అరెస్ట్, హాజరు తేదీలు-సమయాలు, చేసిన అభ్యర్థనల రికార్డు.'),
+        legalBasis: 'Art. 22(2), 32, 226 · BNSS §187',
+        sourceIds: ['constitution', 'bnss']
+      },
+      {
+        id: 'pd-cr-2',
+        phone: '14433',
+        route: t('NHRC / State Human Rights Commission', 'एनएचआरसी / राज्य मानवाधिकार आयोग', 'NHRC / రాష్ట్ర మానవ హక్కుల కమిషన్'),
+        whyItMayApply: t('For custodial violence or serious violations connected with the detention.', 'हिरासत से जुड़ी हिंसा या गंभीर उल्लंघन के लिए।', 'నిర్బంధానికి సంబంధించిన హింస లేదా తీవ్రమైన ఉల్లంఘనలకు.'),
+        whatToPrepare: t('Incident details, medical records, witnesses — after legal advice.', 'घटना विवरण, चिकित्सा रिकॉर्ड, गवाह — कानूनी सलाह के बाद।', 'సంఘటన వివరాలు, వైద్య రికార్డులు, సాక్షులు — న్యాయ సలహా తర్వాత.'),
+        officialUrl: 'https://nhrc.nic.in/',
+        legalBasis: 'Protection of Human Rights Act, 1993',
+        sourceIds: ['nhrc']
+      }
+    ],
+    sourceIds: ['bnss', 'constitution', 'lsaa'],
+    lastVerified: '2026-08-15'
+  },
+
+  /* ────────────────────────────────────────────────────────────────
+     11. POLICE REFUSED TO HELP WITH A COMPLAINT
+  ──────────────────────────────────────────────────────────────── */
+  {
+    id: 'POLICE_REFUSED_HELP',
+    slug: 'police-refused-to-help',
+    icon: 'userX',
+    title: t('Police refused to help with my complaint', 'पुलिस ने मेरी शिकायत पर मदद करने से मना किया', 'పోలీసులు నా ఫిర్యాదుకు సహాయం చేయడానికి నిరాకరించారు'),
+    shortTitle: t('Police refused to help', 'पुलिस ने मदद नहीं की', 'పోలీసులు సహాయం చేయలేదు'),
+    description: t(
+      'You approached the police with a complaint — about an offence, a dispute, or harassment — and they refused to act, said it is not their job, or did nothing.',
+      'आपने पुलिस के पास शिकायत लेकर गए — किसी अपराध, विवाद या उत्पीड़न के बारे में — और उन्होंने कार्रवाई से इनकार कर दिया, कहा कि यह उनका काम नहीं है, या कुछ नहीं किया।',
+      'మీరు ఫిర్యాదుతో పోలీసుల దగ్గరకు వెళ్లారు — నేరం, వివాదం లేదా వేధింపు గురించి — వారు చర్య తీసుకోవడానికి నిరాకరించారు, తమ పని కాదన్నారు లేదా ఏమీ చేయలేదు.'
+    ),
+    urgency: 'medium',
+    summary: t(
+      'The police cannot simply ignore information about an offence. For a cognizable offence, information must be recorded as an FIR; for a non-cognizable matter, the officer must record it and direct you to the Magistrate. If they refuse to act, there are escalation routes — higher police authorities and the Magistrate.',
+      'पुलिस किसी अपराध की सूचना को अनदेखा नहीं कर सकती। संज्ञेय अपराध के लिए सूचना एफआईआर के रूप में दर्ज होनी चाहिए; गैर-संज्ञेय मामले में अधिकारी उसे दर्ज कर मजिस्ट्रेट के पास भेजने के लिए कहता है। इनकार पर उपाय हैं — वरिष्ठ पुलिस अधिकारी और मजिस्ट्रेट।',
+      'పోలీసులు నేర సమాచారాన్ని విస్మరించలేరు. సంజ్ఞేయ నేరానికి సమాచారం ఎఫ్ఐఆర్గా నమోదు కావాలి; సంజ్ఞేయం కాని విషయంలో అధికారి దాన్ని నమోదు చేసి మేజిస్ట్రేట్ వద్దకు పంపాలి. నిరాకరిస్తే పరిహార మార్గాలు ఉన్నాయి — ఉన్నత పోలీసు అధికారులు, మేజిస్ట్రేట్.'
+    ),
+    immediateActions: [
+      t('Give your complaint in writing and keep a dated copy.', 'अपनी शिकायत लिखित में दें और तारीख़युक्त प्रति रखें।', 'మీ ఫిర్యాదు వ్రాతపూర్వకంగా ఇచ్చి తేదీతో కూడిన కాపీ ఉంచుకోండి.'),
+      t('Ask whether your matter is cognizable or non-cognizable, and what the officer will record.', 'पूछें कि आपका मामला संज्ञेय है या गैर-संज्ञेय, और अधिकारी क्या दर्ज करेगा।', 'మీ విషయం సంజ్ఞేయమా కాదా, అధికారి ఏమి నమోదు చేస్తారో అడగండి.'),
+      t('Note the name and rank of the officer who refused to act.', 'कार्रवाई से इनकार करने वाले अधिकारी का नाम और पद नोट करें।', 'చర్యకు నిరాకరించిన అధికారి పేరు, హోదా గమనించండి.'),
+      t('Approach the Superintendent of Police or higher authority with your written complaint.', 'अपनी लिखित शिकायत लेकर पुलिस अधीक्षक या वरिष्ठ अधिकारी के पास जाएँ।', 'మీ వ్రాతపూర్వక ఫిర్యాదుతో సూపరింటెండెంట్ లేదా ఉన్నత అధికారిని సంప్రదించండి.'),
+      t('If still refused, complain to the Magistrate.', 'फिर भी इनकार हो तो मजिस्ट्रेट से शिकायत करें।', 'ఇంకా నిరాకరిస్తే మేజిస్ట్రేట్కు ఫిర్యాదు చేయండి.')
+    ],
+    rights: [
+      {
+        id: 'prh-right-cognizable',
+        title: t('Information about a cognizable offence must be recorded (FIR)', 'संज्ञेय अपराध की सूचना दर्ज कराने का अधिकार (एफआईआर)', 'సంజ్ఞేయ నేర సమాచారం నమోదు చేయించుకునే హక్కు (ఎఫ్ఐఆర్)'),
+        whatThisMeans: t(
+          'When information is given about a cognizable offence, the police are required to record it. If they refuse, the FIR-refused guide explains your remedies.',
+          'संज्ञेय अपराध की सूचना मिलने पर पुलिस उसे दर्ज करने के लिए बाध्य है। इनकार पर एफआईआर इनकार गाइड में उपाय बताए गए हैं।',
+          'సంజ్ఞేయ నేర సమాచారం ఇస్తే పోలీసులు నమోదు చేయాలి. నిరాకరిస్తే ఎఫ్ఐఆర్ నిరాకరణ గైడ్లో పరిహారాలు వివరించబడ్డాయి.'
+        ),
+        legalBasis: 'BNSS §173',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'prh-right-noncognizable',
+        title: t('A non-cognizable complaint must still be recorded and directed to the Magistrate', 'गैर-संज्ञेय शिकायत दर्ज कर मजिस्ट्रेट की ओर निर्देशित कराने का अधिकार', 'సంజ్ఞేయం కాని ఫిర్యాదు నమోదు చేయించి మేజిస్ట్రేట్ వైపు పంపించే హక్కు'),
+        whatThisMeans: t(
+          'Even when an offence is non-cognizable, the officer must record the information and direct the complainant to the Magistrate. Police cannot simply say “nothing can be done”.',
+          'गैर-संज्ञेय अपराध होने पर भी अधिकारी सूचना दर्ज करता है और शिकायतकर्ता को मजिस्ट्रेट के पास भेजता है। पुलिस सिर्फ़ “कुछ नहीं हो सकता” नहीं कह सकती।',
+          'సంజ్ఞేయం కాని నేరమైనా అధికారి సమాచారం నమోదు చేసి ఫిర్యాదుదారుని మేజిస్ట్రేట్ వద్దకు పంపాలి. పోలీసులు "ఏమీ చేయలేం" అని మాత్రమే చెప్పలేరు.'
+        ),
+        legalBasis: 'BNSS §174',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'prh-right-magistrate',
+        title: t('To complain to the Magistrate when police do not act', 'पुलिस के निष्क्रिय रहने पर मजिस्ट्रेट से शिकायत का अधिकार', 'పోలీసులు చర్య తీసుకోకపోతే మేజిస్ట్రేట్కు ఫిర్యాదు చేసే హక్కు'),
+        whatThisMeans: t(
+          'If the police refuse or fail to act on your information, you can complain to the Magistrate, who may order an investigation.',
+          'यदि पुलिस आपकी सूचना पर कार्रवाई से इनकार करती है, तो आप मजिस्ट्रेट से शिकायत कर सकते हैं, जो जाँच का आदेश दे सकते हैं।',
+          'పోలీసులు మీ సమాచారంపై చర్య తీసుకోకపోతే మీరు మేజిస్ట్రేట్కు ఫిర్యాదు చేయవచ్చు; వారు దర్యాప్తు ఆదేశించవచ్చు.'
+        ),
+        legalBasis: 'BNSS §175(3)',
+        sourceIds: ['bnss']
+      }
+    ],
+    do: [
+      {
+        id: 'prh-do-1',
+        text: t('Write your complaint in your own words with dates before you go.', 'जाने से पहले अपनी शिकायत तारीख़ों सहित अपने शब्दों में लिखें।', 'వెళ్లే ముందు మీ ఫిర్యాదును తేదీలతో మీ మాటల్లో రాయండి.'),
+        why: t('A written record with dates makes every escalation stronger.', 'तारीख़ों सहित लिखित रिकॉर्ड हर अपील को मज़बूत बनाता है।', 'తేదీలతో వ్రాతపూర్వక రికార్డు ప్రతి అప్పీల్ను బలపరుస్తుంది.')
+      },
+      {
+        id: 'prh-do-2',
+        text: t('Ask the officer to record the information and give you a copy.', 'अधिकारी से सूचना दर्ज कर प्रति देने को कहें।', 'అధికారిని సమాచారం నమోదు చేసి కాపీ ఇవ్వమని అడగండి.'),
+        why: t('The copy is your proof that the matter was brought to the police.', 'प्रति इस बात का प्रमाण है कि मामला पुलिस के पास लाया गया।', 'కాపీ అనేది విషయం పోలీసుల దృష్టికి వెళ్లిందన్న నిదర్శనం.')
+      },
+      {
+        id: 'prh-do-3',
+        text: t('Escalate in writing: Superintendent of Police, then the Magistrate if needed.', 'लिखित रूप में अपील करें: पुलिस अधीक्षक, फिर ज़रूरत पर मजिस्ट्रेट।', 'వ్రాతపూర్వకంగా పై స్థాయికి వెళ్లండి: సూపరింటెండెంట్, అవసరమైతే మేజిస్ట్రేట్.')
+      },
+      {
+        id: 'prh-do-4',
+        text: t('Take legal aid help if the process feels difficult.', 'प्रक्रिया कठिन लगे तो कानूनी सहायता लें।', 'ప్రక్రియ కష్టంగా అనిపిస్తే న్యాయ సహాయం తీసుకోండి.')
+      }
+    ],
+    avoid: [
+      {
+        id: 'prh-avoid-1',
+        text: t('Do not give up after one refusal — the law gives you higher authorities and the Magistrate.', 'एक इनकार पर हार न मानें — कानून वरिष्ठ अधिकारियों और मजिस्ट्रेट का उपाय देता है।', 'ఒక్క నిరాకరణతో వదులుకోకండి — చట్టం ఉన్నత అధికారులు, మేజిస్ట్రేట్ పరిహారాలిస్తుంది.'),
+        why: t('Recording and investigation duties are legal obligations, not choices.', 'दर्ज करना और जाँच करना कानूनी दायित्व है, विकल्प नहीं।', 'నమోదు, దర్యాప్తు చట్టపరమైన బాధ్యతలు, ఐచ్ఛికం కాదు.')
+      },
+      {
+        id: 'prh-avoid-2',
+        text: t('Do not exaggerate or fabricate facts.', 'तथ्यों को बढ़ा-चढ़ाकर या गढ़कर न बताएँ।', 'వాస్తవాలను అతిశయోక్తి చేయకండి లేదా కల్పించకండి.'),
+        why: t('Accuracy keeps your complaint credible and protects you.', 'सटीकता शिकायत को विश्वसनीय और आपको सुरक्षित रखती है।', 'ఖచ్చితత్వం ఫిర్యాదును నమ్మదగినదిగా, మిమ్మల్ని సురక్షితంగా ఉంచుతుంది.')
+      },
+      {
+        id: 'prh-avoid-3',
+        text: t('Do not argue aggressively at the station — keep a calm written record.', 'थाने में आक्रामक बहस न करें — शांत लिखित रिकॉर्ड रखें।', 'స్టేషన్లో దూకుడుగా వాదించకండి — ప్రశాంతమైన వ్రాతపూర్వక రికార్డు ఉంచుకోండి.'),
+        why: t('A written trail serves you better than a confrontation.', 'लिखित रिकॉर्ड टकराव से बेहतर काम करता है।', 'వ్రాతపూర్వక ఆనవాలు ఘర్షణ కంటే బాగా పనిచేస్తుంది.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'prh-ev-1',
+        text: t('Keep a dated copy of your written complaint.', 'अपनी शिकायत की तारीख़युक्त प्रति रखें।', 'మీ ఫిర్యాదు తేదీతో కూడిన కాపీ ఉంచుకోండి.'),
+        why: t('A written record with dates makes every escalation stronger.', 'तारीख़ों सहित लिखित रिकॉर्ड हर अपील को मज़बूत बनाता है।', 'తేదీలతో వ్రాతపూర్వక రికార్డు ప్రతి అప్పీల్ను బలపరుస్తుంది.')
+      },
+      {
+        id: 'prh-ev-2',
+        text: t('Note the name and rank of the officer who refused to act, and the date and time.', 'कार्रवाई से इनकार करने वाले अधिकारी का नाम, पद और तारीख़-समय नोट करें।', 'చర్యకు నిరాకరించిన అధికారి పేరు, హోదా, తేదీ-సమయం గమనించండి.'),
+        why: t('It identifies the refusal for higher authorities.', 'यह वरिष्ठ अधिकारियों के लिए इनकार स्पष्ट करता है।', 'పై అధికారులకు నిరాకరణను స్పష్టం చేస్తుంది.')
+      },
+      {
+        id: 'prh-ev-3',
+        text: t('Keep records of every approach — the station, the SP, and the Magistrate.', 'हर संपर्क का रिकॉर्ड रखें — थाना, पुलिस अधीक्षक और मजिस्ट्रेट।', 'ప్రతి సంప్రదింపు రికార్డు ఉంచుకోండి — స్టేషన్, SP, మేజిస్ట్రేట్.'),
+        why: t('They show the matter was pursued in order.', 'वे दिखाते हैं कि मामला क्रमबद्ध रूप से उठाया गया।', 'విషయం క్రమబద్ధంగా వెంబడించారని చూపుతాయి.')
+      }
+    ],
+    whatHappensNext: [
+      { label: t('You are here — police refused to act', 'आप यहाँ हैं — पुलिस ने कार्रवाई नहीं की', 'మీరు ఇక్కడ ఉన్నారు — పోలీసులు చర్య తీసుకోలేదు') },
+      { label: t('Cognizable offence → FIR must be recorded', 'संज्ञेय अपराध → एफआईआर दर्ज होनी चाहिए', 'సంజ్ఞేయ నేరం → ఎఫ్ఐఆర్ నమోదు కావాలి'), note: t('BNSS §173', 'बीएनएसएस §173', 'BNSS §173'), linkTo: 'fir-refused' },
+      { label: t('Non-cognizable matter → recorded and directed to Magistrate', 'गैर-संज्ञेय मामला → दर्ज कर मजिस्ट्रेट की ओर', 'సంజ్ఞేయం కానిది → నమోదు చేసి మేజిస్ట్రేట్ వైపు'), note: t('BNSS §174', 'बीएनएसएस §174', 'BNSS §174') },
+      { label: t('Escalation: SP / higher authority, then Magistrate', 'अपील: पुलिस अधीक्षक / वरिष्ठ, फिर मजिस्ट्रेट', 'పై స్థాయి: SP / సీనియర్, తర్వాత మేజిస్ట్రేట్'), note: t('BNSS §175(3)', 'बीएनएसएस §175(3)', 'BNSS §175(3)'), linkTo: 'i-want-to-complain' },
+      { label: t('Legal aid while you pursue this', 'इस दौरान कानूनी सहायता', 'ఈ ప్రక్రియలో న్యాయ సహాయం'), note: t('NALSA / Legal Services Authorities', 'नालसा / कानूनी सेवा प्राधिकरण', 'NALSA / న్యాయ సేవా అథారిటీలు') }
+    ],
+    helpRouteIds: ['nalsa', 'helpline-15100', 'state-directory', 'dlsa-directory'],
+    complaintRoutes: [
+      {
+        id: 'prh-cr-1',
+        route: t('Superintendent of Police (written complaint)', 'पुलिस अधीक्षक (लिखित शिकायत)', 'సూపరింటెండెంట్ ఆఫ్ పోలీస్ (వ్రాతపూర్వక ఫిర్యాదు)'),
+        whyItMayApply: t('First escalation when the station refuses to act on your complaint.', 'थाने द्वारा शिकायत पर कार्रवाई से इनकार होने पर पहला कदम।', 'స్టేషన్ ఫిర్యాదుపై చర్యకు నిరాకరించినప్పుడు మొదటి అడుగు.'),
+        whatToPrepare: t('Your complaint in writing, the record of refusal, officer details.', 'आपकी शिकायत लिखित में, इनकार का रिकॉर्ड, अधिकारी का विवरण।', 'మీ ఫిర్యాదు వ్రాతపూర్వకంగా, నిరాకరణ రికార్డు, అధికారి వివరాలు.'),
+        legalBasis: 'BNSS §173, §174',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'prh-cr-2',
+        route: t('Complaint to the Magistrate', 'मजिस्ट्रेट से शिकायत', 'మేజిస్ట్రేట్కు ఫిర్యాదు'),
+        whyItMayApply: t('When the police refuse or fail to act and higher authorities do not resolve it.', 'जब पुलिस कार्रवाई न करे और वरिष्ठ अधिकारी समाधान न करें।', 'పోలీసులు చర్య తీసుకోకపోయినా, పై అధికారులు పరిష్కరించకపోయినా.'),
+        whatToPrepare: t('Your information in writing, records of every approach, and supporting documents.', 'आपकी सूचना लिखित में, हर संपर्क का रिकॉर्ड और सहायक दस्तावेज़।', 'మీ సమాచారం వ్రాతపూర్వకంగా, ప్రతి సంప్రదింపు రికార్డు, సహాయక పత్రాలు.'),
+        legalBasis: 'BNSS §175(3) — Magistrate may order investigation',
+        sourceIds: ['bnss']
+      }
+    ],
+    sourceIds: ['bnss', 'lsaa'],
+    lastVerified: '2026-08-15'
+  },
+
+  /* ────────────────────────────────────────────────────────────────
+     12. POLICE NOTICE TO APPEAR
+  ──────────────────────────────────────────────────────────────── */
+  {
+    id: 'POLICE_NOTICE',
+    slug: 'police-notice-to-appear',
+    icon: 'fileText',
+    title: t('Police sent me a notice to appear', 'पुलिस ने मुझे पेश होने का नोटिस भेजा', 'పోలీసులు నాకు హాజరు నోటీసు పంపారు'),
+    shortTitle: t('Police notice to appear', 'पुलिस नोटिस', 'పోలీసు నోటీసు'),
+    description: t(
+      'You received a written notice from the police asking you to appear before them for questioning about a matter.',
+      'आपको पुलिस से लिखित नोटिस मिला है जिसमें किसी मामले में पूछताछ के लिए उनके सामने पेश होने को कहा गया है।',
+      'పోలీసుల నుండి వ్రాతపూర్వక నోటీసు వచ్చింది — ఒక విషయంపై ప్రశ్నలకు వారి ముందు హాజరు కావాలని.'
+    ),
+    urgency: 'medium',
+    summary: t(
+      'A notice under BNSS §35(3) is issued for a cognizable offence when the police decide your arrest is not needed. Take it seriously and appear as directed — appearing is not an admission, and if you comply you should not ordinarily be arrested. This notice is not the same as a court summons.',
+      'बीएनएसएस §35(3) के तहत नोटिस तब जारी होता है जब पुलिस तय करती है कि संज्ञेय अपराध में आपकी गिरफ़्तारी आवश्यक नहीं है। इसे गंभीरता से लें और निर्देश अनुसार पेश हों — पेश होना स्वीकारोक्ति नहीं है, और पालन करने पर सामान्यतः गिरफ़्तारी नहीं होनी चाहिए। यह नोटिस न्यायालय के समन से अलग है।',
+      'BNSS §35(3) కింద నోటీసు అంటే సంజ్ఞేయ నేరంలో మీ అరెస్ట్ అవసరం లేదని పోలీసులు నిర్ణయించారని. దాన్ని తీవ్రంగా పరిగణించి నిర్దేశించినట్లు హాజరు కండి — హాజరు అవ్వడం అంగీకారం కాదు; పాటిస్తే సాధారణంగా అరెస్ట్ చేయకూడదు. ఈ నోటీసు కోర్టు సమన్లా కాదు.'
+    ),
+    immediateActions: [
+      t('Read the notice carefully: what matter, what date, time and place.', 'नोटिस ध्यान से पढ़ें: कौन सा मामला, कौन सी तारीख़, समय और स्थान।', 'నోటీసు జాగ్రత్తగా చదవండి: ఏ విషయం, ఏ తేదీ, సమయం, స్థలం.'),
+      t('Appear as directed, or inform the officer in writing if you cannot.', 'निर्देश अनुसार पेश हों, या न हो पाने पर लिखित रूप से सूचित करें।', 'నిర్దేశించినట్లు హాజరు కండి; కుదరకపోతే వ్రాతపూర్వకంగా తెలియజేయండి.'),
+      t('You may consult a lawyer before you go or bring one with you.', 'जाने से पहले वकील से सलाह लें या अपने साथ ले जाएँ।', 'వెళ్లే ముందు న్యాయవాదిని సంప్రదించండి లేదా వెంట తీసుకెళ్లండి.'),
+      t('Do not ignore the notice — failure to comply can lead to arrest.', 'नोटिस अनदेखा न करें — पालन न करने पर गिरफ़्तारी हो सकती है।', 'నోటీసును విస్మరించకండి — పాటించకపోతే అరెస్ట్ కావచ్చు.'),
+      t('Note the officer’s details and keep a copy of the notice.', 'अधिकारी का विवरण नोट करें और नोटिस की प्रति रखें।', 'అధికారి వివరాలు గమనించి నోటీసు కాపీ ఉంచుకోండి.')
+    ],
+    rights: [
+      {
+        id: 'pn-right-duty',
+        title: t('Your duty is to comply — but complying is not an admission', 'पालन आपका कर्तव्य है — पर पालन स्वीकारोक्ति नहीं है', 'పాటించడం మీ బాధ్యత — కానీ అది అంగీకారం కాదు'),
+        whatThisMeans: t(
+          'Once a notice is issued, you have a duty to comply with its terms. Appearing for questioning does not mean you have admitted anything.',
+          'नोटिस जारी होने पर उसकी शर्तों का पालन आपका कर्तव्य है। पूछताछ के लिए पेश होना स्वीकारोक्ति नहीं है।',
+          'నోటీసు జారీ అయిన తర్వాత దాని నిబంధనలు పాటించడం మీ బాధ్యత. ప్రశ్నలకు హాజరు కావడం అంగీకారం కాదు.'
+        ),
+        legalBasis: 'BNSS §35(4)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'pn-right-noarrest',
+        title: t('If you comply, you should not ordinarily be arrested', 'पालन करने पर सामान्यतः गिरफ़्तारी नहीं', 'పాటిస్తే సాధారణంగా అరెస్ట్ చేయకూడదు'),
+        whatThisMeans: t(
+          'If you comply with the notice and continue to comply, you shall not be arrested for the offence in the notice unless the police record reasons to believe you ought to be arrested.',
+          'यदि आप नोटिस का पालन करते हैं, तो नोटिस वाले अपराध के लिए आपकी गिरफ़्तारी नहीं होगी, जब तक पुलिस कारण दर्ज कर यह न माने कि गिरफ़्तारी आवश्यक है।',
+          'మీరు నోటీసు పాటిస్తే, ఆ నోటీసులోని నేరానికి మిమ్మల్ని అరెస్ట్ చేయకూడదు — అరెస్ట్ అవసరమని పోలీసులు కారణాలు నమోదు చేస్తే తప్ప.'
+        ),
+        legalBasis: 'BNSS §35(5)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'pn-right-arrest',
+        title: t('Failure to comply can lead to arrest', 'पालन न करने पर गिरफ़्तारी हो सकती है', 'పాటించకపోతే అరెస్ట్ కావచ్చు'),
+        whatThisMeans: t(
+          'If you fail to comply with the notice or are unwilling to identify yourself, the police may arrest you for the offence mentioned in the notice.',
+          'यदि आप नोटिस का पालन नहीं करते या अपनी पहचान बताने से इनकार करते हैं, तो पुलिस नोटिस में बताए अपराध के लिए आपको गिरफ़्तार कर सकती है।',
+          'మీరు నోటీసు పాటించకపోతే లేదా గుర్తింపు చెప్పడానికి నిరాకరిస్తే, నోటీసులోని నేరానికి పోలీసులు అరెస్ట్ చేయవచ్చు.'
+        ),
+        legalBasis: 'BNSS §35(6)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'pn-right-lawyer',
+        title: t('To consult a lawyer and not be compelled to incriminate yourself', 'वकील से परामर्श और स्वयं-दोषारोपण से सुरक्षा', 'న్యాయవాదిని సంప్రదించే, స్వీయ నేరారోపణకు గురికాకుండా ఉండే హక్కు'),
+        whatThisMeans: t(
+          'You may consult a lawyer before and during questioning, and you cannot be compelled to be a witness against yourself.',
+          'पूछताछ से पहले और दौरान आप वकील से परामर्श कर सकते हैं, और आपको अपने विरुद्ध गवाह बनने के लिए बाध्य नहीं किया जा सकता।',
+          'ప్రశ్నలకు ముందు, సమయంలో న్యాయవాదిని సంప్రదించవచ్చు; మీపైనే సాక్షిగా మారమని బలవంతం చేయలేరు.'
+        ),
+        legalBasis: 'Constitution of India, Article 20(3) · BNSS §38',
+        sourceIds: ['constitution', 'bnss']
+      },
+      {
+        id: 'pn-right-residence',
+        title: t('Women, children, disabled and ill persons need not attend away from home', 'महिलाओं, बच्चों, दिव्यांगों और बीमार व्यक्तियों को घर से बाहर नहीं बुलाया जा सकता', 'స్త్రీలు, పిల్లలు, వికలాంగులు, అనారోగ్యులను ఇంటి నుండి బయటకు పిలవలేరు'),
+        whatThisMeans: t(
+          'No woman, child under 15, person with a mental or physical disability, or person with an acute illness can be required to attend at any place other than their residence for an investigation-related appearance.',
+          'किसी महिला, 15 वर्ष से कम उम्र के बच्चे, मानसिक या शारीरिक दिव्यांग व्यक्ति, या गंभीर बीमार व्यक्ति को जाँच से जुड़ी उपस्थिति के लिए अपने निवास के अलावा किसी अन्य स्थान पर बुलाना अनिवार्य नहीं है।',
+          'స్త్రీ, 15 సంవత్సరాలలోపు పిల్లలు, మానసిక లేదా శారీరక వికలాంగులు, తీవ్ర అనారోగ్యంతో ఉన్నవారిని దర్యాప్తు హాజరు కోసం నివాసం కాకుండా మరే చోటికీ రమ్మని నిర్బంధించలేరు.'
+        ),
+        legalBasis: 'BNSS §179 (proviso)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'pn-right-60',
+        title: t('Protection for elderly and infirm persons from arrest', 'बुज़ुर्गों और अस्वस्थ व्यक्तियों को गिरफ़्तारी से सुरक्षा', 'వృద్ధులు, బలహీనులకు అరెస్ట్ నుండి రక్షణ'),
+        whatThisMeans: t(
+          'For an offence punishable with imprisonment of less than three years, no arrest of a person who is infirm or above sixty years of age may be made without the prior permission of an officer not below the rank of Deputy Superintendent of Police.',
+          'तीन वर्ष से कम कारावास वाले अपराध में, अस्वस्थ या साठ वर्ष से अधिक उम्र के व्यक्ति की गिरफ़्तारी उप-अधीक्षक (डीएसपी) से कम रैंक के अधिकारी की पूर्व अनुमति के बिना नहीं हो सकती।',
+          'మూడేళ్ల కంటే తక్కువ జైలు శిక్ష ఉన్న నేరంలో బలహీనులు లేదా అరవై ఏళ్లు పైబడిన వ్యక్తిని డిప్యూటీ సూపరింటెండెంట్ కంటే తక్కువ హోదా అధికారి ముందస్తు అనుమతి లేకుండా అరెస్ట్ చేయకూడదు.'
+        ),
+        legalBasis: 'BNSS §35(7)',
+        sourceIds: ['bnss']
+      }
+    ],
+    do: [
+      {
+        id: 'pn-do-1',
+        text: t('Appear on the date and time, or give written notice if you cannot.', 'तारीख़-समय पर पेश हों, या न हो पाने पर लिखित रूप से सूचित करें।', 'తేదీ-సమయానికి హాజరు కండి; కుదరకపోతే వ్రాతపూర్వకంగా తెలియజేయండి.'),
+        why: t('Complying protects you from arrest under BNSS §35(5)/(6).', 'पालन आपको बीएनएसएस §35(5)/(6) के तहत गिरफ़्तारी से बचाता है।', 'పాటించడం BNSS §35(5)/(6) కింద అరెస్ట్ నుండి కాపాడుతుంది.')
+      },
+      {
+        id: 'pn-do-2',
+        text: t('Take a lawyer with you, or consult one first.', 'वकील साथ ले जाएँ, या पहले सलाह लें।', 'న్యాయవాదిని వెంట తీసుకెళ్లండి లేదా ముందుగా సంప్రదించండి.'),
+        why: t('A lawyer helps you respond correctly during questioning.', 'वकील पूछताछ के दौरान सही उत्तर देने में मदद करता है।', 'న్యాయవాది ప్రశ్నలకు సరిగ్గా సమాధానమివ్వడానికి సహాయపడతారు.')
+      },
+      {
+        id: 'pn-do-3',
+        text: t('Answer truthfully, and say you wish to consult a lawyer where needed.', 'सच बोलें, और ज़रूरत पड़ने पर कहें कि आप वकील से परामर्श लेना चाहते हैं।', 'నిజం చెప్పండి; అవసరమైతే న్యాయవాదిని సంప్రదించాలనుకుంటున్నానని చెప్పండి.'),
+        why: t('You are not compelled to incriminate yourself (Art. 20(3)).', 'आप स्वयं-दोषारोपण के लिए बाध्य नहीं हैं (अनु. 20(3))।', 'స్వీయ నేరారోపణకు మీరు బలవంతం కాదు (ఆర్టి. 20(3)).')
+      },
+      {
+        id: 'pn-do-4',
+        text: t('If you cannot attend away from your residence (woman, child, disabled, ill), state this in writing.', 'घर से बाहर नहीं जा सकते (महिला, बच्चा, दिव्यांग, बीमार) तो यह लिखित रूप से बताएँ।', 'ఇంటి నుండి బయటకు వెళ్లలేని వారు (స్త్రీ, పిల్లలు, వికలాంగులు, అనారోగ్యులు) వ్రాతపూర్వకంగా తెలియజేయండి.'),
+        why: t('The law does not require you to attend elsewhere than your residence (BNSS §179).', 'कानून आपको निवास के अलावा कहीं और बुलाना अनिवार्य नहीं करता (बीएनएसएस §179)।', 'చట్టం మిమ్మల్ని నివాసం కాకుండా మరే చోటికీ పిలవడం తప్పనిసరి చేయదు (BNSS §179).')
+      }
+    ],
+    avoid: [
+      {
+        id: 'pn-avoid-1',
+        text: t('Do not ignore the notice.', 'नोटिस अनदेखा न करें।', 'నోటీసును విస్మరించకండి.'),
+        why: t('Failure to comply can lead to arrest (BNSS §35(6)).', 'पालन न करने पर गिरफ़्तारी हो सकती है (बीएनएसएस §35(6))।', 'పాటించకపోతే అరెస్ట్ కావచ్చు (BNSS §35(6)).')
+      },
+      {
+        id: 'pn-avoid-2',
+        text: t('Do not assume it is the same as a court summons.', 'इसे न्यायालय के समन जैसा न मानें।', 'దీన్ని కోర్టు సమన్లా భావించకండి.'),
+        why: t('A police notice under §35(3) is a pre-arrest notice; a court summons is issued by a court.', '§35(3) के तहत पुलिस नोटिस गिरफ़्तारी-पूर्व नोटिस है; न्यायालय का समन न्यायालय जारी करता है।', '§35(3) నోటీసు అరెస్ట్కు ముందు నోటీసు; కోర్టు సమన్ను కోర్టు జారీ చేస్తుంది.')
+      },
+      {
+        id: 'pn-avoid-3',
+        text: t('Do not give false information during questioning.', 'पूछताछ में झूठी जानकारी न दें।', 'ప్రశ్నలకు తప్పుడు సమాచారం ఇవ్వకండి.'),
+        why: t('False information can itself create legal complications.', 'झूठी जानकारी स्वयं कानूनी परेशानी खड़ी कर सकती है।', 'తప్పుడు సమాచారం స్వయంగా చట్టపరమైన సమస్యలు సృష్టించవచ్చు.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'pn-ev-1',
+        text: t('Keep a copy of the notice.', 'नोटिस की प्रति रखें।', 'నోటీసు కాపీ ఉంచుకోండి.'),
+        why: t('You need it to comply correctly and to prove you complied.', 'पालन सही ढंग से करने और सिद्ध करने के लिए ज़रूरी है।', 'సరిగ్గా పాటించడానికి, పాటించినట్లు రుజువు చేయడానికి అవసరం.')
+      },
+      {
+        id: 'pn-ev-2',
+        text: t('Note the dates you appeared and what was asked.', 'पेश होने की तारीख़ें और पूछे गए सवाल नोट करें।', 'హాజరైన తేదీలు, అడిగిన ప్రశ్నలు గమనించండి.'),
+        why: t('Proof of compliance protects you from arrest under BNSS §35(5).', 'पालन का प्रमाण आपको बीएनएसएस §35(5) के तहत गिरफ़्तारी से बचाता है।', 'పాటించిన ఆధారం BNSS §35(5) కింద అరెస్ట్ నుండి కాపాడుతుంది.')
+      },
+      {
+        id: 'pn-ev-3',
+        text: t('If you cannot attend away from home, keep a copy of your written request.', 'घर से बाहर नहीं जा सकते तो अपने लिखित अनुरोध की प्रति रखें।', 'ఇంటి నుండి బయటకు వెళ్లలేకపోతే మీ వ్రాతపూర్వక అభ్యర్థన కాపీ ఉంచుకోండి.'),
+        why: t('The law does not require certain persons to attend elsewhere than their residence (BNSS §179).', 'कानून कुछ व्यक्तियों को निवास के अलावा कहीं और बुलाना अनिवार्य नहीं करता (बीएनएसएस §179)।', 'చట్టం కొందరిని నివాసం కాకుండా మరే చోటికీ రమ్మని నిర్బంధించదు (BNSS §179).')
+      }
+    ],
+    whatHappensNext: [
+      { label: t('You are here — police notice received', 'आप यहाँ हैं — पुलिस नोटिस मिला', 'మీరు ఇక్కడ ఉన్నారు — పోలీసు నోటీసు వచ్చింది') },
+      { label: t('Appear as directed (comply)', 'निर्देश अनुसार पेश हों (पालन)', 'నిర్దేశించినట్లు హాజరు (పాటించండి)'), note: t('BNSS §35(4)', 'बीएनएसएस §35(4)', 'BNSS §35(4)') },
+      { label: t('No arrest if you comply — unless reasons recorded', 'पालन पर गिरफ़्तारी नहीं — कारण दर्ज होने को छोड़कर', 'పాటిస్తే అరెస్ట్ లేదు — కారణాలు నమోదైతే తప్ప'), note: t('BNSS §35(5)', 'बीएनएसएस §35(5)', 'BNSS §35(5)') },
+      { label: t('If arrested — grounds told, lawyer, produced within 24 hours', 'गिरफ़्तारी पर — कारण, वकील, 24 घंटे में पेशी', 'అరెస్ట్ అయితే — కారణాలు, న్యాయవాది, 24 గంటల్లో హాజరు'), note: t('Art. 22 · BNSS §47, §48, §57', 'अनु. 22 · बीएनएसएस §47, §48, §57', 'ఆర్టి. 22 · BNSS §47, §48, §57'), linkTo: 'arrested' }
+    ],
+    helpRouteIds: ['nalsa', 'helpline-15100', 'dlsa-directory'],
+    complaintRoutes: [
+      {
+        id: 'pn-cr-1',
+        route: t('Senior police officer', 'वरिष्ठ पुलिस अधिकारी', 'సీనియర్ పోలీసు అధికారి'),
+        whyItMayApply: t('If you were arrested despite complying with the notice without recorded reasons.', 'पालन के बावजूद बिना दर्ज कारण गिरफ़्तारी हुई हो।', 'పాటించినప్పటికీ నమోదైన కారణాలు లేకుండా అరెస్ట్ చేస్తే.'),
+        whatToPrepare: t('A copy of the notice, the dates you appeared, and a written account.', 'नोटिस की प्रति, पेश होने की तारीख़ें और लिखित विवरण।', 'నోటీసు కాపీ, హాజరైన తేదీలు, వ్రాతపూర్వక వివరణ.'),
+        legalBasis: 'BNSS §35(3)-(6)',
+        sourceIds: ['bnss']
+      }
+    ],
+    sourceIds: ['bnss', 'constitution'],
+    lastVerified: '2026-08-15'
+  },
+
+  /* ────────────────────────────────────────────────────────────────
+     13. POLICE CAME TO MY HOME
+  ──────────────────────────────────────────────────────────────── */
+  {
+    id: 'POLICE_AT_HOME',
+    slug: 'police-came-to-my-home',
+    icon: 'home',
+    title: t('Police came to my home', 'पुलिस मेरे घर आई', 'పోలీసులు నా ఇంటికి వచ్చారు'),
+    shortTitle: t('Police at my home', 'पुलिस मेरे घर', 'పోలీసులు ఇంటికి వచ్చారు'),
+    description: t(
+      'Police officers have come to your home — to ask questions about an investigation, to search, or to ask you to come with them.',
+      'पुलिस अधिकारी आपके घर आए हैं — जाँच के सवाल पूछने, तलाशी लेने, या आपको साथ चलने को कहने।',
+      'పోలీసు అధికారులు మీ ఇంటికి వచ్చారు — దర్యాప్తు ప్రశ్నలు అడగడానికి, సోదా చేయడానికి లేదా వెంట రమ్మనడానికి.'
+    ),
+    urgency: 'medium',
+    summary: t(
+      'Police may visit your home during an investigation, but they cannot force their way in without lawful authority. Stay calm, ask for identification and the reason for the visit, and ask to see a warrant before allowing a search. You may consult a lawyer before making statements, and you are not required to go to the station merely because they ask.',
+      'जाँच के दौरान पुलिस आपके घर आ सकती है, लेकिन बिना कानूनी अधिकार के ज़बरदस्ती अंदर नहीं घुस सकती। शांत रहें, पहचान और आने का कारण पूछें, और तलाशी से पहले वारंट देखने को कहें। बयान देने से पहले वकील से सलाह ले सकते हैं, और सिर्फ़ कहने से थाने जाना अनिवार्य नहीं है।',
+      'దర్యాప్తులో పోలీసులు మీ ఇంటికి రావచ్చు, కానీ చట్టబద్ధమైన అధికారం లేకుండా బలవంతంగా లోపలికి రాలేరు. ప్రశాంతంగా ఉండండి, గుర్తింపు మరియు రావడానికి కారణం అడగండి, సోదాకు ముందు వారెంట్ చూపించమని అడగండి. వాంగ్మూలం ఇచ్చే ముందు న్యాయవాదిని సంప్రదించవచ్చు; అడిగారని స్టేషన్కు వెళ్లడం తప్పనిసరి కాదు.'
+    ),
+    immediateActions: [
+      t('Stay calm. Ask the officers to identify themselves and state the reason for the visit.', 'शांत रहें। अधिकारियों से पहचान और आने का कारण पूछें।', 'ప్రశాంతంగా ఉండండి. అధికారులను గుర్తింపు చూపించి, కారణం చెప్పమని అడగండి.'),
+      t('If they want to search, ask to see the warrant first.', 'तलाशी चाहें तो पहले वारंट देखने को कहें।', 'సోదా చేయాలంటే ముందు వారెంట్ చూపించమని అడగండి.'),
+      t('You may consult a lawyer before making any statement.', 'कोई बयान देने से पहले वकील से सलाह ले सकते हैं।', 'వాంగ్మూలం ఇచ్చే ముందు న్యాయవాదిని సంప్రదించవచ్చు.'),
+      t('Note the officers’ names, badge numbers, time and what they ask or take.', 'अधिकारियों के नाम, बैज नंबर, समय और वे क्या पूछते या लेते हैं, नोट करें।', 'అధికారుల పేర్లు, బ్యాడ్జ్ నంబర్లు, సమయం, వారు అడిగేది/తీసుకునేది గమనించండి.'),
+      t('If asked to come to the station, ask whether it is voluntary or you are under arrest.', 'थाने चलने को कहें तो पूछें कि यह स्वेच्छा से है या आप गिरफ़्तार हैं।', 'స్టేషన్ రమ్మంటే అది స్వచ్ఛందమా లేదా మీరు అరెస్ట్ అవుతున్నారా అని అడగండి.')
+    ],
+    rights: [
+      {
+        id: 'ph-right-id',
+        title: t('To know who is at your door and why', 'यह जानने का अधिकार कि आपके दरवाज़े पर कौन और क्यों है', 'మీ ఇంటి గుమ్మం దగ్గర ఎవరు, ఎందుకు ఉన్నారో తెలుసుకునే హక్కు'),
+        whatThisMeans: t(
+          'Officers on duty must bear visible identification, and you may ask for it and for the reason for the visit before engaging further.',
+          'ड्यूटी पर मौजूद अधिकारी दृश्य पहचान रखते हैं, और आगे बातचीत से पहले आप उसे और आने का कारण पूछ सकते हैं।',
+          'విధిలో ఉన్న అధికారులు కనిపించే గుర్తింపు ధరిస్తారు; మరింత మాట్లాడే ముందు దాన్ని, రావడానికి కారణం అడగవచ్చు.'
+        ),
+        legalBasis: 'BNSS §36(a)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'ph-right-warrant',
+        title: t('A home search normally requires a warrant — and you must be shown it', 'घर की तलाशी के लिए सामान्यतः वारंट आवश्यक — और वह दिखाया जाना चाहिए', 'ఇంటి సోదాకు సాధారణంగా వారెంట్ అవసరం — దాన్ని చూపించాలి'),
+        whatThisMeans: t(
+          'A Magistrate may issue a search warrant in the circumstances the law provides. If officers have a warrant, ask to see it before allowing entry — and once a lawful search is under way, the person in charge of the place must allow it.',
+          'कानून द्वारा निर्धारित परिस्थितियों में मजिस्ट्रेट तलाशी वारंट जारी कर सकते हैं। वारंट हो तो अंदर आने से पहले देखने को कहें — और कानूनी तलाशी शुरू होने पर स्थान का प्रभारी उसे अनुमति देने के लिए बाध्य है।',
+          'చట్టం నిర్దేశించిన పరిస్థితుల్లో మేజిస్ట్రేట్ సోదా వారెంట్ జారీ చేయవచ్చు. వారెంట్ ఉంటే లోపలికి రానివ్వడానికి ముందు చూపించమని అడగండి — చట్టబద్ధమైన సోదా మొదలైతే స్థల బాధ్యతగల వ్యక్తి అనుమతించాలి.'
+        ),
+        legalBasis: 'BNSS §96 (search warrant), §103 (allow search)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'ph-right-station',
+        title: t('Not to be required to attend the police station merely because they ask', 'सिर्फ़ कहने से थाने जाना अनिवार्य नहीं', 'అడిగారని స్టేషన్కు వెళ్లడం తప్పనిసరి కాదు'),
+        whatThisMeans: t(
+          'For investigation-related appearances, no woman, child under 15, person with a disability, or acutely ill person can be required to attend anywhere other than their residence. You may also ask that questioning happen at your home or with a lawyer present.',
+          'जाँच से जुड़ी उपस्थिति के लिए किसी महिला, 15 वर्ष से कम उम्र के बच्चे, दिव्यांग या गंभीर बीमार व्यक्ति को अपने निवास के अलावा कहीं और बुलाना अनिवार्य नहीं है। आप पूछताछ घर पर या वकील की उपस्थिति में करने का अनुरोध भी कर सकते हैं।',
+          'దర్యాప్తు హాజరు కోసం స్త్రీ, 15 ఏళ్లలోపు పిల్లలు, వికలాంగులు, తీవ్ర అనారోగ్యులను నివాసం కాకుండా మరే చోటికీ పిలవలేరు. ప్రశ్నలు ఇంట్లో లేదా న్యాయవాది సమక్షంలో జరగాలని కూడా అడగవచ్చు.'
+        ),
+        legalBasis: 'BNSS §179 (proviso)',
+        sourceIds: ['bnss']
+      },
+      {
+        id: 'ph-right-lawyer',
+        title: t('To consult a lawyer before making statements', 'बयान देने से पहले वकील से परामर्श का अधिकार', 'వాంగ్మూలం ఇచ్చే ముందు న్యాయవాదిని సంప్రదించే హక్కు'),
+        whatThisMeans: t(
+          'You may speak to a lawyer before answering questions, and you cannot be compelled to incriminate yourself.', 'सवालों के जवाब से पहले आप वकील से बात कर सकते हैं, और आपको स्वयं-दोषारोपण के लिए बाध्य नहीं किया जा सकता।', 'ప్రశ్నలకు సమాధానమిచ్చే ముందు న్యాయవాదితో మాట్లాడవచ్చు; స్వీయ నేరారోపణకు బలవంతం చేయలేరు.'
+        ),
+        legalBasis: 'Constitution of India, Article 20(3) · BNSS §38',
+        sourceIds: ['constitution', 'bnss']
+      },
+      {
+        id: 'ph-right-arrest',
+        title: t('If arrested at home — grounds, relative informed, produced within 24 hours', 'घर पर गिरफ़्तारी हो तो — कारण, परिवार को सूचना, 24 घंटे में पेशी', 'ఇంట్లో అరెస్ట్ అయితే — కారణాలు, బంధువుకు సమాచారం, 24 గంటల్లో హాజరు'),
+        whatThisMeans: t(
+          'If you are arrested, you must be told the grounds, a relative or friend must be informed, and you must be produced before a Magistrate within 24 hours.',
+          'गिरफ़्तारी पर कारण बताना होगा, परिवार/मित्र को सूचित करना होगा, और 24 घंटे के भीतर मजिस्ट्रेट के सामने पेशी होगी।',
+          'అరెస్ట్ అయితే కారణాలు చెప్పాలి, బంధువు/స్నేహితుడికి తెలియజేయాలి, 24 గంటల్లో మేజిస్ట్రేట్ ముందు హాజరుపరచాలి.'
+        ),
+        legalBasis: 'Constitution of India, Article 22 · BNSS §47, §48, §57',
+        sourceIds: ['constitution', 'bnss']
+      }
+    ],
+    do: [
+      {
+        id: 'ph-do-1',
+        text: t('Talk at the door first: ask who they are, which station, and why they are there.', 'पहले दरवाज़े पर ही बात करें: पूछें कौन हैं, किस थाने से, और क्यों आए हैं।', 'ముందు గుమ్మం దగ్గరే మాట్లాడండి: ఎవరు, ఏ స్టేషన్ నుండి, ఎందుకు వచ్చారు అని అడగండి.'),
+        why: t('This helps you respond correctly and protects your rights.', 'इससे सही जवाब देना आसान होता है और अधिकार सुरक्षित रहते हैं।', 'ఇది సరిగ్గా స్పందించడానికి, హక్కులు కాపాడటానికి సహాయపడుతుంది.')
+      },
+      {
+        id: 'ph-do-2',
+        text: t('If they show a search warrant, read it and note its details before allowing entry.', 'तलाशी वारंट दिखाएँ तो अंदर आने से पहले पढ़ें और विवरण नोट करें।', 'సోదా వారెంట్ చూపిస్తే లోపలికి అనుమతించే ముందు చదివి వివరాలు గమనించండి.'),
+        why: t('The warrant shows the authority and scope of the search.', 'वारंट तलाशी का अधिकार और दायरा दिखाता है।', 'వారెంట్ సోదా అధికారం, పరిధి చూపుతుంది.')
+      },
+      {
+        id: 'ph-do-3',
+        text: t('If they ask you to come to the station, ask whether you are under arrest.', 'थाने चलने को कहें तो पूछें कि क्या आप गिरफ़्तार हैं।', 'స్టేషన్ రమ్మంటే మీరు అరెస్ట్ అవుతున్నారా అని అడగండి.'),
+        why: t('Different rights apply once you are formally arrested.', 'औपचारिक गिरफ़्तारी के बाद अलग अधिकार लागू होते हैं।', 'అధికారిక అరెస్ట్ తర్వాత వేరే హక్కులు వర్తిస్తాయి.')
+      },
+      {
+        id: 'ph-do-4',
+        text: t('Call a family member or lawyer if you are uncomfortable.', 'असहज होने पर परिवार या वकील को कॉल करें।', 'ఇబ్బందిగా అనిపిస్తే కుటుంబ సభ్యుడు లేదా న్యాయవాదికి కాల్ చేయండి.')
+      }
+    ],
+    avoid: [
+      {
+        id: 'ph-avoid-1',
+        text: t('Do not physically obstruct officers who are acting under a lawful warrant.', 'कानूनी वारंट के तहत कार्य कर रहे अधिकारियों में शारीरिक बाधा न डालें।', 'చట్టబద్ధమైన వారెంట్తో పనిచేసే అధికారులకు శారీరకంగా అడ్డుకోకండి.'),
+        why: t('Obstruction can create additional legal trouble; challenge through records and complaints.', 'बाधा अतिरिक्त कानूनी परेशानी ला सकती है; रिकॉर्ड और शिकायत से चुनौती दें।', 'అడ్డుకోవడం అదనపు ఇబ్బంది తెస్తుంది; రికార్డులు, ఫిర్యాదుల ద్వారా సవాలు చేయండి.')
+      },
+      {
+        id: 'ph-avoid-2',
+        text: t('Do not let a search happen without seeing the warrant, if one is claimed.', 'वारंट दावा हो तो बिना देखे तलाशी न होने दें।', 'వారెంట్ ఉందంటే చూడకుండా సోదా జరగనివ్వకండి.'),
+        why: t('The warrant defines the lawful scope of the search.', 'वारंट तलाशी का कानूनी दायरा तय करता है।', 'వారెంట్ సోదా చట్టబద్ధ పరిధిని నిర్ణయిస్తుంది.')
+      },
+      {
+        id: 'ph-avoid-3',
+        text: t('Do not sign statements under pressure without a lawyer’s review.', 'दबाव में बिना वकील की सलाह बयान पर हस्ताक्षर न करें।', 'ఒత్తిడిలో న్యాయవాది సలహా లేకుండా వాంగ్మూలాలపై సంతకం చేయకండి.'),
+        why: t('A signed statement may be used later; have it reviewed first.', 'हस्ताक्षरित बयान बाद में इस्तेमाल हो सकता है; पहले दिखाएँ।', 'సంతకం చేసిన ప్రకటన తర్వాత ఉపయోగించవచ్చు; ముందుగా చూపించండి.')
+      }
+    ],
+    evidence: [
+      {
+        id: 'ph-ev-1',
+        text: t('Note the officers’ names, badge numbers, station and time of the visit.', 'अधिकारियों के नाम, बैज नंबर, थाना और विज़िट का समय नोट करें।', 'అధికారుల పేర్లు, బ్యాడ్జ్ నంబర్లు, స్టేషన్, సందర్శన సమయం గమనించండి.'),
+        why: t('The basic facts you need if you later complain about the visit.', 'बाद में विज़िट की शिकायत के लिए ये मूल तथ्य चाहिए।', 'తర్వాత సందర్శనపై ఫిర్యాదుకు ఈ ప్రాథమిక వాస్తవాలు అవసరం.')
+      },
+      {
+        id: 'ph-ev-2',
+        text: t('If a warrant is shown, note its details before allowing entry.', 'वारंट दिखाया जाए तो अंदर आने से पहले उसका विवरण नोट करें।', 'వారెంట్ చూపిస్తే లోపలికి అనుమతించే ముందు వివరాలు గమనించండి.'),
+        why: t('The warrant defines the lawful scope of the search.', 'वारंट तलाशी का कानूनी दायरा तय करता है।', 'వారెంట్ సోదా చట్టబద్ధ పరిధిని నిర్ణయిస్తుంది.')
+      },
+      {
+        id: 'ph-ev-3',
+        text: t('Write down what was asked or taken during the visit.', 'विज़िट के दौरान जो पूछा या लिया गया उसे लिखें।', 'సందర్శనలో అడిగినది లేదా తీసుకున్నది రాయండి.'),
+        why: t('A written account protects you if the visit is later disputed.', 'बाद में विवाद होने पर लिखित विवरण आपकी रक्षा करता है।', 'తర్వాత వివాదం వస్తే వ్రాతపూర్వక వివరణ మిమ్మల్ని కాపాడుతుంది.')
+      }
+    ],
+    whatHappensNext: [
+      { label: t('You are here — police at your home', 'आप यहाँ हैं — पुलिस आपके घर', 'మీరు ఇక్కడ ఉన్నారు — పోలీసులు మీ ఇంటికి వచ్చారు') },
+      { label: t('Identify officers and the purpose', 'अधिकारियों की पहचान और उद्देश्य', 'అధికారుల గుర్తింపు, ఉద్దేశ్యం'), note: t('BNSS §36(a)', 'बीएनएसएस §36(a)', 'BNSS §36(a)') },
+      { label: t('Search, if any, under a warrant', 'तलाशी, यदि हो, वारंट के तहत', 'సోదా, ఉంటే, వారెంట్తో'), note: t('BNSS §96, §103', 'बीएनएसएस §96, §103', 'BNSS §96, §103'), linkTo: 'police-want-to-search' },
+      { label: t('Questioning, if any, at your home or with a lawyer', 'पूछताछ, यदि हो, घर पर या वकील सहित', 'ప్రశ్నలు, ఉంటే, ఇంట్లో లేదా న్యాయవాదితో'), note: t('BNSS §179', 'बीएनएसएस §179', 'BNSS §179') },
+      { label: t('If arrested — grounds told, produced within 24 hours', 'गिरफ़्तारी पर — कारण, 24 घंटे में पेशी', 'అరెస్ట్ అయితే — కారణాలు, 24 గంటల్లో హాజరు'), note: t('Art. 22 · BNSS §47, §48, §57', 'अनु. 22 · बीएनएसएस §47, §48, §57', 'ఆర్టి. 22 · BNSS §47, §48, §57'), linkTo: 'arrested' }
+    ],
+    helpRouteIds: ['nalsa', 'helpline-15100', 'dlsa-directory'],
+    complaintRoutes: [
+      {
+        id: 'ph-cr-1',
+        route: t('Senior police officer', 'वरिष्ठ पुलिस अधिकारी', 'సీనియర్ పోలీసు అధికారి'),
+        whyItMayApply: t('If officers entered or searched without lawful authority, or misbehaved during the visit.', 'यदि अधिकारियों ने बिना कानूनी अधिकार प्रवेश या तलाशी की, या विज़िट के दौरान दुर्व्यवहार किया।', 'అధికారులు చట్టబద్ధమైన అధికారం లేకుండా ప్రవేశించి లేదా సోదా చేసి, లేదా సందర్శనలో దుర్వినియోగం చేస్తే.'),
+        whatToPrepare: t('Date, time, officers’ details, warrant details (if any), and a written account.', 'तारीख़, समय, अधिकारियों का विवरण, वारंट विवरण (यदि हो) और लिखित विवरण।', 'తేదీ, సమయం, అధికారుల వివరాలు, వారెంట్ వివరాలు (ఉంటే), వ్రాతపూర్వక వివరణ.'),
+        legalBasis: 'BNSS §96, §103, §36',
+        sourceIds: ['bnss']
+      }
+    ],
+    sourceIds: ['bnss', 'constitution'],
     lastVerified: '2026-08-15'
   }
 ]
@@ -1243,6 +2214,7 @@ export const NOT_SURE_ENTRY: Situation = {
   rights: [],
   do: [],
   avoid: [],
+  evidence: [],
   whatHappensNext: [],
   helpRouteIds: [],
   complaintRoutes: [],

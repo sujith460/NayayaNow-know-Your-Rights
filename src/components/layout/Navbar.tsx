@@ -13,7 +13,8 @@ export function Navbar() {
     { to: '/navigator', label: t('navNavigator') },
     { to: '/complaints', label: t('navComplaints') },
     { to: '/help', label: t('navHelp') },
-    { to: '/sources', label: t('navSources') }
+    { to: '/sources', label: t('navSources') },
+    { to: '/faq', label: t('navFaq') }
   ]
 
   return (

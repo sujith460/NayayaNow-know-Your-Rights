@@ -10,18 +10,25 @@ No backend, no login, no accounts — everything runs on-device.
 
 ## 1. Situation Guides (core)
 
-- **8 verified situation guides**, each with a predictable structure:
+- **13 verified situation guides**, each with a predictable structure:
   - Situation header + urgency indicator
   - **30-second "What matters right now"** summary (3–5 actionable points)
   - Your rights (plain-language "What this means" + legal basis + official source)
   - What you can do / What to avoid
+  - **Where to complain** (with tap-to-call official helpline numbers where one exists)
+  - **What evidence & documents to keep** — what to note down and preserve while it is fresh
   - Interactive timeline (where applicable) & "What happens next?" visual path
-  - Get legal help · Where to complain · Official sources · Last-verified date
+  - Get legal help · Official sources · Last-verified date
   - Legal disclaimer
 - Situations covered: Police stopped/questioning me · Arrested · FIR refused ·
   Search · Property seized · Police threatened/abused/assaulted · Bribe ·
-  I want to complain
-- **"I'm not sure" guided flow** — short non-legal questions → recommends the right guide
+  I want to complain · Woman dealing with the police · Detained beyond 24 hours ·
+  Police refused to help with complaint · Police notice to appear · Police at home
+- **"I'm not sure" guided flow** — short non-legal questions → recommends the right guide;
+  when nothing matches, lists all situation guides so the user can choose
+- **Floating Help button** on every page — opens a "Need help?" panel listing all official
+  helplines (112, 100, 101, 102, 181, 1098, 1930, 1091, 1064, 14433, NALSA 15100),
+  each with a tap-to-call button
 
 ## 2. Natural-Language Navigator
 
@@ -97,7 +104,18 @@ No backend, no login, no accounts — everything runs on-device.
   (hides automatically when back online)
 - Honest note that cached content may not reflect the latest law
 
-## 12. Accessibility & Responsiveness
+## 12. FAQ Page
+
+- **FAQ** at `/faq` — plain-language answers to the most common questions:
+  stopped on the road · arrest without warrant · right to silence · FIR refused ·
+  search of person/home · seizure of property · bribe demand · women's protections ·
+  24-hour rule & default bail · police notice to appear · police at home ·
+  police not acting on a complaint
+- Every answer restates verified guide content (no new legal claims), shows its
+  legal citation, and links to the full situation guide
+- Accessible accordion (keyboard + screen-reader friendly), trilingual
+
+## 13. Accessibility & Responsiveness
 
 - Semantic HTML, keyboard navigation, visible focus, screen-reader labels,
   large touch targets, sufficient contrast
@@ -111,7 +129,8 @@ No backend, no login, no accounts — everything runs on-device.
 
 | Area | File |
 |---|---|
-| Verified knowledge base (8 situations) | `src/data/situations.ts` |
+| Verified knowledge base (13 situations) | `src/data/situations.ts` |
+| FAQ Q&A (EN/HI/TE) | `src/data/faq.ts` |
 | Verified sources | `src/data/sources.ts` |
 | States + SLSA contacts | `src/data/registry.ts` |
 | UI strings (EN/HI/TE) | `src/data/ui.ts` |

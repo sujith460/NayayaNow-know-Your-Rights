@@ -23,6 +23,20 @@ export const UI = {
   navComplaints: t('Complaint navigator', 'शिकायत नेविगेटर', 'ఫిర్యాదు నావిగేటర్'),
   navSources: t('Official sources', 'आधिकारिक स्रोत', 'అధికారిక మూలాలు'),
   navNotSure: t("I'm not sure", 'मुझे समझ नहीं आ रहा', 'నాకు తెలియదు'),
+  navFaq: t('FAQ', 'FAQ', 'FAQ'),
+  faqTitle: t('Frequently asked questions', 'अक्सर पूछे जाने वाले प्रश्न', 'తరచుగా అడిగే ప్రశ్నలు'),
+  faqIntro: t(
+    'Quick, plain-language answers to common questions about police interactions and your rights.',
+    'पुलिस व्यवहार और आपके अधिकारों से जुड़े सामान्य सवालों के सरल, स्पष्ट उत्तर।',
+    'పోలీసులతో వ్యవహారాలు, మీ హక్కుల గురించి సాధారణ ప్రశ్నలకు సరళమైన సమాధానాలు.'
+  ),
+  faqReadGuide: t('Read the full guide', 'पूरा गाइड पढ़ें', 'పూర్తి గైడ్ చదవండి'),
+  faqMoreHelpTitle: t('Still unsure what applies to you?', 'फिर भी समझ नहीं आ रहा कि आप पर क्या लागू होता है?', 'మీకు ఏది వర్తిస్తుందో ఇంకా తెలియడం లేదా?'),
+  faqMoreHelpBody: t(
+    'Describe what happened in your own words — the situation finder will match it to the right guide, and every answer links to official sources.',
+    'अपने शब्दों में बताएँ कि क्या हुआ — स्थिति खोजकर्ता इसे सही गाइड से मिलाएगा, और हर उत्तर आधिकारिक स्रोतों से जुड़ा है।',
+    'ఏమి జరిగిందో మీ మాటల్లో చెప్పండి — సిట్యుయేషన్ ఫైండర్ దానిని సరైన గైడ్తో జత చేస్తుంది; ప్రతి సమాధానం అధికారిక మూలాలకు లింక్ అవుతుంది.'
+  ),
   navPrivacyMode: t('Privacy mode', 'गोपनीयता मोड', 'గోప్యతా మోడ్'),
   navSituationMemory: t('Situation memory', 'स्थिति मेमोरी', 'పరిస్థితి మెమరీ'),
 
@@ -68,6 +82,12 @@ export const UI = {
   secTimeline: t('Your journey through this situation', 'इस परिस्थिति में आपका सफ़र', 'ఈ పరిస్థితిలో మీ ప్రయాణం'),
   secHelp: t('Get legal help', 'कानूनी सहायता लें', 'న్యాయ సహాయం పొందండి'),
   secComplain: t('Where to complain', 'कहाँ शिकायत करें', 'ఎక్కడ ఫిర్యాదు చేయాలి'),
+  secEvidence: t('What evidence & documents to keep', 'क्या साक्ष्य और दस्तावेज़ रखें', 'ఏ ఆధారాలు, పత్రాలు ఉంచుకోవాలి'),
+  secEvidenceHint: t(
+    'Records that matter at every later step — keep them safely and lawfully.',
+    'हर अगले चरण में काम आने वाले रिकॉर्ड — सुरक्षित और कानूनी रूप से रखें।',
+    'ప్రతి తదుపరి దశలో ఉపయోగపడే రికార్డులు — సురక్షితంగా, చట్టబద్ధంగా ఉంచుకోండి.'
+  ),
   secWhatNext: t('What happens next?', 'आगे क्या होगा?', 'తర్వాత ఏమి జరుగుతుంది?'),
   secSources: t('Official sources', 'आधिकारिक स्रोत', 'అధికారిక మూలాలు'),
   viewFullRights: t('View full rights', 'पूरे अधिकार देखें', 'పూర్తి హక్కులు చూడండి'),
@@ -170,6 +190,11 @@ export const UI = {
     'న్యాయనౌ అత్యవసర సేవ కాదు. ఇది అధికారిక నంబర్లు, మార్గాలను మాత్రమే చూపుతుంది.'
   ),
   emReturn: t('Return to NyayaNow', 'न्यायनाउ पर वापस', 'న్యాయనౌకు తిరిగి'),
+
+  /* ——— Help button / all official numbers ——— */
+  hpOpen: t('Help', 'मदद', 'సహాయం'),
+  hpTitle: t('Need help?', 'मदद चाहिए?', 'సహాయం కావాలా?'),
+  hpSubtitle: t('Important official helplines', 'महत्वपूर्ण आधिकारिक हेल्पलाइन', 'ముఖ్యమైన అధికారిక హెల్ప్లైన్లు'),
 
   /* ——— Situation memory / Incident record ——— */
   memTitle: t('My Incident Record', 'मेरा घटना रिकॉर्ड', 'నా సంఘటన రికార్డు'),
@@ -327,6 +352,7 @@ export const UI = {
   cnWebsite: t('Official website', 'आधिकारिक वेबसाइट', 'అధికారిక వెబ్సైట్'),
   cnLegalHelp: t('Legal help', 'कानूनी सहायता', 'న్యాయ సహాయం'),
   cnPickOne: t('Choose a situation', 'एक परिस्थिति चुनें', 'ఒక పరిస్థితిని ఎంచుకోండి'),
+  clCall: t('Call', 'कॉल करें', 'కాల్ చేయండి'),
 
   /* ——— Footer / final CTA ——— */
   fctaTitle: t('Know your rights.', 'अपने अधिकार जानें।', 'మీ హక్కులు తెలుసుకోండి.'),

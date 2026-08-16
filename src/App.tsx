@@ -14,6 +14,7 @@ const Sources = lazy(() => import('./pages/Sources').then((m) => ({ default: m.S
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const Emergency = lazy(() => import('./pages/Emergency').then((m) => ({ default: m.Emergency })))
 const LegalTerms = lazy(() => import('./pages/LegalTerms').then((m) => ({ default: m.LegalTerms })))
+const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })))
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/emergency" element={<Emergency />} />
               <Route path="/legal-terms" element={<LegalTerms />} />
+              <Route path="/faq" element={<Faq />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
           </Routes>

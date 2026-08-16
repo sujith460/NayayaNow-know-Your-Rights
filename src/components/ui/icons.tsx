@@ -8,6 +8,11 @@ import {
   Banknote,
   Megaphone,
   HelpCircle,
+  Users,
+  Clock,
+  UserX,
+  FileText,
+  Home,
   type LucideIcon
 } from 'lucide-react'
 
@@ -20,7 +25,12 @@ export const SITUATION_ICONS: Record<string, LucideIcon> = {
   shieldAlert: ShieldAlert,
   banknote: Banknote,
   megaphone: Megaphone,
-  help: HelpCircle
+  help: HelpCircle,
+  users: Users,
+  clock: Clock,
+  userX: UserX,
+  fileText: FileText,
+  home: Home
 }
 
 export function SituationIcon({ name, className }: { name: string; className?: string }) {

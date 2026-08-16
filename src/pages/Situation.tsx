@@ -23,6 +23,7 @@ import { Stepper } from '../components/situation/Stepper'
 import { ThirtySecondSummary } from '../components/situation/ThirtySecondSummary'
 import { RightCard } from '../components/situation/RightCard'
 import { DoList, AvoidList } from '../components/situation/ActionList'
+import { EvidenceList } from '../components/situation/EvidenceList'
 import { Timeline } from '../components/situation/Timeline'
 import { WhatHappensNext } from '../components/situation/WhatHappensNext'
 import { HelpRouteCard } from '../components/situation/HelpRouteCard'
@@ -120,6 +121,25 @@ export function SituationPage() {
   const isAbuse = situation.id === 'POLICE_ABUSE'
   const termIds = SITUATION_TERMS[situation.id] ?? []
 
+  // Sequential section numbering (timeline = 02 when present)
+  const hasTimeline = (situation.timeline?.length ?? 0) > 0
+  const hasTerms = termIds.length > 0
+  const hasComplaints = situation.complaintRoutes.length > 0
+  let n = hasTimeline ? 2 : 1
+  const next = () => {
+    n += 1
+    return String(n).padStart(2, '0')
+  }
+  const rightsIdx = next()
+  const doIdx = next()
+  const avoidIdx = next()
+  const complainIdx = hasComplaints ? next() : undefined
+  const evidenceIdx = next()
+  const whatNextIdx = next()
+  const termsIdx = hasTerms ? next() : undefined
+  const helpIdx = next()
+  const sourcesIdx = next()
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 animate-rise">
       <div className="flex items-center justify-between gap-3">
@@ -195,7 +215,7 @@ export function SituationPage() {
       {/* Your rights */}
       <section className="mt-16" aria-labelledby="rights-heading">
         <SectionHeading
-          index={situation.timeline?.length ? '03' : '02'}
+          index={rightsIdx}
           title={t('secRights')}
           subtitle={t('whatThisMeans')}
         />
@@ -209,25 +229,45 @@ export function SituationPage() {
       {/* What you can do / avoid */}
       <section className="mt-16 grid gap-10 lg:grid-cols-2" aria-label={t('secDo')}>
         <div>
-          <SectionHeading index="04" title={t('secDo')} />
+          <SectionHeading index={doIdx} title={t('secDo')} />
           <DoList items={situation.do} />
         </div>
         <div>
-          <SectionHeading index="05" title={t('secAvoid')} />
+          <SectionHeading index={avoidIdx} title={t('secAvoid')} />
           <AvoidList items={situation.avoid} />
         </div>
       </section>
 
+      {/* Where to complain */}
+      {hasComplaints && (
+        <section className="mt-16" aria-labelledby="complain-heading">
+          <SectionHeading index={complainIdx} title={t('secComplain')} />
+          <div className="grid gap-4">
+            {situation.complaintRoutes.map((r) => (
+              <ComplaintRouteCard key={r.id} route={r} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* What evidence & documents to keep */}
+      {situation.evidence.length > 0 && (
+        <section className="mt-16" aria-labelledby="evidence-heading">
+          <SectionHeading index={evidenceIdx} title={t('secEvidence')} subtitle={t('secEvidenceHint')} />
+          <EvidenceList items={situation.evidence} />
+        </section>
+      )}
+
       {/* What happens next */}
       <section className="mt-16">
-        <SectionHeading index="06" title={t('secWhatNext')} />
+        <SectionHeading index={whatNextIdx} title={t('secWhatNext')} />
         <WhatHappensNext situation={situation} />
       </section>
 
       {/* Legal terms in this guide */}
-      {termIds.length > 0 && (
+      {hasTerms && (
         <section className="mt-16" aria-label={t('ltInGuide')}>
-          <SectionHeading index="07" title={t('ltInGuide')} subtitle={t('ltTapTerm')}>
+          <SectionHeading index={termsIdx} title={t('ltInGuide')} subtitle={t('ltTapTerm')}>
             <Link to="/legal-terms" className="text-sm font-semibold text-saffron-deep hover:underline">
               {t('ltTitle')} →
             </Link>
@@ -242,7 +282,7 @@ export function SituationPage() {
 
       {/* Get legal help */}
       <section className="mt-16" aria-labelledby="help-heading">
-        <SectionHeading index={termIds.length > 0 ? '08' : '07'} title={t('secHelp')} />
+        <SectionHeading index={helpIdx} title={t('secHelp')} />
         <div className="grid gap-4 sm:grid-cols-2">
           {situation.helpRouteIds.map((id) => (
             <HelpRouteCard key={id} routeId={id} />
@@ -250,22 +290,10 @@ export function SituationPage() {
         </div>
       </section>
 
-      {/* Where to complain */}
-      {situation.complaintRoutes.length > 0 && (
-        <section className="mt-16" aria-labelledby="complain-heading">
-          <SectionHeading index={termIds.length > 0 ? '09' : '08'} title={t('secComplain')} />
-          <div className="grid gap-4">
-            {situation.complaintRoutes.map((r) => (
-              <ComplaintRouteCard key={r.id} route={r} />
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* Official sources */}
       <section className="mt-16" aria-labelledby="sources-heading">
         <SectionHeading
-          index={termIds.length > 0 ? '10' : situation.complaintRoutes.length > 0 ? '09' : '08'}
+          index={sourcesIdx}
           title={t('secSources')}
           subtitle={t('srcIntro')}
         />
@@ -312,6 +340,7 @@ export function SituationPage() {
           {t('discTitle')}
         </button>
       </p>
+
     </div>
   )
 }
