@@ -5,7 +5,6 @@ import { Button } from '../components/ui/Button'
 import { SituationCard } from '../components/situation/SituationCard'
 import { UrgencyBadge } from '../components/ui/UrgencyBadge'
 import { SearchInput } from '../components/features/SearchInput'
-import { SituationStatusChecker } from '../components/features/SituationStatusChecker'
 import { ECourtsBridge } from '../components/features/ECourtsBridge'
 import { ALL_ENTRIES, NOT_SURE_ENTRY } from '../data/situations'
 
@@ -53,19 +52,30 @@ export function Home() {
         </div>
       </section>
 
-      {/* ——— Natural language search ——— */}
+      {/* ——— Ask NyayaNow — natural-language situation navigator ——— */}
       <section className="mx-auto max-w-3xl px-4 pt-8 sm:px-6 sm:pt-10">
         <div className="rounded-3xl border border-line bg-cream p-6 shadow-[0_24px_60px_-24px_rgb(11_27_47/0.3)] sm:p-8">
-          <h2 className="mb-4 text-center font-display text-xl font-semibold text-ink sm:text-2xl">
-            {t('nlTitle')}
+          <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-saffron-deep">
+            <span aria-hidden="true">🧭</span> {t('anEyebrow')}
+          </p>
+          <h2 className="mt-3 text-center font-display text-2xl font-semibold text-ink sm:text-3xl">
+            {t('anTitle')}
           </h2>
-          <SearchInput large />
+          <p className="mt-1 text-center text-[15px] font-medium text-ink/80 sm:text-base">
+            {t('anSub')}
+          </p>
+          <p className="mx-auto mt-2 max-w-md text-center text-sm leading-relaxed text-mist">
+            {t('anHint')}
+          </p>
+          <div className="mt-6">
+            <SearchInput large />
+          </div>
+          <p className="mt-4 text-center">
+            <a href="#situations" className="text-sm font-semibold text-saffron-deep hover:underline">
+              {t('anChooseInstead')}
+            </a>
+          </p>
         </div>
-      </section>
-
-      {/* ——— Questioned vs arrested decision tool ——— */}
-      <section className="mx-auto max-w-3xl px-4 pt-12 sm:px-6 sm:pt-14">
-        <SituationStatusChecker />
       </section>
 
       {/* ——— Situation grid ——— */}

@@ -65,7 +65,11 @@ export const UI = {
     'దగ్గరి పరిస్థితిని ఎంచుకోండి — లేదా క్రింద మీ మాటల్లో వివరించండి.'
   ),
   nlTitle: t('Tell us what happened', 'बताइए क्या हुआ', 'ఏమి జరిగిందో చెప్పండి'),
-  nlPlaceholder: t('Police stopped me and are asking me to come to the station.', 'पुलिस ने मुझे रोका और थाने आने को कह रही है।', 'పోలీసులు నన్ను ఆపి స్టేషన్ రమ్మంటున్నారు.'),
+  nlPlaceholder: t(
+    'Example: Police stopped me while I was driving and asked for my documents.',
+    'उदाहरण: पुलिस ने मुझे गाड़ी चलाते समय रोका और दस्तावेज़ माँगे।',
+    'ఉదాహరణ: నేను డ్రైవింగ్ చేస్తుండగా పోలీసులు నన్ను ఆపి పత్రాలు అడిగారు.'
+  ),
   nlSubmit: t('Find my next step', 'मेरा अगला कदम खोजें', 'నా తదుపరి అడుగు కనుగొనండి'),
   nlHint: t(
     'We match your words to a verified guide. We never generate legal advice.',
@@ -548,6 +552,92 @@ export const UI = {
     'Voice input may use your browser’s or its provider’s speech-recognition service. Nothing is sent to NyayaNow. You can type instead.',
     'वॉइस इनपुट आपके ब्राउज़र या उसके प्रदाता की स्पीच-पहचान सेवा का उपयोग कर सकता है। कुछ भी न्यायनाउ को नहीं भेजा जाता। आप टाइप भी कर सकते हैं।',
     'వాయిస్ ఇన్పుట్ మీ బ్రౌజర్ లేదా దాని ప్రొవైడర్ స్పీచ్-గుర్తింపు సేవను ఉపయోగించవచ్చు. ఏదీ న్యాయనౌకు పంపబడదు. మీరు టైప్ చేయవచ్చు.'
+  ),
+
+  /* ——— Ask NyayaNow — situation navigator ——— */
+  anEyebrow: t('Ask NyayaNow', 'न्यायनाउ से पूछें', 'న్యాయనౌను అడగండి'),
+  anTitle: t('Something happened?', 'कुछ हुआ?', 'ఏదైనా జరిగిందా?'),
+  anSub: t(
+    'Tell NyayaNow what happened in your own words.',
+    'न्यायनाउ को अपने शब्दों में बताइए कि क्या हुआ।',
+    'మీ మాటల్లో న్యాయనౌకు ఏమి జరిగిందో చెప్పండి.'
+  ),
+  anHint: t(
+    "You don't need to know the legal term. Describe the situation normally.",
+    'आपको कानूनी शब्द जानने की ज़रूरत नहीं। स्थिति को सामान्य तरीके से बताइए।',
+    'మీకు చట్టపరమైన పదం తెలియాల్సిన అవసరం లేదు. పరిస్థితిని సాధారణంగా వివరించండి.'
+  ),
+  anChooseInstead: t(
+    'Choose a situation instead',
+    'इसके बजाय कोई परिस्थिति चुनें',
+    'బదులుగా ఒక పరిస్థితిని ఎంచుకోండి'
+  ),
+  anHelpIdentify: t(
+    'I can help identify the closest situation.',
+    'मैं निकटतम परिस्थिति की पहचान करने में मदद कर सकता हूँ।',
+    'దగ్గరి పరిస్థితిని గుర్తించడానికి నేను సహాయపడగలను.'
+  ),
+  anEnsure: t(
+    "Let's make sure we understand.",
+    'आइए सुनिश्चित करें कि हम सही समझे हैं।',
+    'మేము సరిగ్గా అర్థం చేసుకున్నామని నిర్ధారించుకుందాం.'
+  ),
+  anYouDescribed: t('You described:', 'आपने बताया:', 'మీరు వివరించారు:'),
+  anConfidenceHigh: t('HIGH CONFIDENCE', 'उच्च विश्वास', 'అధిక విశ్వాసం'),
+  anConfidenceMore: t('NEEDS MORE INFORMATION', 'और जानकारी चाहिए', 'మరింత సమాచారం అవసరం'),
+  anFound: t('Closest situation found', 'निकटतम परिस्थिति मिली', 'దగ్గరి పరిస్థితి కనుగొనబడింది'),
+  anViewNext: t('View my next step', 'मेरा अगला कदम देखें', 'నా తదుపరి అడుగు చూడండి'),
+  anChooseAnother: t('Choose another situation', 'कोई अन्य परिस्थिति चुनें', 'వేరే పరిస్థితిని ఎంచుకోండి'),
+  anClear: t('Clear conversation', 'बातचीत साफ़ करें', 'సంభాషణను తొలగించండి'),
+  anOnDevice: t(
+    'Situation matching happens on this device. Your description is not sent anywhere.',
+    'परिस्थिति मिलान इसी डिवाइस पर होता है। आपका विवरण कहीं नहीं भेजा जाता।',
+    'పరిస్థితి సరిపోలిక ఈ పరికరంలోనే జరుగుతుంది. మీ వివరణ ఎక్కడికీ పంపబడదు.'
+  ),
+  anRelated: t('This may also involve', 'इसमें ये भी शामिल हो सकते हैं', 'వీటితో కూడా సంబంధం ఉండవచ్చు'),
+  anRelatedSub: t(
+    'Related verified guides that may matter depending on the circumstances.',
+    'परिस्थितियों के अनुसार प्रासंगिक सत्यापित गाइड।',
+    'పరిస్థితులపై ఆధారపడి సంబంధించిన ధృవీకరించిన గైడ్లు.'
+  ),
+  anNoGuess: t(
+    "NyayaNow doesn't want to guess about your legal rights.",
+    'न्यायनाउ आपके कानूनी अधिकारों के बारे में अनुमान नहीं लगाना चाहता।',
+    'న్యాయనౌ మీ చట్టపరమైన హక్కుల గురించి ఊహించదలచుకోలేదు.'
+  ),
+  anTrafficTitle: t('Traffic-related situation', 'यातायात से संबंधित स्थिति', 'ట్రాఫిక్ సంబంధిత పరిస్థితి'),
+  anTrafficNote: t(
+    'We can identify this as a traffic-related situation, but NyayaNow does not yet have enough verified guidance for this specific issue.',
+    'हम इसे यातायात से संबंधित स्थिति के रूप में पहचान सकते हैं, लेकिन न्यायनाउ के पास अभी इस विशेष मुद्दे के लिए पर्याप्त सत्यापित मार्गदर्शन नहीं है।',
+    'దీన్ని ట్రాఫిక్ సంబంధిత పరిస్థితిగా మేము గుర్తించగలము, కానీ ఈ నిర్దిష్ట సమస్యకు న్యాయనౌ వద్ద ఇంకా తగినంత ధృవీకరించిన మార్గదర్శనం లేదు.'
+  ),
+  anTrafficVerify: t(
+    'Traffic-specific law (such as the Motor Vehicles Act, 1988) is not yet part of NyayaNow’s verified knowledge base, so we will not guess about it. Use the official sources and legal help below.',
+    'यातायात-विशिष्ट कानून (जैसे मोटर वाहन अधिनियम, 1988) अभी न्यायनाउ के सत्यापित ज्ञानकोश का हिस्सा नहीं है, इसलिए हम इसके बारे में अनुमान नहीं लगाएँगे। नीचे दिए गए आधिकारिक स्रोतों और कानूनी सहायता का उपयोग करें।',
+    'ట్రాఫిక్-నిర్దిష్ట చట్టం (మోటార్ వెహికల్ యాక్ట్, 1988 వంటిది) ఇంకా న్యాయనౌ ధృవీకరించిన జ్ఞాన భాండారంలో లేదు, కాబట్టి దాని గురించి మేము ఊహించము. క్రింది అధికారిక మూలాలు, న్యాయ సహాయం ఉపయోగించండి.'
+  ),
+  anBrowseRelated: t('Browse related guides', 'संबंधित गाइड देखें', 'సంబంధిత గైడ్లు చూడండి'),
+  anGetLegalHelp: t('Get legal help', 'कानूनी सहायता लें', 'న్యాయ సహాయం పొందండి'),
+  anWhatNow: t('What are they doing right now?', 'वे अभी क्या कर रहे हैं?', 'వారు ప్రస్తుతం ఏమి చేస్తున్నారు?'),
+  anOptDocuments: t('Stopping me / asking for documents', 'रोक रहे हैं / दस्तावेज़ माँग रहे हैं', 'ఆపుతున్నారు / పత్రాలు అడుగుతున్నారు'),
+  anOptQuestions: t('Asking me questions', 'सवाल पूछ रहे हैं', 'ప్రశ్నలు అడుగుతున్నారు'),
+  anOptSearch: t('Wanting to search me or my things', 'मेरी या मेरे सामान की तलाशी लेना चाहते हैं', 'నన్ను లేదా నా వస్తువులను సోదా చేయాలనుకుంటున్నారు'),
+  anOptMoney: t('Asking for money', 'पैसे माँग रहे हैं', 'డబ్బు అడుగుతున్నారు'),
+  anOptProperty: t('Taking or keeping something', 'कुछ ले रहे हैं या रख रहे हैं', 'ఏదైనా తీసుకుంటున్నారు లేదా ఉంచుతున్నారు'),
+  anOptArrest: t("Told me I am under arrest", 'बताया कि मैं गिरफ़्तार हूँ', 'నేను అరెస్ట్ అయ్యానని చెప్పారు'),
+  anOptHarm: t('Threatening or hurting me', 'धमका रहे हैं या चोट पहुँचा रहे हैं', 'బెదిరిస్తున్నారు లేదా గాయపరుస్తున్నారు'),
+  anOptFir: t("Won't register my complaint / FIR", 'मेरी शिकायत / FIR दर्ज नहीं कर रहे', 'నా ఫిర్యాదు / FIR నమోదు చేయడం లేదు'),
+  anOptOther: t('Something else', 'कुछ और', 'వేరేది'),
+  anSafetyIntro: t(
+    'Your safety comes first. We will not ask you to do anything risky.',
+    'आपकी सुरक्षा सबसे पहले। हम आपसे कोई जोखिम भरा काम नहीं करने को कहेंगे।',
+    'మీ భద్రతకే ప్రధాన ప్రాధాన్యం. ప్రమాదకరమైన పని చేయమని మేము అడగము.'
+  ),
+  anArrestCheckTitle: t('Questioned or arrested?', 'पूछताछ या गिरफ़्तारी?', 'ప్రశ్నలా లేదా అరెస్ట్?'),
+  anArrestCheckIntro: t(
+    'Whether you are formally under arrest changes which rights apply. We will not decide this for you — answer two quick questions.',
+    'औपचारिक रूप से गिरफ़्तार होना या न होना तय करता है कि कौन से अधिकार लागू होंगे। हम यह आपके लिए तय नहीं करेंगे — दो छोटे सवालों के जवाब दें।',
+    'మీరు అధికారికంగా అరెస్ట్ అయ్యారా లేదా అనేది ఏ హక్కులు వర్తిస్తాయో నిర్ణయిస్తుంది. మేము దీన్ని మీ కోసం నిర్ణయించము — రెండు చిన్న ప్రశ్నలకు సమాధానం ఇవ్వండి.'
   ),
 
   /* ——— Quick exit ——— */
