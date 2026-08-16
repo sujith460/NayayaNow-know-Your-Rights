@@ -1,0 +1,31 @@
+# NyayaNow — secure LLM situation-classification proxy.
+#
+# Local dev:    npx wrangler dev
+# Deploy:       npx wrangler deploy
+#
+# Server secret (never put it in this file):
+#   npx wrangler secret put LLM_API_KEY    # the Google Gemini API key
+#
+# The API key must NEVER be prefixed with VITE_ — VITE_ variables can become
+# visible in the client bundle. The frontend only knows VITE_AI_ENDPOINT, the
+# public URL of this worker.
+
+name = "nyayanow-classify"
+main = "index.ts"
+compatibility_date = "2025-06-01"
+
+# Public configuration — visible to the Worker runtime, never to the client.
+[vars]
+# Comma-separated frontend origins allowed to call this worker.
+ALLOWED_ORIGINS =  "http://localhost:5173,http://127.0.0.1:5173,https://nyayanow.vercel.app/"
+
+# Google Gemini (Generative Language API). LLM_ENDPOINT is the API base;
+# the worker appends /models/{LLM_MODEL}:generateContent.
+LLM_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta"
+LLM_MODEL = "gemini-3.5-flash-lite"
+
+# Optional: use Cloudflare Workers AI instead of an API key (no secret needed).
+# Cloudflare holds the credentials for you. Uncomment and set LLM_MODEL to the
+# Workers AI model id (e.g. "@cf/meta/llama-3.3-70b-instruct-fp8-fast"):
+#   [[ai]]
+#   binding = "AI"

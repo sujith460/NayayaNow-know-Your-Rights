@@ -4,3 +4,12 @@ dist-ssr
 *.local
 .DS_Store
 npm-debug.log*
+
+# Environment secrets (never committed)
+.env
+.env.local
+.env.*.local
+worker/.dev.vars
+
+# Cloudflare Wrangler
+.wrangler/

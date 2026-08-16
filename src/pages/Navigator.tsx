@@ -16,12 +16,18 @@ import {
 import { useApp } from '../context/AppContext'
 import {
   getSituationProvider,
+  getClarification,
   getRelatedSituations
 } from '../lib/situationUnderstanding'
-import type { SituationUnderstanding, RouteSituationId, Confidence, ClarificationOption } from '../lib/situationUnderstanding'
+import type {
+  SituationUnderstanding,
+  RouteSituationId,
+  Confidence,
+  ClarificationOption,
+  ClarificationStep
+} from '../lib/situationUnderstanding'
 import { getSituationById, SITUATIONS } from '../data/situations'
 import type { Lang } from '../data/types'
-import type { UIKey } from '../data/ui'
 import { SituationCard } from '../components/situation/SituationCard'
 import { SituationStatusChecker } from '../components/features/SituationStatusChecker'
 import { Button } from '../components/ui/Button'
@@ -195,7 +201,13 @@ function ConfidenceBadge({ confidence }: { confidence: Confidence }) {
   )
 }
 
-function IdentifiedCard({ understanding }: { understanding: SituationUnderstanding }) {
+function IdentifiedCard({
+  understanding,
+  onChangeAnswers
+}: {
+  understanding: SituationUnderstanding
+  onChangeAnswers?: () => void
+}) {
   const { t, tr } = useApp()
   const situation = getSituationById(understanding.situationId)
   if (!situation) return null
@@ -233,16 +245,27 @@ function IdentifiedCard({ understanding }: { understanding: SituationUnderstandi
             {t('anViewNext')} <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
         </Link>
-        <a href="#all-situations" className="flex-1 sm:flex-none">
-          <Button variant="ghost" className="w-full sm:w-auto">
-            {t('anChooseAnother')}
+        {onChangeAnswers ? (
+          <Button variant="ghost" onClick={onChangeAnswers} className="w-full sm:w-auto">
+            {t('anChangeAnswers')}
           </Button>
-        </a>
+        ) : (
+          <a href="#all-situations" className="flex-1 sm:flex-none">
+            <Button variant="ghost" className="w-full sm:w-auto">
+              {t('anChooseAnother')}
+            </Button>
+          </a>
+        )}
       </div>
 
-      <p className="mt-6 rounded-2xl bg-paper-2 p-4 text-xs leading-relaxed text-mist">
-        {t('clAIBoundary')}
-      </p>
+      {/* Trust message — one of the most important product messages */}
+      <div className="mt-6 rounded-2xl border border-line bg-paper-2 p-4">
+        <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-saffron-deep">
+          <ShieldAlert className="h-4 w-4" aria-hidden="true" />
+          {t('anTrustTitle')}
+        </p>
+        <p className="mt-2 text-xs leading-relaxed text-mist">{t('anTrustBody')}</p>
+      </div>
     </div>
   )
 }
@@ -323,14 +346,16 @@ function SafetyCard({
 
 function ClarifyCard({
   text,
-  questionKey,
-  options,
-  onPick
+  step,
+  onPick,
+  onBack,
+  canGoBack
 }: {
   text: string
-  questionKey: UIKey
-  options: ClarificationOption[]
+  step: ClarificationStep
   onPick: (option: ClarificationOption) => void
+  onBack: () => void
+  canGoBack: boolean
 }) {
   const { t } = useApp()
   return (
@@ -346,19 +371,39 @@ function ClarifyCard({
         “{text}”
       </blockquote>
 
-      <h3 className="mt-6 font-display text-lg font-semibold text-ink">{t(questionKey)}</h3>
+      <h3 className="mt-6 font-display text-lg font-semibold text-ink">{t(step.questionKey)}</h3>
+      <p className="mt-1 text-xs leading-relaxed text-mist">{t(step.whyKey)}</p>
+
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
-        {options.map((option) => (
+        {step.options.map((option) => (
           <button
             key={option.id}
             onClick={() => onPick(option)}
-            className="rounded-2xl border border-line bg-cream px-4 py-3.5 text-left text-sm font-semibold text-ink transition-all hover:border-saffron hover:bg-saffron-soft hover:text-saffron-deep"
+            className={`rounded-2xl border px-4 py-3.5 text-left text-sm font-semibold text-ink transition-all ${
+              option.unsure
+                ? 'border-dashed border-mist-2 bg-paper text-mist hover:border-saffron hover:text-saffron-deep'
+                : 'border-line bg-cream hover:border-saffron hover:bg-saffron-soft hover:text-saffron-deep'
+            }`}
           >
             {t(option.labelKey)}
           </button>
         ))}
       </div>
-      <p className="mt-4 text-xs leading-relaxed text-mist">{t('clAIBoundary')}</p>
+
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+        {canGoBack ? (
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-1.5 rounded-full border border-line bg-cream px-3 py-1.5 text-xs font-semibold text-mist transition-colors hover:border-saffron hover:text-saffron-deep"
+          >
+            <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+            {t('anBack')}
+          </button>
+        ) : (
+          <span aria-hidden="true" />
+        )}
+        <p className="text-xs leading-relaxed text-mist">{t('clAIBoundary')}</p>
+      </div>
     </div>
   )
 }
@@ -449,22 +494,50 @@ export function Navigator() {
   const [submitted, setSubmitted] = useState<string | null>(null)
   const [understanding, setUnderstanding] = useState<SituationUnderstanding | null>(null)
   const [safetyAnswer, setSafetyAnswer] = useState<'safe' | 'danger' | 'notsure' | null>(null)
+  const [analyzing, setAnalyzing] = useState(false)
+  const [aiAssist, setAiAssist] = useState(provider.aiAssistEnabled)
+  const [clarifyHistory, setClarifyHistory] = useState<string[]>([])
+  const runIdRef = useRef(0)
+  const resultRef = useRef<HTMLDivElement | null>(null)
+
+  const runAnalyze = (text: string) => {
+    const id = ++runIdRef.current
+    setAnalyzing(true)
+    setSafetyAnswer(null)
+    setClarifyHistory([])
+    setUnderstanding(null)
+    provider.analyze(text).then((u) => {
+      if (runIdRef.current !== id) return
+      setUnderstanding(u)
+      setAnalyzing(false)
+    })
+  }
 
   // Analyze whenever the URL carries a description (homepage card → /navigator?q=…).
   useEffect(() => {
     if (q && q.trim().length >= 3) {
       setValue(q.trim())
       setSubmitted(q.trim())
-      setUnderstanding(provider.analyze(q.trim()))
-      setSafetyAnswer(null)
+      runAnalyze(q.trim())
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q])
 
+  // Move focus into the result for screen readers whenever it changes.
+  useEffect(() => {
+    if (!analyzing && understanding && submitted) {
+      resultRef.current?.focus({ preventScroll: true })
+    }
+  }, [understanding, analyzing, submitted])
+
   const reset = () => {
+    runIdRef.current++
     setValue('')
     setSubmitted(null)
     setUnderstanding(null)
     setSafetyAnswer(null)
+    setAnalyzing(false)
+    setClarifyHistory([])
     setSearchParams({}, { replace: true })
   }
 
@@ -473,13 +546,40 @@ export function Navigator() {
   }
 
   const pickOption = (option: ClarificationOption) => {
-    // The "something else" option is the honest fallback — never a guess.
-    const id = option.situationId === 'UNKNOWN' ? 'other' : option.id
-    setUnderstanding(provider.resolveClarification(id))
+    const current = understanding?.clarification?.currentStepId
+    if (!current) return
+    if (option.nextStepId) {
+      setClarifyHistory((h) => [...h, current])
+    } else {
+      setClarifyHistory([])
+    }
+    setUnderstanding(provider.resolveClarification(current, option.id))
     setSafetyAnswer(null)
   }
 
-  const showResult = submitted !== null && understanding !== null
+  const goBack = () => {
+    const prev = clarifyHistory.slice(0, -1)
+    const target = prev[prev.length - 1] ?? 'where'
+    setClarifyHistory(prev)
+    setUnderstanding(getClarification(target))
+  }
+
+  const changeAnswers = () => {
+    setClarifyHistory([])
+    setUnderstanding(getClarification('where'))
+  }
+
+  const toggleAiAssist = () => {
+    const next = !aiAssist
+    setAiAssist(next)
+    provider.setAiAssistEnabled(next)
+  }
+
+  const showResult = submitted !== null && understanding !== null && !analyzing
+  const currentStep = understanding?.clarification
+    ? understanding.clarification.steps.find((s) => s.id === understanding.clarification?.currentStepId)
+    : undefined
+  const canGoBack = clarifyHistory.length > 0
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 animate-rise">
@@ -494,12 +594,65 @@ export function Navigator() {
         <NavigatorInput value={value} onChange={setValue} onSubmit={submit} />
       </div>
 
+      {/* AI assist opt-in — only shown when a proxy is actually configured */}
+      {provider.aiAssistAvailable && (
+        <div className="mt-4 max-w-3xl rounded-2xl border border-line bg-cream p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+                <ShieldAlert className="h-4 w-4 shrink-0 text-leaf" aria-hidden="true" />
+                {t('anPrivateMode')}
+                <span className="text-mist" aria-hidden="true">
+                  ·
+                </span>
+                <Sparkles className="h-4 w-4 shrink-0 text-saffron-deep" aria-hidden="true" />
+                {t('anAIAssist')}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-mist">
+                {t(aiAssist ? 'anAIAssistNote' : 'anPrivateModeNote')}
+              </p>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={aiAssist}
+              aria-label={t('anAIAssist')}
+              onClick={toggleAiAssist}
+              className={`shrink-0 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
+                aiAssist
+                  ? 'bg-saffron text-white'
+                  : 'border border-line bg-paper text-mist hover:text-ink'
+              }`}
+            >
+              {t(aiAssist ? 'anAIAssistOn' : 'anAIAssistOff')}
+            </button>
+          </div>
+          <p className="mt-2 text-[11px] leading-relaxed text-mist-2">{t('anAIAssistDesc')}</p>
+        </div>
+      )}
+
+      {/* Honest loading state — only shows while local/AI analysis is actually running */}
+      {analyzing && (
+        <div
+          className="mt-10 max-w-3xl rounded-3xl border border-line bg-cream p-8 text-center animate-pop"
+          role="status"
+          aria-live="polite"
+        >
+          <div
+            className="mx-auto h-8 w-8 animate-spin rounded-full border-[3px] border-saffron-soft border-t-saffron-deep"
+            aria-hidden="true"
+          />
+          <p className="mt-4 text-sm font-semibold text-ink">{t('anUnderstanding')}</p>
+          <p className="mt-1 text-xs text-mist">{t(provider.processingNoteKey)}</p>
+        </div>
+      )}
+
       {showResult && (
-        <div className="mt-10 max-w-3xl">
+        <div ref={resultRef} tabIndex={-1} className="mt-10 max-w-3xl rounded-2xl outline-none" aria-live="polite">
           {/* Clear conversation */}
           <div className="mb-4 flex items-center justify-between gap-3">
             <p className="text-xs font-semibold uppercase tracking-wide text-mist">
-              {t('progressLabel')} · {t('anFound')}
+              {t('progressLabel')} · {t(understanding.needsClarification ? 'anEnsure' : 'anFound')}
             </p>
             <button
               onClick={reset}
@@ -519,7 +672,7 @@ export function Navigator() {
               onDanger={openEmergency}
               onNotSure={() => setSafetyAnswer('notsure')}
             />
-          ) : // 2. "I don't know if I am arrested" → the decision tool decides, not us
+          ) : // 2. "Questioned or arrested?" → the decision tool decides, not us
           understanding.arrestUncertainty ? (
             <div className="rounded-3xl border border-line bg-cream p-5 sm:p-6 animate-pop">
               <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-saffron-deep">
@@ -538,17 +691,21 @@ export function Navigator() {
           ) : // 4. Honest fallback — we don't guess about legal rights
           understanding.situationId === 'UNKNOWN' && !understanding.needsClarification ? (
             <UnknownCard />
-          ) : // 5. Ambiguous → one clarification question
-          understanding.needsClarification && understanding.clarification ? (
+          ) : // 5. Dynamic everyday-language clarification (max 3 questions)
+          understanding.needsClarification && currentStep ? (
             <ClarifyCard
               text={submitted}
-              questionKey={understanding.clarification.questionKey}
-              options={understanding.clarification.options}
+              step={currentStep}
               onPick={pickOption}
+              onBack={goBack}
+              canGoBack={canGoBack}
             />
           ) : // 6. Verified situation identified
           understanding.situationId !== 'UNKNOWN' ? (
-            <IdentifiedCard understanding={understanding} />
+            <IdentifiedCard
+              understanding={understanding}
+              onChangeAnswers={clarifyHistory.length > 0 ? changeAnswers : undefined}
+            />
           ) : (
             <UnknownCard />
           )}

@@ -1,0 +1,12 @@
+# Copy this file to `worker/.dev.vars` for `npx wrangler dev`.
+# `.dev.vars` is gitignored — it must never be committed.
+#
+# NEVER prefix these with VITE_ — they are server-side secrets.
+# The frontend only knows VITE_AI_ENDPOINT (the public worker URL).
+
+# Google Gemini API key (from https://aistudio.google.com/apikey).
+# Set with `wrangler secret put LLM_API_KEY` for deployed environments.
+LLM_API_KEY=
+LLM_ENDPOINT=https://generativelanguage.googleapis.com/v1beta
+LLM_MODEL=gemini-3.5-flash-lite
+ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173

@@ -594,6 +594,34 @@ export const UI = {
     'परिस्थिति मिलान इसी डिवाइस पर होता है। आपका विवरण कहीं नहीं भेजा जाता।',
     'పరిస్థితి సరిపోలిక ఈ పరికరంలోనే జరుగుతుంది. మీ వివరణ ఎక్కడికీ పంపబడదు.'
   ),
+  anPrivateMode: t('Private · on-device', 'निजी · डिवाइस पर', 'ప్రైవేట్ · పరికరంలో'),
+  anPrivateModeNote: t(
+    'NyayaNow first tries to understand your situation on this device. Your description is not sent anywhere.',
+    'न्यायनाउ पहले आपकी स्थिति को इसी डिवाइस पर समझने की कोशिश करता है। आपका विवरण कहीं नहीं भेजा जाता।',
+    'న్యాయనౌ ముందుగా మీ పరిస్థితిని ఈ పరికరంలోనే అర్థం చేసుకోవడానికి ప్రయత్నిస్తుంది. మీ వివరణ ఎక్కడికీ పంపబడదు.'
+  ),
+  anAIAssist: t('AI assist', 'AI सहायता', 'AI సహాయం'),
+  anAIAssistOn: t('AI assist is ON', 'AI सहायता चालू है', 'AI సహాయం ఆన్లో ఉంది'),
+  anAIAssistOff: t('AI assist is OFF', 'AI सहायता बंद है', 'AI సహాయం ఆఫ్లో ఉంది'),
+  anAIAssistDesc: t(
+    'Allow NyayaNow to use an external AI model when your situation is difficult to classify on-device. Off by default.',
+    'जब आपकी स्थिति को डिवाइस पर वर्गीकृत करना कठिन हो, तो न्यायनाउ को बाहरी AI मॉडल का उपयोग करने दें। डिफ़ॉल्ट रूप से बंद।',
+    'మీ పరిస్థితిని పరికరంలో వర్గీకరించడం కష్టమైనప్పుడు న్యాయనౌ బాహ్య AI మోడల్ను ఉపయోగించడానికి అనుమతించండి. డిఫాల్ట్గా ఆఫ్.'
+  ),
+  anAIAssistNote: t(
+    'If on-device matching is not confident enough, your description may be sent to the configured AI service to help identify the closest situation. Legal guidance still comes from NyayaNow’s verified knowledge base.',
+    'यदि डिवाइस पर मिलान पर्याप्त विश्वसनीय नहीं है, तो निकटतम परिस्थिति की पहचान के लिए आपका विवरण कॉन्फ़िगर किए गए AI सेवा को भेजा जा सकता है। कानूनी मार्गदर्शन फिर भी न्यायनाउ के सत्यापित ज्ञानकोश से आता है।',
+    'పరికరంలో సరిపోలిక తగినంత నమ్మకంగా లేకపోతే, దగ్గరి పరిస్థితిని గుర్తించడానికి మీ వివరణ కాన్ఫిగర్ చేసిన AI సేవకు పంపబడవచ్చు. న్యాయ మార్గదర్శనం ఎల్లప్పుడూ న్యాయనౌ ధృవీకరించిన జ్ఞాన భాండారం నుండే వస్తుంది.'
+  ),
+  anUnderstanding: t('Understanding your description…', 'आपका विवरण समझा जा रहा है…', 'మీ వివరణను అర్థం చేసుకుంటున్నాం…'),
+  anTrustTitle: t('Why you can trust this answer', 'इस उत्तर पर भरोसा क्यों करें', 'ఈ సమాధానాన్ని ఎందుకు నమ్మవచ్చు'),
+  anTrustBody: t(
+    'NyayaNow uses AI only to understand your description. The legal guidance shown here comes from NyayaNow’s verified knowledge base and official sources.',
+    'न्यायनाउ AI का उपयोग केवल आपका विवरण समझने के लिए करता है। यहाँ दिखाया गया कानूनी मार्गदर्शन न्यायनाउ के सत्यापित ज्ञानकोश और आधिकारिक स्रोतों से आता है।',
+    'న్యాయనౌ AI ని మీ వివరణను అర్థం చేసుకోవడానికి మాత్రమే ఉపయోగిస్తుంది. ఇక్కడ చూపిన న్యాయ మార్గదర్శనం న్యాయనౌ ధృవీకరించిన జ్ఞాన భాండారం, అధికారిక మూలాల నుండి వస్తుంది.'
+  ),
+  anChangeAnswers: t('Change my answers', 'मेरे उत्तर बदलें', 'నా సమాధానాలు మార్చండి'),
+  anBack: t('Back', 'पीछे', 'వెనుకకు'),
   anRelated: t('This may also involve', 'इसमें ये भी शामिल हो सकते हैं', 'వీటితో కూడా సంబంధం ఉండవచ్చు'),
   anRelatedSub: t(
     'Related verified guides that may matter depending on the circumstances.',
@@ -618,16 +646,57 @@ export const UI = {
   ),
   anBrowseRelated: t('Browse related guides', 'संबंधित गाइड देखें', 'సంబంధిత గైడ్లు చూడండి'),
   anGetLegalHelp: t('Get legal help', 'कानूनी सहायता लें', 'న్యాయ సహాయం పొందండి'),
-  anWhatNow: t('What are they doing right now?', 'वे अभी क्या कर रहे हैं?', 'వారు ప్రస్తుతం ఏమి చేస్తున్నారు?'),
-  anOptDocuments: t('Stopping me / asking for documents', 'रोक रहे हैं / दस्तावेज़ माँग रहे हैं', 'ఆపుతున్నారు / పత్రాలు అడుగుతున్నారు'),
-  anOptQuestions: t('Asking me questions', 'सवाल पूछ रहे हैं', 'ప్రశ్నలు అడుగుతున్నారు'),
-  anOptSearch: t('Wanting to search me or my things', 'मेरी या मेरे सामान की तलाशी लेना चाहते हैं', 'నన్ను లేదా నా వస్తువులను సోదా చేయాలనుకుంటున్నారు'),
-  anOptMoney: t('Asking for money', 'पैसे माँग रहे हैं', 'డబ్బు అడుగుతున్నారు'),
-  anOptProperty: t('Taking or keeping something', 'कुछ ले रहे हैं या रख रहे हैं', 'ఏదైనా తీసుకుంటున్నారు లేదా ఉంచుతున్నారు'),
-  anOptArrest: t("Told me I am under arrest", 'बताया कि मैं गिरफ़्तार हूँ', 'నేను అరెస్ట్ అయ్యానని చెప్పారు'),
-  anOptHarm: t('Threatening or hurting me', 'धमका रहे हैं या चोट पहुँचा रहे हैं', 'బెదిరిస్తున్నారు లేదా గాయపరుస్తున్నారు'),
-  anOptFir: t("Won't register my complaint / FIR", 'मेरी शिकायत / FIR दर्ज नहीं कर रहे', 'నా ఫిర్యాదు / FIR నమోదు చేయడం లేదు'),
-  anOptOther: t('Something else', 'कुछ और', 'వేరేది'),
+  /* ——— Ask NyayaNow — clarification (everyday language, max 3 questions) ——— */
+  anQWhere: t('Where are you right now?', 'आप अभी कहाँ हैं?', 'మీరు ప్రస్తుతం ఎక్కడ ఉన్నారు?'),
+  anQWhereWhy: t(
+    'We ask this because the next step depends on where you are and what happened after you came in contact with the police.',
+    'हम यह इसलिए पूछते हैं क्योंकि अगला कदम इस पर निर्भर करता है कि आप कहाँ हैं और पुलिस से बातचीत के बाद क्या हुआ।',
+    'మీరు ఎక్కడ ఉన్నారు, పోలీసులతో సంబంధం తర్వాత ఏమి జరిగింది — తదుపరి అడుగు దీనిపై ఆధారపడి ఉంటుంది కాబట్టి అడుగుతున్నాము.'
+  ),
+  anQWhat: t('What happened after you came in contact with the police?', 'पुलिस से बातचीत के बाद क्या हुआ?', 'పోలీసులతో సంబంధం తర్వాత ఏమి జరిగింది?'),
+  anQWhatWhy: t(
+    'We ask this because the guidance depends on what the police actually did — not on legal labels.',
+    'हम यह इसलिए पूछते हैं क्योंकि मार्गदर्शन इस पर निर्भर करता है कि पुलिस ने वास्तव में क्या किया — न कि कानूनी शब्दों पर।',
+    'మార్గదర్శనం పోలీసులు వాస్తవంగా ఏమి చేశారనే దానిపై ఆధారపడి ఉంటుంది — చట్టపరమైన పేర్లపై కాదు.'
+  ),
+  anQTook: t('Did they take something from you, or look through your things?', 'क्या उन्होंने आपसे कुछ लिया, या आपका सामान देखा?', 'వారు మీ నుండి ఏదైనా తీసుకున్నారా, లేదా మీ వస్తువులు చూశారా?'),
+  anQTookWhy: t(
+    'We ask this because taking something and checking something lead to different verified guides.',
+    'हम यह इसलिए पूछते हैं क्योंकि कुछ लेना और कुछ जाँचना अलग-अलग सत्यापित गाइड की ओर ले जाते हैं।',
+    'ఏదైనా తీసుకోవడం, చూడటం వేర్వేరు ధృవీకరించిన గైడ్లకు దారితీస్తాయి కాబట్టి అడుగుతున్నాము.'
+  ),
+  anQAtHome: t('What are the police doing at your home?', 'पुलिस आपके घर पर क्या कर रही है?', 'పోలీసులు మీ ఇంట్లో ఏమి చేస్తున్నారు?'),
+  anQAtHomeWhy: t(
+    'We ask this because a visit, a search and a request for money are different situations with different rules.',
+    'हम यह इसलिए पूछते हैं क्योंकि मुलाक़ात, तलाशी और पैसे माँगना अलग-अलग परिस्थितियाँ हैं जिनके अलग नियम हैं।',
+    'సందర్శన, సోదా, డబ్బు అడగడం — వేర్వేరు పరిస్థితులు, వేర్వేరు నియమాలు కాబట్టి అడుగుతున్నాము.'
+  ),
+  anQAtStation: t('What is happening at the police station?', 'थाने पर क्या हो रहा है?', 'పోలీస్ స్టేషన్లో ఏమి జరుగుతోంది?'),
+  anQAtStationWhy: t(
+    'We ask this because being questioned, being told you are under arrest, and being refused an FIR have different verified guides.',
+    'हम यह इसलिए पूछते हैं क्योंकि पूछताछ, गिरफ़्तारी की सूचना और FIR से इनकार — इन सबके अलग-अलग सत्यापित गाइड हैं।',
+    'ప్రశ్నలు అడగడం, అరెస్ట్ చెప్పడం, FIR నిరాకరించడం — వీటికి వేర్వేరు ధృవీకరించిన గైడ్లు ఉన్నాయి కాబట్టి అడుగుతున్నాము.'
+  ),
+  anOptOnRoad: t('🚗 On the road / travelling', '🚗 सड़क पर / यात्रा कर रहा/रही हूँ', '🚗 రోడ్డుపై / ప్రయాణంలో'),
+  anOptAtHome: t('🏠 At home', '🏠 घर पर', '🏠 ఇంట్లో'),
+  anOptAtStation: t('🚔 At a police station', '🚔 पुलिस थाने पर', '🚔 పోలీస్ స్టేషన్లో'),
+  anOptElsewhere: t('📍 Somewhere else', '📍 कहीं और', '📍 వేరే చోట'),
+  anOptNotSure: t("🤷 I'm not sure", '🤷 मुझे नहीं पता', '🤷 నాకు తెలియదు'),
+  anOptAskedDocs: t('📄 They asked me for something — documents, papers or ID', '📄 उन्होंने मुझसे कुछ माँगा — दस्तावेज़, कागज़ या पहचान', '📄 వారు నన్ను ఏదో అడిగారు — పత్రాలు, కాగితాలు లేదా ID'),
+  anOptQuestions: t('❓ They started asking me questions', '❓ उन्होंने मुझसे सवाल पूछने शुरू किए', '❓ వారు నన్ను ప్రశ్నలు అడగడం మొదలుపెట్టారు'),
+  anOptCheckThings: t('🔍 They wanted to look through my bag, phone, vehicle or belongings', '🔍 वे मेरा बैग, फ़ोन, वाहन या सामान देखना चाहते थे', '🔍 వారు నా బ్యాగ్, ఫోన్, వాహనం లేదా వస్తువులు చూడాలనుకున్నారు'),
+  anOptTookSomething: t('📦 They took something from me or kept something of mine', '📦 उन्होंने मुझसे कुछ लिया या मेरा कुछ रख लिया', '📦 వారు నా నుండి ఏదో తీసుకున్నారు లేదా నాది ఏదో ఉంచుకున్నారు'),
+  anOptMoney: t('💰 They asked me for money', '💰 उन्होंने मुझसे पैसे माँगे', '💰 వారు నన్ను డబ్బు అడిగారు'),
+  anOptComeWith: t('🚶 They told me to come with them', '🚶 उन्होंने मुझे अपने साथ चलने को कहा', '🚶 వారు నాతో రమ్మన్నారు'),
+  anOptWontLetLeave: t("🚧 They won't let me leave", '🚧 वे मुझे जाने नहीं दे रहे', '🚧 వారు నన్ను వెళ్లనివ్వడం లేదు'),
+  anOptHarm: t('😟 They threatened or hurt me', '😟 उन्होंने धमकाया या चोट पहुँचाई', '😟 వారు బెదిరించారు లేదా గాయపరిచారు'),
+  anOptTookYes: t('📦 Yes — they took something and kept it', '📦 हाँ — उन्होंने कुछ लिया और रख लिया', '📦 అవును — వారు ఏదో తీసుకుని ఉంచుకున్నారు'),
+  anOptChecked: t('🔍 They looked through my things', '🔍 उन्होंने मेरा सामान देखा', '🔍 వారు నా వస్తువులు చూశారు'),
+  anOptOnlyTalked: t('❌ No — they only talked to me', '❌ नहीं — उन्होंने सिर्फ़ बात की', '❌ కాదు — వారు నాతో మాత్రమే మాట్లాడారు'),
+  anOptPoliceCameHome: t('🏠 Police came to my home', '🏠 पुलिस मेरे घर आई', '🏠 పోలీసులు నా ఇంటికి వచ్చారు'),
+  anOptLookInside: t('🔍 They want to look inside my home', '🔍 वे मेरे घर के अंदर देखना चाहते हैं', '🔍 వారు నా ఇంటి లోపల చూడాలనుకుంటున్నారు'),
+  anOptToldArrest: t('⛓️ They told me I am under arrest', '⛓️ उन्होंने बताया कि मैं गिरफ़्तार हूँ', '⛓️ నేను అరెస్ట్ అయ్యానని చెప్పారు'),
+  anOptFir: t("📝 They won't register my complaint / FIR", '📝 वे मेरी शिकायत / FIR दर्ज नहीं कर रहे', '📝 వారు నా ఫిర్యాదు / FIR నమోదు చేయడం లేదు'),
   anSafetyIntro: t(
     'Your safety comes first. We will not ask you to do anything risky.',
     'आपकी सुरक्षा सबसे पहले। हम आपसे कोई जोखिम भरा काम नहीं करने को कहेंगे।',
